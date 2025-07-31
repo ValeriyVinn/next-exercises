@@ -1,11 +1,11 @@
-import css from "./page.module.css";
-
+// import css from "./page.module.css";
+import Menu from "@/components/Menu/Menu";
+import htmlCssMenuData from "@/data/menu/html-css";
 
 export default function HtmlCss() {
   return (
-    <div className={css.databasePage}>
-      <h1>Databases</h1>
-      <p>This is the databases page.</p>
-    </div>
+    <main className="max-w-4xl mx-auto mt-10">
+      <Menu data={htmlCssMenuData} />
+    </main>
   );
 }
