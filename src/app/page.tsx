@@ -1,13 +1,31 @@
 
-export default function Home() {
+import Link from "next/link";
+
+
+const topics = [
+  { slug: "html-css", label: "HTML + CSS" },
+  { slug: "javascript", label: "JavaScript" },
+  { slug: "react", label: "React" },
+  { slug: "redux", label: "Redux" },
+  { slug: "node-js", label: "Node.js" },
+  { slug: "next-js", label: "Next.js" },
+  { slug: "databases", label: "Databases" },
+];
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-     <h1>Next Exercises</h1>   
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-       
-      </footer>
-    </div>
+    <main className="p-8">
+      {/* <h1 className="text-3xl font-bold mb-4">Next Exercises</h1> */}
+      <ul className="space-y-2">
+        {topics.map(({ slug, label }) => (
+          <li key={slug}>
+            <Link href={`/${slug}`} className="text-blue-600 hover:underline">
+              {label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+   
+    </main>
   );
 }
