@@ -4,7 +4,7 @@ import htmlCssMenuData from "@/data/menu/html-css";
 
 export default function HtmlCss() {
   return (
-    <main className="max-w-4xl mx-auto mt-10">
+    <main>
       <Menu data={htmlCssMenuData} />
     </main>
   );

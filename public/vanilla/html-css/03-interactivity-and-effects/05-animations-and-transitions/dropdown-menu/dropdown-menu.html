@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./dropdown-menu.css" />
+    <title>Dropdown menu</title>
+  </head>
+  <body>
+   <a href="/vanilla/html-css/html-css.html">Home</a>
+    <header id="menu-container" class="html-css-menu"> </header>
+
+    <main></main>
+    <footer></footer>
+
+    <div class="flex">
+      <div class="side">
+        <button class="open-btn" id="openModal">Send solution</button>
+        <div class="modal-overlay" id="backdrop">
+          <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <!-- <h2>This is a shared modal window</h2> -->
+            <textarea
+              id="solution-input"
+              cols="90"
+              rows="20"
+              placeholder="Write your code here..."
+            ></textarea>
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <br />
+        <button id="get-btn">Get solution</button>
+        <!-- conditions of the problem -->
+        <h1 class="header">Dropdown menu</h1>
+
+        <p>Create a dropdown menu.</p>
+        <!-- conditions of the problem -->
+        <!-- solution -->
+        <ul class="dropdown-menu">
+          <li class="dropdown-menu-item">
+            <a href="" class="dropdown-menu-link">Mathematicians</a>
+            <ul class="sub-menu">
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Archimedes</a>
+              </li>
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Isaac Newton</a>
+              </li>
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">G.W. Leibniz</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-menu-item">
+            <a href="" class="dropdown-menu-link">Physicist</a>
+            <ul class="sub-menu">
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Niels Bohr</a>
+              </li>
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Albert Einstein</a>
+              </li>
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Michael Faraday</a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown-menu-item">
+            <a href="" class="dropdown-menu-link">Chemist</a>
+            <ul class="sub-menu">
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Dmitri Mendeleev</a>
+              </li>
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Alfred Nobel</a>
+              </li>
+              <li class="sub-menu-item">
+                <a href="" class="sub-menu-link">Marie Curie</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <p class="indent">
+          Natural science or empirical science is one of the branches of science
+          concerned with the description, understanding and prediction of
+          natural phenomena, based on empirical evidence from observation and
+          experimentation. Mechanisms such as peer review and reproducibility of
+          findings are used to try to ensure the validity of scientific
+          advances.
+        </p>
+        <p class="indent">
+          Natural science can be divided into two main branches: life science
+          and physical science. Life science is alternatively known as biology.
+          Physical science is subdivided into branches: physics, astronomy,
+          Earth science and chemistry. These branches of natural science may be
+          further divided into more specialized branches (also known as fields).
+          As empirical sciences, natural sciences use tools from the formal
+          sciences, such as mathematics and logic, converting information about
+          nature into measurements that can be explained as clear statements of
+          the "laws of nature".
+        </p>
+        <p class="indent">
+          Modern natural science succeeded more classical approaches to natural
+          philosophy. Galileo, Kepler, Descartes, Bacon, and Newton debated the
+          benefits of using approaches which were more mathematical and more
+          experimental in a methodical way. Still, philosophical perspectives,
+          conjectures, and presuppositions, often overlooked, remain necessary
+          in natural science. Systematic data collection, including discovery
+          science, succeeded natural history, which emerged in the 16th century
+          by describing and classifying plants, animals, minerals, and so on.
+          Today, "natural history" suggests observational descriptions aimed at
+          popular audiences.
+        </p>
+        <!-- solution -->
+      </div>
+      <div class="grow">
+        <div>
+          <!-- <div class="solutions">
+ 
+          </div> -->
+          <div class="solutions"><ul id="solutions-list"></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script
+      type="module"
+      src="../../../shared/modal/modal.js"
+    ></script> -->
+    <script type="module" src="./dropdown-menu.js"></script>
+
+    <script type="module" src="../../../../scripts/modal/modal.js"></script>
+    
+<script type="module">
+  import { loadMenu } from "../../../../../data/menu/html-css.js";
+  loadMenu("html-css");
+</script>
+
+
+
+  </body>
+</html>

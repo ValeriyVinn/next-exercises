@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./fixed-header.css" />
+    <title>Fixed header</title>
+  </head>
+  <body>
+    <a href="/exercises/">Home</a>
+    <div id="menu-container" class="html-css-menu"></div>
+
+    <div class="flex">
+      <div class="side">
+        <button class="open-btn" id="openModal">Send solution</button>
+        <div class="modal-overlay" id="backdrop">
+          <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <!-- <h2>This is a shared modal window</h2> -->
+            <textarea
+              id="solution-input"
+              cols="90"
+              rows="20"
+              placeholder="Write your code here..."
+            ></textarea>
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <br />
+        <button id="get-btn">Get solution</button>
+        <!-- conditions of the problem -->
+        <h1 class="header">Fixed header</h1>
+
+        <p class="task-paragraph">Create a fixed header.</p>
+        <!-- conditions of the problem -->
+        <!-- solution -->
+
+        <div class="page-header" id="page-header">
+          <ul>
+            <li><a href="">Sony</a></li>
+            <li><a href="">Apple</a></li>
+            <li><a href="">Samsung</a></li>
+            <li><a href="">LG</a></li>
+            <li><a href="">Motorolla</a></li>
+          </ul>
+        </div>
+        <p class="text">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          vel aspernatur, vero laborum doloremque nihil nobis debitis accusamus
+          quia, rem natus quidem fugiat! Earum veniam, corporis est quam
+          deleniti itaque. Id, officiis rerum ipsam dolorem sit molestias rem
+          doloremque neque cum, architecto facere dolor, voluptate eaque. Amet
+          voluptate at, mollitia vitae optio, laborum, nemo neque est impedit
+          nostrum officiis incidunt.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores magni
+          facilis voluptatibus praesentium! Dignissimos laudantium ipsum
+          similique vel necessitatibus corporis quaerat, quisquam aperiam fugit
+          esse voluptates maiores, enim ducimus consectetur. A ullam voluptates
+          dolores earum. Unde dicta blanditiis tempora laboriosam, ipsum quos
+          reiciendis eligendi possimus impedit vel, necessitatibus, error
+          aliquam libero. Explicabo sunt ullam sint distinctio repellendus
+          corrupti placeat magnam. Officiis labore dolorem dicta quas,
+          aspernatur aliquam sapiente! Facere ullam sapiente cum optio neque
+          sequi repellat molestias dicta impedit excepturi ex velit corrupti,
+          laudantium in expedita quibusdam voluptate quia accusamus! Perferendis
+          doloribus vitae corporis omnis quam enim veritatis explicabo, cum quia
+          quod iste quis deleniti ratione ipsa quos quisquam molestias? Enim
+          eum, expedita vitae perspiciatis consequuntur quidem rerum consequatur
+          ipsam.
+        </p>
+        <p>
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus, eum
+          maxime necessitatibus laboriosam dicta odio reprehenderit deserunt
+          atque aspernatur pariatur alias tempore harum ipsa. Deserunt ipsum
+          numquam aperiam. Unde, ipsum? Assumenda atque adipisci omnis natus
+          repellat itaque, amet ipsa ab fugit quaerat saepe commodi odio facilis
+          praesentium exercitationem impedit totam voluptatum hic, ea nulla.
+          Sint voluptatibus amet repellendus tempora aperiam. Neque adipisci
+          totam doloremque esse consequuntur eveniet quam excepturi repudiandae,
+          optio maiores velit perferendis laboriosam fugit molestiae facilis
+          aliquam labore quas, odit cumque accusamus itaque nobis minus? Iste,
+          accusantium optio? Nulla dignissimos quos incidunt ut totam,
+          temporibus commodi nesciunt obcaecati dolorem voluptatum vel quidem
+          est amet nisi id eligendi quam fugit explicabo architecto similique
+          consectetur sed nemo perspiciatis veritatis! Dolores! Ab corrupti
+          voluptatum aspernatur praesentium odit modi voluptate laudantium
+          dolor, eum, dolores nam ea fugit cumque alias! Fugiat suscipit, enim
+          illum eos velit ipsa quis voluptas natus vitae consequuntur atque!
+          Sint ipsa vero quam quis sed deserunt cumque, laudantium officia
+          incidunt, tempora repudiandae non exercitationem illum temporibus
+          repellendus, veniam iure? Fugiat, quas ipsa. Aliquam iste odio quas
+          debitis? Consequatur, laboriosam. Veritatis molestias illo alias nobis
+          modi odit dolorem! Quo reprehenderit necessitatibus quis iure facere.
+          Iste reprehenderit sunt quas laudantium minima animi consequatur
+          facilis corrupti, ex perspiciatis. Veritatis totam voluptatem eveniet.
+        </p>
+
+        <!-- solution -->
+      </div>
+      <div class="grow">
+        <div>
+          <!-- <div class="solutions">
+ 
+          </div> -->
+          <div class="solutions"><ul id="solutions-list"></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script
+      type="module"
+      src="../../../shared/modal/modal.js"
+    ></script> -->
+    <script type="module" src="./fixed-header.js"></script>
+    <script type="module" src="../../../../scripts/modal/modal.js"></script>
+
+    <script type="module">
+  import { loadMenu } from "../../../../../data/menu/html-css.js";
+  loadMenu("html-css");
+</script>
+  </body>
+</html>

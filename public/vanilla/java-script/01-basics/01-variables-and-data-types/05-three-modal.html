@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Multiple Modals</title>
+    <link rel="stylesheet" href="../../../../shared/modal/modal.css" />
+    <link rel="stylesheet" href="../../01-basics/01-variables-and-data-types/styles/three-modal.css" />
+
+  </head>
+  <body>
+    <a href="/exercises/">Home</a>
+    <div class="flex">
+      <div class="side">
+        <h2>First Modal Window</h2>
+        <button class="open-modal" data-modal="1">Open First</button>
+
+        <h2>Second Modal Window</h2>
+        <button class="open-modal" data-modal="2">Open Second</button>
+
+        <h2>Third Modal Window</h2>
+        <button class="open-modal" data-modal="3">Open Third</button>
+      </div>
+      <div class="solutions"><ul id="solutions-list"></ul></div>
+    </div>
+
+    <!-- Контейнер для шаблону -->
+    <div id="modal-template-container"></div>
+
+    <script type="module">
+      import { createModal } from "../../../../shared/modal/modal.js";
+
+      // Вставка шаблону
+      fetch("../../../../shared/modal/modal.html")
+  .then((res) => res.text())
+  .then((html) => {
+    document.getElementById("modal-template-container").innerHTML = html;
+
+    // Після вставки шаблону — можна шукати шаблон і використовувати createModal
+    document.querySelectorAll(".open-modal").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const id = btn.dataset.modal;
+        let title, content, extraClass;
+
+        switch (id) {
+          case "1":
+            title = "Send First Solution";
+            content = `<textarea cols="30" rows="5" placeholder="First..."></textarea><br><button>Send</button>`;
+            extraClass = `first`;
+            break;
+          case "2":
+            title = "Send Second Solution";
+            content = `<input type="text" placeholder="Second input"><br><button>Submit</button>`;
+            extraClass = `second`;
+            break;
+          case "3":
+            title = "Info Modal";
+            content = `<p>This is a read-only modal.</p>`;
+            extraClass = `third`;
+            break;
+        }
+
+        // ВАЖЛИВО: шаблон уже точно вставлений на цей момент
+        createModal({ title, contentHTML: content, extraClass });
+      });
+    });
+  });
+    </script>
+  </body>
+</html>

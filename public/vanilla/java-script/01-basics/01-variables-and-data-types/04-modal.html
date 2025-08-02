@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal Window</title>
+    <link rel="stylesheet" href="./styles/modal.css" />
+  </head>
+  <body>
+    <a href="/exercises/">Home</a>
+    <div class="flex">
+      <div class="side">
+        <!-- The Shared Modal Window -->
+        <button class="open-btn" id="openModal">Send solution</button>
+        <div class="modal-overlay" id="backdrop">
+          <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <h2>This is a shared modal window </h2>
+            <textarea
+              id="solution-input"
+              cols="30"
+              rows="10"
+              placeholder="Write your code here..."
+            ></textarea>
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <br />
+        <button id="get-btn">Get solution</button>
+        <h1>Modal Window</h1>
+
+        <p>Create modal window</p>
+        <!-- Task Modal Window -->
+        <button class="example-open-btn" id="example-openModal">
+          Open Modal
+        </button>
+        <div class="example-modal-overlay" id="example-backdrop">
+          <div class="example-modal">
+            <button class="example-close-btn" id="example-closeModal">×</button>
+            <p>This is a task modal window</p>
+          </div>
+        </div>
+        <!-- html -->
+      </div>
+      <div class="solutions"><ul id="solutions-list"></ul></div>
+    </div>
+
+    <script
+      type="module"
+      src="../../../scripts/vanilla-exercise-handler.js"
+    ></script>
+    <script type="module" src="./scripts/04-modal.js"></script>
+    <script type="module" src="../../../scripts/modal/modal.js"></script>
+  </body>
+</html>

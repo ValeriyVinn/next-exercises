@@ -5,31 +5,31 @@ const javaScriptMenuData = [
     "children": [
       {
         "title": "Variables and data types",
-        "path": "/vanilla/javascript/task1.html",
+        "path": "/vanilla/java-script/task1.html",
         "tasks": [
           {
             "title": "Personal info card",
-            "path": "/vanilla/javascript/task2.html"
+            "path": "/vanilla/java-script/01-basics/01-variables-and-data-types/personal-info-card/personal-info-card.html"
           },
           {
             "title": "Type checker",
-            "path": "vanilla/java-script/01-basics/01-variables-and-data-types/type-checker/type-checker.html"
+            "path": "/vanilla/java-script/01-basics/01-variables-and-data-types/type-checker/type-checker.html"
           },
           {
             "title": "Price calculator",
-            "path": "vanilla/java-script/01-basics/01-variables-and-data-types/price-calculator/price-calculator.html"
+            "path": "/vanilla/java-script/01-basics/01-variables-and-data-types/price-calculator/price-calculator.html"
           },
           {
             "title": "Accordion",
-            "path": "vanilla/java-script/01-basics/01-variables-and-data-types/03-accordion.html"
+            "path": "/vanilla/java-script/01-basics/01-variables-and-data-types/03-accordion.html"
           },
           {
             "title": "Modal window",
-            "path": "vanilla/java-script/01-basics/01-variables-and-data-types/04-modal.html"
+            "path": "/vanilla/java-script/01-basics/01-variables-and-data-types/04-modal.html"
           },
           {
             "title": "Three modal window",
-            "path": "vanilla/java-script/01-basics/01-variables-and-data-types/05-three-modal.html"
+            "path": "/vanilla/java-script/01-basics/01-variables-and-data-types/05-three-modal.html"
           }
         ]
       },
@@ -83,7 +83,7 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Task 1",
-            "path": "vanilla/java-script/02-array-methods/01-forEach-map-filter/task-one.html"
+            "path": "/vanilla/java-script/02-array-methods/01-forEach-map-filter/task-one.html"
           },
           { "title": "Task 2", "path": "" },
           { "title": "Task 3", "path": "" }
@@ -190,11 +190,11 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "List data in the console",
-            "path": "vanilla/java-script/05-working-with-the-dom/01-element-selection/list-data-in-the-console/list-data-in-the-console.html"
+            "path": "/vanilla/java-script/05-working-with-the-dom/01-element-selection/list-data-in-the-console/list-data-in-the-console.html"
           },
           {
             "title": "Toggle background color",
-            "path": "vanilla/java-script/05-working-with-the-dom/01-element-selection/toggle-background-color/toggle-background-color.html"
+            "path": "/vanilla/java-script/05-working-with-the-dom/01-element-selection/toggle-background-color/toggle-background-color.html"
           },
           { "title": "Task 3", "path": "" }
         ]
@@ -212,7 +212,7 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Betlyck",
-            "path": "vanilla/java-script/05-working-with-the-dom/03-creating-inserting-elements/betlyck.html"
+            "path": "/vanilla/java-script/05-working-with-the-dom/03-creating-inserting-elements/betlyck.html"
           },
           { "title": "Task 2", "path": "" },
           { "title": "Task 3", "path": "" }
@@ -278,23 +278,23 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Belated greetings",
-            "path": "vanilla/java-script/08-asynchronous-js/01-callbacks/belated-greetings/belated-greetings.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/01-callbacks/belated-greetings/belated-greetings.html"
           },
           {
             "title": "Processing an array with callback",
-            "path": "vanilla/java-script/08-asynchronous-js/01-callbacks/processing-an-array-with-callback/processing-an-array-with-callback.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/01-callbacks/processing-an-array-with-callback/processing-an-array-with-callback.html"
           },
           {
             "title": "Countdown timer",
-            "path": "vanilla/java-script/08-asynchronous-js/01-callbacks/countdown-timer/countdown-timer.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/01-callbacks/countdown-timer/countdown-timer.html"
           },
           {
             "title": "Do math",
-            "path": "vanilla/java-script/08-asynchronous-js/01-callbacks/do-math/do-math.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/01-callbacks/do-math/do-math.html"
           },
           {
             "title": "Filter",
-            "path": "vanilla/java-script/08-asynchronous-js/01-callbacks/filter/filter.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/01-callbacks/filter/filter.html"
           }
         ]
       },
@@ -303,15 +303,15 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Delayed promise",
-            "path": "vanilla/java-script/08-asynchronous-js/02-promises/delayed-promise/delayed-promise.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/02-promises/delayed-promise/delayed-promise.html"
           },
           {
             "title": "Number check",
-            "path": "vanilla/java-script/08-asynchronous-js/02-promises/number-check/number-check.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/02-promises/number-check/number-check.html"
           },
           {
             "title": "Sequence of promises",
-            "path": "vanilla/java-script/08-asynchronous-js/02-promises/sequence-of-promises/sequence-of-promises.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/02-promises/sequence-of-promises/sequence-of-promises.html"
           }
         ]
       },
@@ -320,15 +320,15 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Asynchronous greeting",
-            "path": "vanilla/java-script/08-asynchronous-js/03-async-await/asynchronous-greeting/asynchronous-greeting.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/03-async-await/asynchronous-greeting/asynchronous-greeting.html"
           },
           {
             "title": "Parity check",
-            "path": "vanilla/java-script/08-asynchronous-js/03-async-await/parity-check/parity-check.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/03-async-await/parity-check/parity-check.html"
           },
           {
             "title": "Consistent waiting",
-            "path": "vanilla/java-script/08-asynchronous-js/03-async-await/consistent-waiting/consistent-waiting.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/03-async-await/consistent-waiting/consistent-waiting.html"
           }
         ]
       },
@@ -337,15 +337,15 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Getting data from the API",
-            "path": "vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/getting-data-from-api/getting-data-from-api.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/getting-data-from-api/getting-data-from-api.html"
           },
           {
             "title": "Sending data",
-            "path": "vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/sending-data/sending-data.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/sending-data/sending-data.html"
           },
           {
             "title": "Checking the status of the response",
-            "path": "vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/check-response-status/check-response-status.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/check-response-status/check-response-status.html"
           }
         ]
       },
@@ -354,19 +354,19 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Counter with memory",
-            "path": "vanilla/java-script/08-asynchronous-js/05-closures/counter-with-memory/counter-with-memory.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/05-closures/counter-with-memory/counter-with-memory.html"
           },
           {
             "title": "Random number generator in range",
-            "path": "vanilla/java-script/08-asynchronous-js/05-closures/random-number-generator-in-range/random-number-generator-in-range.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/05-closures/random-number-generator-in-range/random-number-generator-in-range.html"
           },
           {
             "title": "Saving the settings state",
-            "path": "vanilla/java-script/08-asynchronous-js/05-closures/saving-the-settings-state/saving-the-settings-state.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/05-closures/saving-the-settings-state/saving-the-settings-state.html"
           },
           {
             "title": "Make Sheff",
-            "path": "vanilla/java-script/08-asynchronous-js/05-closures/make-sheff/make-sheff.html"
+            "path": "/vanilla/java-script/08-asynchronous-js/05-closures/make-sheff/make-sheff.html"
           }
         ]
       }
@@ -417,14 +417,14 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Stand in days between two dates",
-            "path": "vanilla/java-script/10-date-and-time/01-date-object/stand-in-days-between-two-dates/stand-in-days-between-two-dates.html"
+            "path": "/vanilla/java-script/10-date-and-time/01-date-object/stand-in-days-between-two-dates/stand-in-days-between-two-dates.html"
           },
-          { "title": "Countdown timer (to event)", "path": "vanilla/java-script/10-date-and-time/01-date-object/countdown-timer-to-event/countdown-timer-to-event.html" },
-          { "title": "Сlock in the interface", "path": "vanilla/java-script/10-date-and-time/01-date-object/clock-in-the-interface/clock-in-the-interface.html" },
-          { "title": "User's last login date", "path": "vanilla/java-script/10-date-and-time/01-date-object/user-last-visit-date/user-last-visit-date.html" },
+          { "title": "Countdown timer (to event)", "path": "/vanilla/java-script/10-date-and-time/01-date-object/countdown-timer-to-event/countdown-timer-to-event.html" },
+          { "title": "Сlock in the interface", "path": "/vanilla/java-script/10-date-and-time/01-date-object/clock-in-the-interface/clock-in-the-interface.html" },
+          { "title": "User's last login date", "path": "/vanilla/java-script/10-date-and-time/01-date-object/user-last-visit-date/user-last-visit-date.html" },
           {
             "title": "Is weekend",
-            "path": "vanilla/java-script/10-date-and-time/01-date-object/is-weekend/is-weekend.html"
+            "path": "/vanilla/java-script/10-date-and-time/01-date-object/is-weekend/is-weekend.html"
           }
         ]
       },
@@ -446,15 +446,15 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Saving username",
-            "path": "vanilla/java-script/11-local-storage/01-local-and-session-storage/save-username/save-username.html"
+            "path": "/vanilla/java-script/11-local-storage/01-local-and-session-storage/save-username/save-username.html"
           },
           {
             "title": "Page view counter",
-            "path": "vanilla/java-script/11-local-storage/01-local-and-session-storage/page-view-counter/page-view-counter.html"
+            "path": "/vanilla/java-script/11-local-storage/01-local-and-session-storage/page-view-counter/page-view-counter.html"
           },
           {
             "title": "Saving the site theme",
-            "path": "vanilla/java-script/11-local-storage/01-local-and-session-storage/save-site-theme/save-site-theme.html"
+            "path": "/vanilla/java-script/11-local-storage/01-local-and-session-storage/save-site-theme/save-site-theme.html"
           }
         ]
       },
@@ -463,15 +463,15 @@ const javaScriptMenuData = [
         "tasks": [
           {
             "title": "Saving an object to localStorage",
-            "path": "vanilla/java-script/11-local-storage/02-JSON/saving-an-object/saving-an-object.html"
+            "path": "/vanilla/java-script/11-local-storage/02-JSON/saving-an-object/saving-an-object.html"
           },
           {
             "title": "Getting an array from localStorage",
-            "path": "vanilla/java-script/11-local-storage/02-JSON/getting-an-array/getting-an-array.html"
+            "path": "/vanilla/java-script/11-local-storage/02-JSON/getting-an-array/getting-an-array.html"
           },
           {
             "title": "Saving a task list",
-            "path": "vanilla/java-script/11-local-storage/02-JSON/saving-a-task-list/saving-a-task-list.html"
+            "path": "/vanilla/java-script/11-local-storage/02-JSON/saving-a-task-list/saving-a-task-list.html"
           }
         ]
       }

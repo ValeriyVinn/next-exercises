@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./basic-2v2-grid.css" />
+    <title>Basic 2v2 grid</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <div id="menu-container" class="html-css-menu"></div>
+
+    <div class="flex">
+      <div class="side">
+        <button class="open-btn" id="openModal">Send solution</button>
+        <div class="modal-overlay" id="backdrop">
+          <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <!-- <h2>This is a shared modal window</h2> -->
+            <textarea
+              id="solution-input"
+              cols="90"
+              rows="20"
+              placeholder="Write your code here..."
+            ></textarea>
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <br />
+        <button id="get-btn">Get solution</button>
+        <!-- conditions of the problem -->
+        <h1 class="header">Basic 2v2 grid</h1>
+
+        <p>Create a container that displays 4 blocks in a 2x2 grid. All blocks must be the same size.</p>
+        <!-- conditions of the problem -->
+        <!-- solution -->
+        <div class="grid-container">
+          <div class="item">1</div>
+          <div class="item">2</div>
+          <div class="item">3</div>
+          <div class="item">4</div>
+        </div>
+
+        <!-- solution -->
+        
+      </div>
+      <div class="grow">
+        <div>
+          <!-- <div class="solutions">
+ 
+          </div> -->
+          <div class="solutions"><ul id="solutions-list"></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script
+      type="module"
+      src="../../../shared/modal/modal.js"
+    ></script> -->
+    <script type="module" src="./basic-2v2-grid.js"></script>
+    <script type="module" src="../../../../scripts/modal/modal.js"></script>
+
+
+    <script type="module">
+  import { loadMenu } from "../../../../../data/menu/html-css.js";
+  loadMenu("html-css");
+</script>
+  </body>
+</html>

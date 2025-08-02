@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./html-css.css" />
+    <title>Html-Css</title>
+  </head>
+  <body>
+    <a href="/exercises/">Home</a>
+    <header id="menu-container" class="html-css-menu"></header>
+
+    <h1>Html-css</h1>
+    <h2 id="header-message"></h2>
+
+    <script type="module" src="./html-css.js"></script>
+
+    <script type="module">
+      import { loadMenu } from "../../data/menu/html-css.js";
+      loadMenu("html-css");
+    </script>
+  </body>
+</html>

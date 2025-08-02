@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./list-data-in-the-console.css" />
+
+        <link rel="stylesheet" href="../../../../../data/menu/java-script.css" />
+    <title>List data in the console</title>
+  </head>
+  <body>
+    <a href="/exercises/">Home</a>
+    <div id="menu-container" class="html-css-menu"></div>
+
+    <div class="flex">
+      <div class="side">
+        <button class="open-btn" id="openModal">Send solution</button>
+        <div class="modal-overlay" id="backdrop">
+          <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <!-- <h2>This is a shared modal window</h2> -->
+            <textarea
+              id="solution-input"
+              cols="90"
+              rows="20"
+              placeholder="Write your code here..."
+            ></textarea>
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <br />
+        <button id="get-btn">Get solution</button>
+        <!-- conditions of the problem -->
+        <h1>List data in the console</h1>
+
+        <p>HTML contains a list of categories ul#categories.</p>
+        <pre><code>
+&lt;ul&nbsp;id=&quot;categories&quot;&gt;
+<br>&nbsp;&nbsp;&lt;li&nbsp;class=&quot;item&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Animals&lt;/h2&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Cat&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Hamster&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Horse&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Parrot&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+<br>&nbsp;&nbsp;&lt;/li&gt;
+<br>&nbsp;&nbsp;&lt;li&nbsp;class=&quot;item&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Products&lt;/h2&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Bread&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Prasley&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Cheese&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+<br>&nbsp;&nbsp;&lt;/li&gt;
+<br>&nbsp;&nbsp;&lt;li&nbsp;class=&quot;item&quot;&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;h2&gt;Technologies&lt;/h2&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;ul&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;HTML&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;CSS&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;JavaScript&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;React&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;li&gt;Node.js&lt;/li&gt;
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&lt;/ul&gt;
+<br>&nbsp;&nbsp;&lt;/li&gt;
+<br>&lt;/ul&gt;&nbsp;&nbsp;&nbsp;&nbsp;
+</code></pre>
+        <p>Write a script that:</p>
+        <ul>
+          <li>
+            Counts and outputs to the console the number of categories in
+            ul#categories, i.e. elements li.item.
+          </li>
+          <li>
+            For each li.item in the ul#categories list, find and print to the
+            console the text of the element's title (the &lt;h2&gt; tag) and the
+            number of items in the category (all &lt;li&gt; nested within it).
+          </li>
+        </ul>
+        <p>
+          To accomplish this task, you need to use the forEach() method and DOM
+          navigation properties.
+        </p>
+        <p>
+          As a result, the following messages will be displayed in the console.
+        </p>
+        <pre><code>Number of categories: 3
+
+Category: Animals
+Elements: 4
+
+Category: Products
+Elements: 3
+
+Category: Technologies
+Elements: 5</code></pre>
+        <!-- conditions of the problem -->
+      </div>
+      <div class="grow">
+        <div class="solutions">
+          <ul id="categories">
+            <li class="item">
+              <h2>Animals</h2>
+              <ul>
+                <li>Cat</li>
+                <li>Hamster</li>
+                <li>Horse</li>
+                <li>Parrot</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h2>Products</h2>
+              <ul>
+                <li>Bread</li>
+                <li>Prasley</li>
+                <li>Cheese</li>
+              </ul>
+            </li>
+            <li class="item">
+              <h2>Technologies</h2>
+              <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="solutions"><ul id="solutions-list"></ul></div>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="../../../../scripts/vanilla-exercise-handler.js"
+    ></script>
+    <script type="module" src="./list-data-in-the-console.js"></script>
+    <script type="module" src="../../../../scripts/modal/modal.js"></script>
+
+        <script type="module">
+      import { loadMenu } from "../../../../../data/menu/java-script.js";
+      loadMenu("javascript");
+    </script>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 3: Accordion</title>
+    <link rel="stylesheet" href="./styles/accordion.css" />
+  </head>
+  <body>
+    <a href="/exercises/">Home</a>
+    <div class="flex">
+      <div class="side">
+        <h1>Task 3: Accordion</h1>
+
+        <p>Create accordion</p>
+        <!-- html -->
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header">Section 1</div>
+            <div class="accordion-content">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut consectetur sequi illum rerum nostrum ipsa eum quaerat distinctio fugiat! Necessitatibus, dolorem debitis. Sed laudantium rerum, iste ducimus aperiam aut sapiente.
+              Ab saepe aliquam esse totam repudiandae facilis libero, perspiciatis error molestias sed praesentium incidunt aperiam ipsum voluptates alias officia perferendis placeat laudantium iure. Alias quidem, doloremque quasi iure amet ad.
+              Natus ipsa rem similique veritatis sunt culpa eligendi quam ut nemo eos recusandae sequi harum molestiae quisquam nostrum repellendus officiis, dolore dignissimos unde quaerat. Mollitia veritatis eos adipisci magni beatae.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">Section 2</div>
+            <div class="accordion-content">
+              <p>This is a content of section 2</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">Section 3</div>
+            <div class="accordion-content">
+              <p>This is a content of section 3</p>
+            </div>
+          </div>
+        </div>
+
+        <textarea
+          id="solution-input"
+          cols="30"
+          rows="10"
+          placeholder="Write your code here..."
+        ></textarea>
+        <br />
+        <button id="send-btn">Send solution</button>
+        <button id="get-btn">Get solution</button>
+      </div>
+      <div class="solutions"><ul id="solutions-list"></ul></div>
+    </div>
+
+    <script
+      type="module"
+      src="../../../scripts/vanilla-exercise-handler.js"
+    ></script>
+    <script type="module" src="./scripts/03-accordion.js"></script>
+  </body>
+</html>

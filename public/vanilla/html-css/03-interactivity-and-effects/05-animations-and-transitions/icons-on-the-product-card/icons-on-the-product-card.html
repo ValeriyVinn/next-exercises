@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./icons-on-the-product-card.css" />
+    <title>Icons on the product card</title>
+  </head>
+  <body>
+    <header><a href="/exercises/">Home</a></header>
+
+    <div id="menu-container" class="html-css-menu"></div>
+
+    <div class="flex">
+      <div class="side">
+        <button class="open-btn" id="openModal">Send solution</button>
+        <div class="modal-overlay" id="backdrop">
+          <div class="modal">
+            <button class="close-btn" id="closeModal">×</button>
+            <!-- <h2>This is a shared modal window</h2> -->
+            <textarea
+              id="solution-input"
+              cols="90"
+              rows="20"
+              placeholder="Write your code here..."
+            ></textarea>
+            <button id="send-btn">Send</button>
+          </div>
+        </div>
+        <br />
+        <button id="get-btn">Get solution</button>
+        <!-- conditions of the problem -->
+        <h1 class="header">Icons on the product card</h1>
+
+        <p>Position the block of icons on top of the image.</p>
+        <!-- conditions of the problem -->
+        <!-- solution -->
+
+        <article class="product">
+          <div class="product-wrap">
+            <img
+              src="../../../data/img/jpg/summer-time.jpg"
+              alt="a palm on a beach"
+              class="img"
+            />
+
+            <div class="product-action">
+              <button class="item" aria-label="home">
+                <svg class="icon">
+                  <use
+                    href="../../../data/img/svg/symbol-defs.svg#icon-home3"
+                  ></use>
+                </svg>
+              </button>
+              <button class="item" aria-label="favorite">
+                <svg class="icon">
+                  <use
+                    href="../../../data/img/svg/symbol-defs.svg#icon-star-full"
+                  ></use>
+                </svg>
+              </button>
+              <button class="item" aria-label="edit">
+                <svg class="icon">
+                  <use
+                    href="../../../data/img/svg/symbol-defs.svg#icon-pencil"
+                  ></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <h2>Palm tree on the shore</h2>
+          <p>A lonely tree enjoys the peace</p>
+        </article>
+
+        <!-- solution -->
+      </div>
+      <div class="grow">
+        <div>
+          <!-- <div class="solutions">
+ 
+          </div> -->
+          <div class="solutions"><ul id="solutions-list"></ul></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <script
+      type="module"
+      src="../../../shared/modal/modal.js"
+    ></script> -->
+    <script type="module" src="./icons-on-the-product-card.js"></script>
+    <script type="module" src="../../../../scripts/modal/modal.js"></script>
+
+    <script type="module">
+  import { loadMenu } from "../../../../../data/menu/html-css.js";
+  loadMenu("html-css");
+</script>
+  </body>
+</html>
