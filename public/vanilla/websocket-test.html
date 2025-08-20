@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>WebSocket Test</title>
+</head>
+<body>
+  <h1>WebSocket Client</h1>
+  <div id="output"></div>
+  <button id="stopBtn">Stop Timer</button>
+
+  <script>
+    let timer = null;
+    let seconds = 0;
+    const output = document.getElementById("output");
+    const stopBtn = document.getElementById("stopBtn");
+
+    const ws = new WebSocket("ws://localhost:8080");
+
+    function startTimer() {
+      if (timer) return; // уже працює
+      output.innerText = `Timer started: 0s`;
+      timer = setInterval(() => {
+        seconds++;
+        output.innerText = `Timer running: ${seconds}s`;
+        localStorage.setItem("timerState", JSON.stringify({ running: true, seconds }));
+      }, 1000);
+    }
+
+    function stopTimer() {
+      clearInterval(timer);
+      timer = null;
+      localStorage.setItem("timerState", JSON.stringify({ running: false, seconds }));
+    }
+
+    ws.onmessage = (event) => {
+   try {
+    console.log("Raw message:", event.data); // Додатковий лог
+    const message = JSON.parse(event.data);
+    console.log("Parsed message:", message);
+
+    if (message.type === "start") {
+      startTimer();
+    } else if (message.type === "stop") {
+      stopTimer();
+    }
+  } catch (e) {
+    console.error("Помилка JSON.parse:", e, "Дані:", event.data);
+  }
+    };
+
+    stopBtn.addEventListener("click", () => {
+      ws.send(JSON.stringify({ type: "stop" }));
+    });
+
+    // відновлення після перезавантаження
+    const saved = JSON.parse(localStorage.getItem("timerState"));
+    if (saved?.running) {
+      seconds = saved.seconds || 0;
+      startTimer();
+    }
+  </script>
+</body>
+</html>
+

@@ -90,3 +90,14 @@ p {
   opacity: 1;
   visibility: visible;
 }
+
+
+
+.editor {
+  border: 1px solid #ccc;
+  min-height: 200px;
+  padding: 1rem;
+  font-family: monospace;
+  white-space: pre;
+  background-color: #f9f9f9;
+}

@@ -1,10 +1,10 @@
-import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
+// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
 
-setupExercise({
-  fileKey: "10-date-and-time",
-  exerciseName: "Is weekend",
-  statement: "Check if the date is on a weekend.",
-});
+// setupExercise({
+//   fileKey: "10-date-and-time",
+//   exerciseName: "Is weekend",
+//   statement: "Check if the date is on a weekend.",
+// });
 
 // ! Рішення ----------
 // function isWeekend(date) {

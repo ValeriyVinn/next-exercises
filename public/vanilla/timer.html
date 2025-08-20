@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Таймер вправи</title>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    #timer { font-size: 2rem; color: darkblue; }
+  </style>
+</head>
+<body>
+  <h1>JS Таймер</h1>
+  <div id="timer">Час: 0.0 сек</div>
+  <p>Почни писати в <code>my-solution.js</code> у VSCode, і таймер запуститься автоматично. Натисни в будь-яке місце на цій сторінці — таймер зупиниться.</p>
+  <script>
+    let started = false;
+    let startTime;
+    let intervalId;
+
+    const timerEl = document.getElementById('timer');
+    const socket = new WebSocket("ws://localhost:3001");
+
+    socket.addEventListener("message", (event) => {
+      if (event.data === "start" && !started) {
+        startTime = Date.now();
+        intervalId = setInterval(updateTimer, 100);
+        started = true;
+        console.log("Таймер стартував!");
+      }
+    });
+
+    document.addEventListener("click", () => {
+      if (started) {
+        clearInterval(intervalId);
+        const elapsed = (Date.now() - startTime) / 1000;
+        timerEl.textContent = `Готово! Час: ${elapsed.toFixed(1)} сек`;
+        started = false;
+      }
+    });
+
+    function updateTimer() {
+      const elapsed = (Date.now() - startTime) / 1000;
+      timerEl.textContent = `Час: ${elapsed.toFixed(1)} сек`;
+    }
+  </script>
+</body>
+</html>

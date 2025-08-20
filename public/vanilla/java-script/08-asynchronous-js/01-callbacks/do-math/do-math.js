@@ -1,11 +1,14 @@
-import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
+// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
 
-setupExercise({
-  fileKey: "08-asynchronous-js",
-  exerciseName: "Do math",
-  statement:
-    "Write a function that takes two values ​​and the callback for mathematical operations on them.",
-});
+// setupExercise({
+//   fileKey: "08-asynchronous-js",
+//   exerciseName: "Do math",
+//   statement:
+//     "Write a function that takes two values ​​and the callback for mathematical operations on them.",
+// });
+
+
+
 
 // ! Рішення ----------
 // const doMath = function (a, b, callback) {
