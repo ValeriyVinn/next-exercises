@@ -1,9 +1,11 @@
 import css from "./page.module.css";
 
-export default function Databases() {
+
+export default function NextJs() {
   return (
     <div className={css.databasePage}>
-      <h1>Databases</h1>
+      <h1>Nest.js</h1>
+      
     </div>
   );
 }
