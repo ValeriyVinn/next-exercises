@@ -4,6 +4,7 @@ import css from "./page.module.css";
 const topics = [
   { slug: "html-css", label: "Html-Css" },
   { slug: "javascript", label: "JavaScript" },
+  { slug: "typescript", label: "TypeScript" },
   { slug: "react", label: "React" },
   { slug: "redux", label: "Redux" },
   { slug: "node-js", label: "Node.js" },
