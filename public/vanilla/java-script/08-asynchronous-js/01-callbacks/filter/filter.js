@@ -1,11 +1,11 @@
-import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
+// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
 
-setupExercise({
-  fileKey: "08-asynchronous-js",
-  exerciseName: "Filter",
-  statement:
-    "Write a function to filter an array that takes two parameters - an array and a callback that filters this array.",
-});
+// setupExercise({
+//   fileKey: "08-asynchronous-js",
+//   exerciseName: "Filter",
+//   statement:
+//     "Write a function to filter an array that takes two parameters - an array and a callback that filters this array.",
+// });
 
 // ! Рішення ----------
 

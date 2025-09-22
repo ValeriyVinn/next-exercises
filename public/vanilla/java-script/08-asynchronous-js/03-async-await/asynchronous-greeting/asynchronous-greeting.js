@@ -1,10 +1,10 @@
-import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
+// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
 
-setupExercise({
-  fileKey: "08-asynchronous-js",
-  exerciseName: "Asynchronous greeting",
-  statement: "Write an asynchronous greet function with a delay of 1 second.",
-});
+// setupExercise({
+//   fileKey: "08-asynchronous-js",
+//   exerciseName: "Asynchronous greeting",
+//   statement: "Write an asynchronous greet function with a delay of 1 second.",
+// });
 
 // ! Рішення ----------
 async function greet() {
@@ -13,3 +13,4 @@ async function greet() {
 }
 
 greet();
+
