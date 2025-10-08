@@ -2,7 +2,7 @@ const oneBetlyck = document.querySelectorAll(".grid-element");
 
 const content = `
   <h3 class="subject">English</h3>
-  <p class="practice">Phonetics</p>
+  <p class="practice">Phonetics/../__/../__/../__</p>
   <p class="practice">Learning words</p>
   <p class="practice">Listening</p>
   <p class="practice">Shadowing</p>
