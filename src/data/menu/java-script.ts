@@ -255,17 +255,17 @@ const javaScriptMenuData = [
       {
         "title": "Getting data from inputs",
         "tasks": [
-          { "title": "Task 1", "path": "" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Greeting from input", "path": "/vanilla/java-script/07-working-with-forms/01-getting-data-from-input/greeting-from-input/greeting-from-input.html" },
+          { "title": "Calculate total", "path": "/vanilla/java-script/07-working-with-forms/01-getting-data-from-input/calculate-total/calculate-total.html" },
+          { "title": "Get selected value from a dropdown", "path": "/vanilla/java-script/07-working-with-forms/01-getting-data-from-input/get-selected-value-from-a-dropdown/get-selected-value-from-a-dropdown.html" }
         ]
       },
       {
         "title": "Validation",
         "tasks": [
-          { "title": "Task 1", "path": "" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Required Fields Check", "path": "/vanilla/java-script/07-working-with-forms/02-validation/required-fields-check/required-fields-check.html" },
+          { "title": "Email Format Validation", "path": "/vanilla/java-script/07-working-with-forms/02-validation/email-format-validation/email-format-validation.html" },
+          { "title": "Password Strength", "path": "/vanilla/java-script/07-working-with-forms/02-validation/password-strength/password-strength.html" }
         ]
       }
     ]
