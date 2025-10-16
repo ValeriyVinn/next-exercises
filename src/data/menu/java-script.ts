@@ -483,9 +483,9 @@ const javaScriptMenuData = [
       {
         "title": "Creating classes",
         "tasks": [
-          { "title": "Task 1", "path": "" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Create a basic class", "path": "" },
+          { "title": "Add methods and logic", "path": "" },
+          { "title": "Class with computed property", "path": "" }
         ]
       },
       {
