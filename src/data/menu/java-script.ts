@@ -483,25 +483,29 @@ const javaScriptMenuData = [
       {
         "title": "Creating classes",
         "tasks": [
-          { "title": "Create a basic class", "path": "" },
-          { "title": "Add methods and logic", "path": "" },
-          { "title": "Class with computed property", "path": "" }
+          { "title": "Create a basic class", "path": "/vanilla/java-script/12-classes/01-creating-classes/create-a-basic-class/create-a-basic-class.html" },
+          { "title": "Add methods and logic", "path": "/vanilla/java-script/12-classes/01-creating-classes/add-methods-and-logic/add-methods-and-logic.html" },
+          { "title": "Class with computed property", "path": "/vanilla/java-script/12-classes/01-creating-classes/class-with-computed-property/class-with-computed-property.html" }
         ]
       },
       {
         "title": "Inheritance",
         "tasks": [
-          { "title": "Task 1", "path": "" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Basic inheritance", "path": "/vanilla/java-script/12-classes/02-inheritance/basic-inheritance/basic-inheritance.html" },
+          { "title": "Using super() in a subclass", "path": "/vanilla/java-script/12-classes/02-inheritance/using-super-in-a-subclass/using-super-in-a-subclass.html" },
+          { "title": "Multi-level inheritance", "path": "/vanilla/java-script/12-classes/02-inheritance/multilevel-inheritance/multilevel-inheritance.html" }
         ]
       },
       {
         "title": "Class methods",
         "tasks": [
           { "title": "Mini Promice", "path": "/vanilla/java-script/12-classes/03-class-methods/mini-promise/mini-promise.html" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Instance methods", "path": "/vanilla/java-script/12-classes/03-class-methods/instance-methods/instance-methods.html" },
+          { "title": "Static Methods", "path": "/vanilla/java-script/12-classes/03-class-methods/static-methods/static-methods.html" },
+          { "title": "Combining instance and static methods", "path": "/vanilla/java-script/12-classes/03-class-methods/combining-instance-and-static-methods/combining-instance-and-static-methods.html" },
+          { "title": "User management system", "path": "/vanilla/java-script/12-classes/03-class-methods/user-management-system/user-management-system.html" },
+          { "title": "E-commerce product system", "path": "/vanilla/java-script/12-classes/03-class-methods/e-commerce-product-system/e-commerce-product-system.html" },
+          { "title": "School management system", "path": "/vanilla/java-script/12-classes/03-class-methods/school-management-system/school-management-system.html" }
         ]
       }
     ]

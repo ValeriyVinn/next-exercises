@@ -1,0 +1,20 @@
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log(`${this.name} makes a noise.`);
+  }
+}
+
+class Dog extends Animal {
+  speak() {
+    console.log(`${this.name} barks.`);
+  }
+}
+
+// Example
+const rex = new Dog("Rex");
+rex.speak(); 
+// Output: Rex barks.
