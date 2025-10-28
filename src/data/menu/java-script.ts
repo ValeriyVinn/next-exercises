@@ -242,9 +242,9 @@ const javaScriptMenuData = [
       {
         "title": "requestAnimationFrame",
         "tasks": [
-          { "title": "Task 1", "path": "" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Moving box animation", "path": "/vanilla/java-script/06-timers-and-animation/02-requestAnimationFrame/moving-box-animation/moving-box-animation.html" },
+          { "title": "Bouncing ball", "path": "/vanilla/java-script/06-timers-and-animation/02-requestAnimationFrame/bouncing-ball/bouncing-ball.html" },
+          { "title": "Smooth fade in", "path": "/vanilla/java-script/06-timers-and-animation/02-requestAnimationFrame/smooth-fade-in/smooth-fade-in.html" }
         ]
       }
     ]

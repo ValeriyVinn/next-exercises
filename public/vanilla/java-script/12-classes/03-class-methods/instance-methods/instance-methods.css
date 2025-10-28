@@ -1,0 +1,22 @@
+.counter {
+  width: 200px;
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 1rem;
+  text-align: center;
+  font-size: 40px;
+  /* gap: 1rem; */
+}
+
+.button {
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  margin: 0 1rem;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
