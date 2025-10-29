@@ -234,9 +234,9 @@ const javaScriptMenuData = [
       {
         "title": "setTimeout / setInterval",
         "tasks": [
-          { "title": "Task 1", "path": "" },
-          { "title": "Task 2", "path": "" },
-          { "title": "Task 3", "path": "" }
+          { "title": "Delayed greeting", "path": "/vanilla/java-script/06-timers-and-animation/01-set-timeout-set-interval/delayed-greeting/delayed-greeting.html" },
+          { "title": "Countdown timer", "path": "/vanilla/java-script/06-timers-and-animation/01-set-timeout-set-interval/countdown-timer/countdown-timer.html" },
+          { "title": "Auto image slider", "path": "/vanilla/java-script/06-timers-and-animation/01-set-timeout-set-interval/auto-image-slider/auto-image-slider.html" }
         ]
       },
       {
