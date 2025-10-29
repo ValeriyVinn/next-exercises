@@ -1,11 +1,11 @@
+import Menu from "@/components/Menu/Menu";
+import reactMenuData from "@/data/menu/react";
 import css from "./page.module.css";
 
-
-export default function React() {
+export default function ReactPage() {
   return (
     <div className={css.databasePage}>
-      <h1>React</h1>
-      
+      <Menu data={reactMenuData} />
     </div>
   );
 }

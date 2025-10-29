@@ -3,8 +3,7 @@ import javaScriptMenuData from "@/data/menu/java-script";
 
 export default function JavaScript() {
   return (
-
-        <main>
+    <main>
       <Menu data={javaScriptMenuData} />
     </main>
   );
