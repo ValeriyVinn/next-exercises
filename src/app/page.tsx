@@ -8,9 +8,9 @@ const topics = [
   { slug: "typescript", label: "TypeScript" },
   { slug: "react", label: "React" },
   { slug: "redux", label: "Redux" },
-  { slug: "node-js", label: "Node.js" },
-  { slug: "next-js", label: "Next.js" },
-  { slug: "nest-js", label: "Nest.js" },
+  { slug: "nodejs", label: "Node.js" },
+  { slug: "nextjs", label: "Next.js" },
+  { slug: "nestjs", label: "Nest.js" },
   { slug: "databases", label: "Databases" },
 ];
 

@@ -174,7 +174,7 @@ const htmlCssMenuData = [
       {
         "title": "Form Elements",
         "tasks": [
-          { "title": "Task 1", "path": "" },
+          { "title": "Forms", "path": "/vanilla/html-css/04-forms-and-interaction/01-form-elements/forms/forms.html" },
           { "title": "Task 2", "path": "" },
           { "title": "Task 3", "path": "" }
         ]

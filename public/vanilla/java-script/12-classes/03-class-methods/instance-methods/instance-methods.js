@@ -1,47 +1,8 @@
-
-// class Counter {
-//   constructor() {
-//     this.count = 0;
-//   }
-
-//   increment() {
-//     this.count++;
-//   }
-
-//   decrement() {
-//     this.count--;
-//   }
-
-//   reset() {
-//     this.count = 0;
-//   }
-
-//   show() {
-//    document.getElementById("counter").textContent = `${this.count}`
-//   }
-// }
-
-// const counter = new Counter();
-
-// document.getElementById("increment").addEventListener("click", ()=> {
-//   counter.increment();
-//   counter.show()
-// })
-// document.getElementById("decrement").addEventListener("click", ()=> {
-//   counter.decrement();
-//   counter.show()
-// })
-// document.getElementById("reset").addEventListener("click", ()=> {
-//   counter.reset();
-//   counter.show()
-// })
-
-
 class Counter {
   constructor(displayElement) {
     this.count = 0;
     this.displayElement = displayElement;
-    // this.show();
+    this.show();
   }
 
   increment() {
@@ -71,5 +32,10 @@ document.getElementById("increment").addEventListener("click", () => counter.inc
 document.getElementById("decrement").addEventListener("click", () => counter.decrement());
 document.getElementById("reset").addEventListener("click", () => counter.reset());
 
-// const counter1 = new Counter(document.getElementById("counter1"));
+const display1 = document.getElementById("counter1")
+const counter1 = new Counter(display1);
+document.getElementById("increment1").addEventListener("click", () => counter1.increment());
+document.getElementById("decrement1").addEventListener("click", () => counter1.decrement());
+document.getElementById("reset1").addEventListener("click", () => counter1.reset());
+
 // const counter2 = new Counter(document.getElementById("counter2"));

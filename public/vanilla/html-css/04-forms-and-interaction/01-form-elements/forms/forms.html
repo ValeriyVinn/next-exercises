@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Form</title>
+    <link rel="stylesheet" href="./forms.css" />
+  </head>
+
+  <body class="form-body">
+    <header></header>
+    <main>
+      <div class="form-container">
+        <h1 class="form-header">Signup Form</h1>
+
+        <form>
+          <!-- Email -->
+          <label class="form-label">
+            Email:
+            <input
+              class="form-input"
+              type="email"
+              name="email"
+              placeholder="Enter email"
+              required
+            />
+          </label>
+
+          <!-- Username -->
+          <label class="form-label">
+            Username:
+            <input
+              class="form-input"
+              type="text"
+              name="username"
+              placeholder="Enter username"
+              required
+            />
+          </label>
+
+          <!-- Password -->
+          <label class="form-label">
+            Password:
+            <input
+              class="form-input"
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              required
+            />
+          </label>
+
+          <!-- Select -->
+          <label class="form-label">
+            Select role:
+            <select class="form-select" name="role">
+              <option value="user">User</option>
+              <option value="creator">Creator</option>
+              <option value="admin">Admin</option>
+            </select>
+          </label>
+
+          <!-- Radio buttons -->
+          <div class="radio-group">
+            <p><strong>Select gender:</strong></p>
+
+            <label>
+              <input type="radio" name="gender" value="male" />
+              Male
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="female" />
+              Female
+            </label>
+
+            <label>
+              <input type="radio" name="gender" value="other" />
+              Other
+            </label>
+          </div>
+
+          <!-- Checkbox -->
+          <div class="checkbox-group">
+            <label>
+              <input type="checkbox" name="agree" />
+              I agree to the terms and conditions
+            </label>
+          </div>
+
+          <!-- Textarea -->
+          <label>
+            Comment:
+            <textarea
+              class="form-textarea"
+              name="comment"
+              rows="4"
+              placeholder="Enter your comment"
+            ></textarea>
+          </label>
+
+          <!-- Submit -->
+          <button class="form-button" type="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+</html>

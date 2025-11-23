@@ -5,16 +5,16 @@ const reactMenuData = [
       {
         title: "Components",
         tasks: [
-          { title: "Task 1", path: "" },
-          { title: "Task 2", path: "" },
+          { title: "Home", path: "/react/01-components-and-collections/01-components/Home/" },
+          { title: "Forms", path: "/react/01-components-and-collections/01-components/Forms/" },
           { title: "Task 3", path: "" },
         ],
       },
       {
         title: "Props and Children",
         tasks: [
-          { title: "Task 1", path: "" },
-          { title: "Task 2", path: "" },
+          { title: "Product card", path: "/react/01-components-and-collections/02-props-and-children/ProductCard" },
+          { title: "User Profile", path: "/react/01-components-and-collections/02-props-and-children/UserProfile" },
           { title: "Task 3", path: "" },
         ],
       },
@@ -59,9 +59,11 @@ const reactMenuData = [
       {
         title: "Forms",
         tasks: [
+          { title: "Forms", path: "/react/02-events-and-state-forms/03-Forms/Forms" },          
           { title: "Controlled Components", path: "" },
           { title: "Multiple Inputs", path: "" },
           { title: "Form Submission", path: "" },
+
         ],
       },
     ],

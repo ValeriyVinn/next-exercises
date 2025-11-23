@@ -1,0 +1,41 @@
+/* Загальний контейнер */
+.wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #fafafa;
+}
+
+/* Ліва панель (меню) */
+.sidebar {
+  width: 270px;
+  padding: 20px;
+  background: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  overflow-y: auto;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+/* Контент справа */
+.content {
+  flex: 1;
+  padding: 30px 40px;
+  background: #fff;
+  overflow-y: auto;
+}
+
+/* Адаптивність */
+@media (max-width: 900px) {
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: static;
+    border-right: none;
+    border-bottom: 1px solid #e5e5e5;
+  }
+}

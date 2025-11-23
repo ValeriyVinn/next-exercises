@@ -1,11 +1,9 @@
-import Menu from "@/components/Menu/Menu";
-import reactMenuData from "@/data/menu/react";
-import css from "./page.module.css";
+"use client";
 
-export default function ReactPage() {
-  return (
-    <div className={css.databasePage}>
-      <Menu data={reactMenuData} />
-    </div>
-  );
+
+
+function ReactHomePage() {
+  return <h1>React Home Page</h1>;
 }
+
+export default ReactHomePage;
