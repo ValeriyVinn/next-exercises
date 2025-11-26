@@ -1,0 +1,67 @@
+.article {
+  border: 1px solid green;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 10px auto;
+  width: 95%;
+  background-color: rgb(247, 246, 246);
+}
+
+.btn_phrasal_verbs {
+  background-color: rgb(8, 49, 49);
+  color: rgb(6, 240, 6);
+  text-transform: capitalize;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px soid green;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter_words  {
+  color: darkgreen;
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.input {
+  margin-left: 10px;
+  border: 1px solid green;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 28px;
+}
+
+.form {
+  margin-bottom: 30px;
+}
+
+.phrasalVerbsModal {
+  width: 1000px;
+  height: 430px;
+  padding: 10px;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.addToLearnButton {
+  background-color: rgb(8, 49, 49);
+  color: rgb(6, 240, 6);
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 5px 10px;
+  margin: 5px;
+  border: 1px soid green;
+  
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.pleaceToLearnHeader {
+  color: darkgreen;
+  font-size: 28px;
+  font-weight: 500;
+}

@@ -274,6 +274,10 @@ const javaScriptMenuData = [
         title: "Getting data from inputs",
         tasks: [
           {
+            title: "Input filter",
+            path: "/vanilla/java-script/07-working-with-forms/01-getting-data-from-input/input-filter/input-filter.html",
+          },
+          {
             title: "Forms",
             path: "/vanilla/java-script/07-working-with-forms/01-getting-data-from-input/forms/forms.html",
           },
