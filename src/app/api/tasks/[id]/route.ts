@@ -2,16 +2,16 @@ import clientPromise from "../../../../../lib/mongodb";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
-// ✅ Мінімальний робочий варіант
 export async function GET(
   request: Request,
-  context: { params: { id: string } }
+  context: { params: Record<string, string | string[]> }
 ) {
   try {
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
 
-    const task = await collection.findOne({ _id: new ObjectId(context.params.id) });
+    const id = context.params.id as string; // 👈 кастимо до string
+    const task = await collection.findOne({ _id: new ObjectId(id) });
 
     if (!task) {
       return NextResponse.json({ error: "Task not found" }, { status: 404 });
@@ -26,7 +26,7 @@ export async function GET(
 
 export async function PUT(
   request: Request,
-  context: { params: { id: string } }
+  context: { params: Record<string, string | string[]> }
 ) {
   try {
     const body = await request.json();
@@ -34,10 +34,8 @@ export async function PUT(
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
 
-    await collection.updateOne(
-      { _id: new ObjectId(context.params.id) },
-      { $set: body }
-    );
+    const id = context.params.id as string;
+    await collection.updateOne({ _id: new ObjectId(id) }, { $set: body });
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
@@ -48,13 +46,14 @@ export async function PUT(
 
 export async function DELETE(
   request: Request,
-  context: { params: { id: string } }
+  context: { params: Record<string, string | string[]> }
 ) {
   try {
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
 
-    await collection.deleteOne({ _id: new ObjectId(context.params.id) });
+    const id = context.params.id as string;
+    await collection.deleteOne({ _id: new ObjectId(id) });
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
