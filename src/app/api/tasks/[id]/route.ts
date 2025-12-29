@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
+
 import clientPromise from "../../../../../lib/mongodb";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
@@ -19,6 +19,7 @@ export async function GET(
 
     return NextResponse.json(task, { status: 200 });
   } catch (error) {
+    console.error("GET /task/:id error:", error);
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 }
@@ -40,6 +41,7 @@ export async function PUT(
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
+    console.error("GET /task/:id error:", error);
     return NextResponse.json({ error: "Failed to update task" }, { status: 500 });
   }
 }
@@ -56,6 +58,7 @@ export async function DELETE(
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
+    console.error("GET /task/:id error:", error);
     return NextResponse.json({ error: "Failed to delete task" }, { status: 500 });
   }
 }
