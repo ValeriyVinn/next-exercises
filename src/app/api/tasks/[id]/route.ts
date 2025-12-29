@@ -61,3 +61,12 @@
 //     return NextResponse.json({ error: "Failed to delete task" }, { status: 500 });
 //   }
 // }
+
+// src/app/api/tasks/[id]/route.ts
+
+import { NextResponse } from "next/server";
+
+// простий заглушка для GET
+export async function GET() {
+  return NextResponse.json({ message: "Not implemented yet" }, { status: 501 });
+}
