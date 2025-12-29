@@ -1,22 +1,32 @@
-import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
-
-setupExercise({
-  fileKey: "08-asynchronous-js",
-  exerciseName: "Checking the status of the response",
-  statement:
-    "Implement a function that displays the response status after a request.",
-});
-
 // ! Рішення ----------
+
+
+
+const URI = "https://jsonplaceholder.typicode.com/todos/3";
+
 // async function fetchData(url) {
 //   try {
 //     const response = await fetch(url);
-//     console.log(`Status: ${response.status}`);
-//     const data = await response.json();
-//     console.log(data);
+//     console.log(`Response status: ${response.status}`);
 //   } catch (error) {
-//     console.error("Fetch failed:", error);
+//     console.log(error);
 //   }
 // }
+// fetchData(URI)
 
-// fetchData("https://jsonplaceholder.typicode.com/todos/1");
+
+
+
+// function checkResponseStatus(url) {
+//   try {
+//     fetch(url).then((response) => {
+//       if (!response.ok) {
+//         throw new Error(`Status: ${response.status}`);
+//       }
+//       console.log(`Status: ${response.status}`);
+//     });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
+// checkResponseStatus(URI)

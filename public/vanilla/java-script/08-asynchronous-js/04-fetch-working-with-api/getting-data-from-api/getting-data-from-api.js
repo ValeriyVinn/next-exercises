@@ -1,52 +1,98 @@
-// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
+// ! Рішення ----------
+// const URL = "https://jsonplaceholder.typicode.com/users";
 
-// const { error } = require("console")
+// const solutionsList = document.getElementById("solutions-list");
 
-// setupExercise({
-//   fileKey: "08-asynchronous-js",
-//   exerciseName: "Getting data from the API",
-//   statement:
-//     "Get a list of users from the API https://jsonplaceholder.typicode.com/users and print the names.",
+// fetch(URL).then((response) => {
+//   if (!response.ok) {
+//     throw new error(`${response.status}`);
+//   }
+//   return response.json();
+// }).then((data)=>{
+//     const fragment = document.createDocumentFragment()
+
+//     data.forEach((user)=>{
+//       const liItem = document.createElement("li")  
+//       liItem.textContent = user.name 
+//       fragment.appendChild(liItem)
+//     })
+//     solutionsList.appendChild(fragment)
+
 // });
 
-// ! Рішення ----------
-// fetch("https://jsonplaceholder.typicode.com/users")
-//   .then((response) => {
-//     if (!response.ok) {
-//       throw new Error(`HTTP error! Status: ${response.status}`);
-//     }
-//     return response.json(); // перетворення в JS-об'єкт
-//   })
-//   .then((data) => {
-//     data.forEach((user) => console.log(user.name));
-//     console.log("---------");
-//   })
-// .catch((error) => {
-//     console.error("Помилка:", error);
-//   });
+  function delay(ms, callback) {
+    setTimeout(() => {
+      callback(`Минуло ${ms} мс`);
+    }, ms);
+  }
 
-// async function fetchUsers() {
+  document.getElementById("btn").addEventListener("click", () => {
+    delay(2000, (msg) => {
+      console.log(msg);
+    });
+  });
+
+
+
+
+// async function getData() {
 //   try {
-//     const response = await fetch("https://jsonplaceholder.typicode.com/users");
+//     const response = await fetch(URL);
 //     if (!response.ok) {
 //       throw new Error(`HTTP error! Status: ${response.status}`);
 //     }
-
-//     const users = await response.json();
-//     users.forEach((user) => console.log(user.name));
-//     console.log("---------");
+//     const data = await response.json();
+//     const fragment = document.createDocumentFragment();
+//     data.forEach((user) => {
+//       const liItem = document.createElement("li");
+//       liItem.textContent = user.name;
+//       fragment.appendChild(liItem);
+//     });
+//     solutionsList.appendChild(fragment);
 //   } catch (error) {
 //     console.error("Помилка:", error);
 //   }
 // }
-// fetchUsers();
+// getData()
 
+// const URL = "https://jsonplaceholder.typicode.com/users";
 
+// fetch(URL).then((response)=>{
+//   if(!response.ok){
+//     throw new Error (`HTTP Error! Status: ${response.status}`)
+//   }
+//   return response.json()
+// }).then((data)=>{
+// console.log(data)
+//   })
+
+// fetch(URL).then((response)=>{
+//   if(!response.ok){
+//     throw new Error(`This error is ${response.status}`)
+//   }
+//   return response.json()
+// }).then((data)=>{
+//  const fragment = document.createDocumentFragment()
+//   data.forEach(element => {
+//   const li = document.createElement("li")
+//   li.textContent = element.name
+//   fragment.appendChild(li);
+//   });
+//   solutionsList.appendChild(fragment);
+// }).catch((error)=> console.log(error))
+
+// getUser()
 // axios
-//   .get("https://jsonplaceholder.typicode.com/users")
+//   .get(URL)
 //   .then((res) => {
-//     res.data.forEach((user) => console.log(user.name));
-//     console.log("---------");
+//     const fragment = document.createDocumentFragment()
+
+//     res.data.forEach((user) => {
+//     const li = document.createElement("li")
+//     li.textContent = user.name
+//     fragment.appendChild(li)
+//     });
+//     solutionsList.appendChild(fragment)
 //   })
 //   .catch((err) => console.error(err));
 

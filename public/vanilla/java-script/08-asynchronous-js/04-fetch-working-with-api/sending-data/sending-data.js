@@ -1,10 +1,3 @@
-import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
-
-setupExercise({
-  fileKey: "08-asynchronous-js",
-  exerciseName: "Sending data",
-  statement: "Send a POST request with the user object and print the response.",
-});
 
 // ! Рішення ----------
 // async function createUser(data) {
@@ -19,4 +12,20 @@ setupExercise({
 //   console.log(result);
 // }
 
-// createUser({ name: "John", age: 30 });
+// createUser({ name: "Varvara", age: 27, id: 5, });
+
+
+// fetch("https://jsonplaceholder.typicode.com/posts/1")
+//   .then(response => {
+//     if (!response.ok) {
+//       throw new Error(`HTTP error! Status: ${response.status}`);
+//     }
+//     console.log(response)
+//     return response.json(); // перетворення в JS-об'єкт
+//   })
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.error("Помилка:", error);
+//   });

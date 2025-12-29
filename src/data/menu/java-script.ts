@@ -82,11 +82,17 @@ const javaScriptMenuData = [
         title: "forEach, map, filter",
         tasks: [
           {
-            title: "Task 1",
-            path: "/vanilla/java-script/02-array-methods/01-forEach-map-filter/task-one.html",
+            title: "List of products with prices",
+            path: "/vanilla/java-script/02-array-methods/01-forEach-map-filter/list-of-products-with-prices/list-of-products-with-prices.html",
           },
-          { title: "Task 2", path: "" },
-          { title: "Task 3", path: "" },
+          {
+            title: "Forming a list of names",
+            path: "/vanilla/java-script/02-array-methods/01-forEach-map-filter/forming-a-list-of-names/forming-a-list-of-names.html",
+          },
+          {
+            title: "Фільтрація списку подій",
+            path: "/vanilla/java-script/02-array-methods/01-forEach-map-filter/filtering-the-event-list/filtering-the-event-list.html",
+          },
         ],
       },
       {
@@ -391,6 +397,18 @@ const javaScriptMenuData = [
             title: "Checking the status of the response",
             path: "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/check-response-status/check-response-status.html",
           },
+          {
+            title: "Tasks",
+            path: "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/tasks/tasks.html",
+          },
+          {
+            title: "Fetch countries",
+            path: "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/fetch-countries/fetch-countries.html",
+          },
+          {
+            title: "PokeAPI",
+            path: "/vanilla/java-script/08-asynchronous-js/04-fetch-working-with-api/pokeapi/pokeapi.html",
+          },
         ],
       },
       {
@@ -411,6 +429,27 @@ const javaScriptMenuData = [
           {
             title: "Make Sheff",
             path: "/vanilla/java-script/08-asynchronous-js/05-closures/make-sheff/make-sheff.html",
+          },
+        ],
+      },
+      {
+        title: "Promisification",
+        tasks: [
+          {
+            title: "Timer promisification",
+            path: "/vanilla/java-script/08-asynchronous-js/06-promisification/timer-promisification/timer-promisification.html",
+          },
+          {
+            title: "Transition promisification",
+            path: "/vanilla/java-script/08-asynchronous-js/06-promisification/transition-promisification/transition-promisification.html",
+          },
+          {
+            title: "Events promisification",
+            path: "/vanilla/java-script/08-asynchronous-js/06-promisification/events-promisification/events-promisification.html",
+          },
+          {
+            title: "Download promisification",
+            path: "/vanilla/java-script/08-asynchronous-js/06-promisification/download-promisification/download-promisification.html",
           },
         ],
       },

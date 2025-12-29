@@ -1,16 +1,19 @@
-// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
-
-// setupExercise({
-//   fileKey: "08-asynchronous-js",
-//   exerciseName: "Asynchronous greeting",
-//   statement: "Write an asynchronous greet function with a delay of 1 second.",
-// });
-
 // ! Рішення ----------
+
+const success = false;
+
 async function greet() {
-  await new Promise((resolve) => setTimeout(resolve, 1000));
-  console.log("Hello after 1 second!");
+  const promise = await new Promise((resolve, reject) => {
+    if (success) {
+      setTimeout(() => resolve("Resolve after 1 second!"), 1000);
+    }
+    setTimeout(() => reject("Reject after 3 second!"), 3000);
+  });
+  console.log(promise);
+  // const result = await promise;
+  // return result;
 }
 
-greet();
+// result.then(resolve => console.log(resolve).catch(reject=> console.log(reject)))
 
+greet();

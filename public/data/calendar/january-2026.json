@@ -1,0 +1,543 @@
+{
+  "location": "Kyiv",
+  "year": 2026,
+  "month": "January",
+  "monthIndex": 0,
+  "days": [
+    {
+      "date": "2026-01-01",
+      "weekday": "Thursday",
+      "day": 1,
+      "sun": {
+        "sunrise": "07:58",
+        "solarNoon": "12:01",
+        "sunset": "16:04",
+        "dayLength": "08:06",
+        "nightLength": "15:54"
+      },
+      "lunarDay": 14,
+      "moonrise": "13:26",
+      "lunarDayStart": "06:11",
+      "moonPhase": "waxing"
+    },
+    {
+      "date": "2026-01-02",
+      "weekday": "Friday",
+      "day": 2,
+      "sun": {
+        "sunrise": "07:58",
+        "solarNoon": "12:01",
+        "sunset": "16:05",
+        "dayLength": "08:07",
+        "nightLength": "15:53"
+      },
+      "lunarDay": 15,
+      "moonrise": "14:26",
+      "lunarDayStart": "07:29",
+      "moonZodiac": {
+        "sign": "Cancer",
+        "time": "15:08"
+      },
+      "moonPhase": "waxing"
+    },
+    {
+      "date": "2026-01-03",
+      "weekday": "Saturday",
+      "day": 3,
+      "sun": {
+        "sunrise": "07:57",
+        "solarNoon": "12:01",
+        "sunset": "16:06",
+        "dayLength": "08:09",
+        "nightLength": "15:51"
+      },
+      "lunarDay": 16,
+      "moonrise": "15:45",
+      "lunarDayStart": "08:28",
+      "event": {
+        "type": "full_moon",
+        "time": "12:03"
+      }
+    },
+    {
+      "date": "2026-01-04",
+      "weekday": "Sunday",
+      "day": 4,
+      "sun": {
+        "sunrise": "07:57",
+        "solarNoon": "12:02",
+        "sunset": "16:07",
+        "dayLength": "08:10",
+        "nightLength": "15:50"
+      },
+      "lunarDay": 17,
+      "moonrise": "17:13",
+      "lunarDayStart": "09:09",
+      "moonZodiac": {
+        "sign": "Leo",
+        "time": "15:43"
+      },
+      "moonPhase": "waning"
+    },
+    {
+      "date": "2026-01-05",
+      "weekday": "Monday",
+      "day": 5,
+      "sun": {
+        "sunrise": "07:57",
+        "solarNoon": "12:02",
+        "sunset": "16:08",
+        "dayLength": "08:11",
+        "nightLength": "15:49"
+      },
+      "lunarDay": 18,
+      "moonrise": "18:41",
+      "lunarDayStart": "09:37"
+    },
+    {
+      "date": "2026-01-06",
+      "weekday": "Tuesday",
+      "day": 6,
+      "sun": {
+        "sunrise": "07:57",
+        "solarNoon": "12:03",
+        "sunset": "16:10",
+        "dayLength": "08:13",
+        "nightLength": "15:47"
+      },
+      "lunarDay": 19,
+      "moonrise": "20:05",
+      "lunarDayStart": "09:56",
+      "moonZodiac": {
+        "sign": "Virgo",
+        "time": "18:56"
+      }
+    },
+    {
+      "date": "2026-01-07",
+      "weekday": "Wednesday",
+      "day": 7,
+      "sun": {
+        "sunrise": "07:56",
+        "solarNoon": "12:03",
+        "sunset": "16:11",
+        "dayLength": "08:15",
+        "nightLength": "15:45"
+      },
+      "lunarDay": 20,
+      "moonrise": "21:24",
+      "lunarDayStart": "10:11"
+    },
+    {
+      "date": "2026-01-08",
+      "weekday": "Thursday",
+      "day": 8,
+      "sun": {
+        "sunrise": "07:56",
+        "solarNoon": "12:04",
+        "sunset": "16:12",
+        "dayLength": "08:16",
+        "nightLength": "15:44"
+      },
+      "lunarDay": 21,
+      "moonrise": "22:39",
+      "lunarDayStart": "10:24"
+    },
+    {
+      "date": "2026-01-09",
+      "weekday": "Friday",
+      "day": 9,
+      "sun": {
+        "sunrise": "07:55",
+        "solarNoon": "12:04",
+        "sunset": "16:13",
+        "dayLength": "08:18",
+        "nightLength": "15:42"
+      },
+      "lunarDay": 22,
+      "moonrise": "23:52",
+      "lunarDayStart": "10:36",
+      "moonZodiac": {
+        "sign": "Libra",
+        "time": "02:05"
+      }
+    },
+    {
+      "date": "2026-01-10",
+      "weekday": "Saturday",
+      "day": 10,
+      "sun": {
+        "sunrise": "07:55",
+        "solarNoon": "12:05",
+        "sunset": "16:15",
+        "dayLength": "08:20",
+        "nightLength": "15:40"
+      },
+      "event": {
+        "type": "last_quarter",
+        "time": "17:49"
+      }
+    },
+    {
+      "date": "2026-01-11",
+      "weekday": "Sunday",
+      "day": 11,
+      "sun": {
+        "sunrise": "07:54",
+        "solarNoon": "12:05",
+        "sunset": "16:16",
+        "dayLength": "08:22",
+        "nightLength": "15:38"
+      },
+      "lunarDay": 23,
+      "moonrise": "01:03",
+      "lunarDayStart": "11:01",
+      "moonZodiac": {
+        "sign": "Scorpio",
+        "time": "12:55"
+      },
+      "moonPhase": "waning"
+    },
+    {
+      "date": "2026-01-12",
+      "weekday": "Monday",
+      "day": 12,
+      "sun": {
+        "sunrise": "07:54",
+        "solarNoon": "12:06",
+        "sunset": "16:18",
+        "dayLength": "08:24",
+        "nightLength": "15:36"
+      },
+      "lunarDay": 24,
+      "moonrise": "02:15",
+      "lunarDayStart": "11:17"
+    },
+    {
+      "date": "2026-01-13",
+      "weekday": "Tuesday",
+      "day": 13,
+      "sun": {
+        "sunrise": "07:53",
+        "solarNoon": "12:06",
+        "sunset": "16:19",
+        "dayLength": "08:26",
+        "nightLength": "15:34"
+      },
+      "lunarDay": 25,
+      "moonrise": "03:27",
+      "lunarDayStart": "11:37"
+    },
+    {
+      "date": "2026-01-14",
+      "weekday": "Wednesday",
+      "day": 14,
+      "sun": {
+        "sunrise": "07:52",
+        "solarNoon": "12:06",
+        "sunset": "16:20",
+        "dayLength": "08:28",
+        "nightLength": "15:32"
+      },
+      "lunarDay": 26,
+      "moonrise": "04:37",
+      "lunarDayStart": "12:04",
+      "moonZodiac": {
+        "sign": "Sagittarius",
+        "time": "01:33"
+      }
+    },
+    {
+      "date": "2026-01-15",
+      "weekday": "Thursday",
+      "day": 15,
+      "sun": {
+        "sunrise": "07:52",
+        "solarNoon": "12:07",
+        "sunset": "16:22",
+        "dayLength": "08:30",
+        "nightLength": "15:30"
+      },
+      "lunarDay": 27,
+      "moonrise": "05:45",
+      "lunarDayStart": "12:40"
+    },
+    {
+      "date": "2026-01-16",
+      "weekday": "Friday",
+      "day": 16,
+      "sun": {
+        "sunrise": "07:51",
+        "solarNoon": "12:07",
+        "sunset": "16:23",
+        "dayLength": "08:32",
+        "nightLength": "15:28"
+      },
+      "lunarDay": 28,
+      "moonrise": "06:42",
+      "lunarDayStart": "13:30",
+      "moonZodiac": {
+        "sign": "Capricorn",
+        "time": "13:46"
+      }
+    },
+    {
+      "date": "2026-01-17",
+      "weekday": "Saturday",
+      "day": 17,
+      "sun": {
+        "sunrise": "07:50",
+        "solarNoon": "12:07",
+        "sunset": "16:25",
+        "dayLength": "08:35",
+        "nightLength": "15:25"
+      },
+      "lunarDay": 29,
+      "moonrise": "07:30",
+      "lunarDayStart": "14:32"
+    },
+    {
+      "date": "2026-01-18",
+      "weekday": "Sunday",
+      "day": 18,
+      "sun": {
+        "sunrise": "07:49",
+        "solarNoon": "12:07",
+        "sunset": "16:26",
+        "dayLength": "08:37",
+        "nightLength": "15:23"
+      },
+      "lunarDay": "30/1",
+      "moonrise": "08:05",
+      "lunarDayStart": "15:44",
+      "event": {
+        "type": "new_moon",
+        "time": "21:53"
+      }
+    },
+    {
+      "date": "2026-01-19",
+      "weekday": "Monday",
+      "day": 19,
+      "sun": {
+        "sunrise": "07:48",
+        "solarNoon": "12:08",
+        "sunset": "16:28",
+        "dayLength": "08:40",
+        "nightLength": "15:20"
+      },
+      "lunarDay": 2,
+      "moonrise": "08:31",
+      "lunarDayStart": "17:00",
+      "moonZodiac": {
+        "sign": "Aquarius",
+        "time": "00:17"
+      },
+      "moonPhase": "waxing"
+    },
+    {
+      "date": "2026-01-20",
+      "weekday": "Tuesday",
+      "day": 20,
+      "sun": {
+        "sunrise": "07:47",
+        "solarNoon": "12:08",
+        "sunset": "16:30",
+        "dayLength": "08:43",
+        "nightLength": "15:17"
+      },
+      "lunarDay": 3,
+      "moonrise": "08:51",
+      "lunarDayStart": "18:18"
+    },
+    {
+      "date": "2026-01-21",
+      "weekday": "Wednesday",
+      "day": 21,
+      "sun": {
+        "sunrise": "07:46",
+        "solarNoon": "12:08",
+        "sunset": "16:31",
+        "dayLength": "08:45",
+        "nightLength": "15:15"
+      },
+      "lunarDay": 4,
+      "moonrise": "09:06",
+      "lunarDayStart": "19:36",
+      "moonZodiac": {
+        "sign": "Pisces",
+        "time": "08:49"
+      }
+    },
+    {
+      "date": "2026-01-22",
+      "weekday": "Thursday",
+      "day": 22,
+      "sun": {
+        "sunrise": "07:45",
+        "solarNoon": "12:09",
+        "sunset": "16:33",
+        "dayLength": "08:48",
+        "nightLength": "15:12"
+      },
+      "lunarDay": 5,
+      "moonrise": "09:20",
+      "lunarDayStart": "20:53"
+    },
+    {
+      "date": "2026-01-23",
+      "weekday": "Friday",
+      "day": 23,
+      "sun": {
+        "sunrise": "07:44",
+        "solarNoon": "12:09",
+        "sunset": "16:35",
+        "dayLength": "08:51",
+        "nightLength": "15:09"
+      },
+      "lunarDay": 6,
+      "moonrise": "09:33",
+      "lunarDayStart": "22:11",
+      "moonZodiac": {
+        "sign": "Aries",
+        "time": "15:25"
+      }
+    },
+    {
+      "date": "2026-01-24",
+      "weekday": "Saturday",
+      "day": 24,
+      "sun": {
+        "sunrise": "07:43",
+        "solarNoon": "12:09",
+        "sunset": "16:36",
+        "dayLength": "08:53",
+        "nightLength": "15:07"
+      },
+      "lunarDay": 7,
+      "moonrise": "09:46",
+      "lunarDayStart": "23:32"
+    },
+    {
+      "date": "2026-01-25",
+      "weekday": "Sunday",
+      "day": 25,
+      "sun": {
+        "sunrise": "07:42",
+        "solarNoon": "12:10",
+        "sunset": "16:38",
+        "dayLength": "08:56",
+        "nightLength": "15:04"
+      },
+      "lunarDay": 8,
+      "moonrise": "10:00",
+      "moonZodiac": {
+        "sign": "Taurus",
+        "time": "20:05"
+      }
+    },
+    {
+      "date": "2026-01-26",
+      "weekday": "Monday",
+      "day": 26,
+      "sun": {
+        "sunrise": "07:41",
+        "solarNoon": "12:10",
+        "sunset": "16:40",
+        "dayLength": "08:59",
+        "nightLength": "15:01"
+      },
+      "lunarDay": 9,
+      "moonrise": "10:18",
+      "lunarDayStart": "00:55",
+      "event": {
+        "type": "first_quarter",
+        "time": "06:48"
+      }
+    },
+    {
+      "date": "2026-01-27",
+      "weekday": "Tuesday",
+      "day": 27,
+      "sun": {
+        "sunrise": "07:39",
+        "solarNoon": "12:10",
+        "sunset": "16:41",
+        "dayLength": "09:02",
+        "nightLength": "14:58"
+      },
+      "lunarDay": 10,
+      "moonrise": "10:42",
+      "lunarDayStart": "02:22",
+      "moonZodiac": {
+        "sign": "Gemini",
+        "time": "22:54"
+      },
+      "moonPhase": "waxing"
+    },
+    {
+      "date": "2026-01-28",
+      "weekday": "Wednesday",
+      "day": 28,
+      "sun": {
+        "sunrise": "07:38",
+        "solarNoon": "12:10",
+        "sunset": "16:43",
+        "dayLength": "09:05",
+        "nightLength": "14:55"
+      },
+      "lunarDay": 11,
+      "moonrise": "11:17",
+      "lunarDayStart": "03:49"
+    },
+    {
+      "date": "2026-01-29",
+      "weekday": "Thursday",
+      "day": 29,
+      "sun": {
+        "sunrise": "07:37",
+        "solarNoon": "12:11",
+        "sunset": "16:45",
+        "dayLength": "09:08",
+        "nightLength": "14:52"
+      },
+      "lunarDay": 12,
+      "moonrise": "12:08",
+      "lunarDayStart": "05:10"
+    },
+    {
+      "date": "2026-01-30",
+      "weekday": "Friday",
+      "day": 30,
+      "sun": {
+        "sunrise": "07:35",
+        "solarNoon": "12:10",
+        "sunset": "16:46",
+        "dayLength": "09:11",
+        "nightLength": "14:49"
+      },
+      "lunarDay": 13,
+      "moonrise": "13:17",
+      "lunarDayStart": "06:15",
+      "moonZodiac": {
+        "sign": "Cancer",
+        "time": "00:31"
+      }
+    },
+    {
+      "date": "2026-01-31",
+      "weekday": "Saturday",
+      "day": 31,
+      "sun": {
+        "sunrise": "07:34",
+        "solarNoon": "12:11",
+        "sunset": "16:48",
+        "dayLength": "09:14",
+        "nightLength": "14:46"
+      },
+      "lunarDay": 14,
+      "moonrise": "14:39",
+      "lunarDayStart": "07:03"
+    }
+  ]
+}

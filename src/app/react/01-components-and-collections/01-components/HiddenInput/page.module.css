@@ -1,0 +1,19 @@
+.hiddenInput {
+  display: none; /* приховуємо стандартний інпут */
+}
+
+.customLabel {
+  display: inline-block;
+  padding: 8px 12px;
+  margin: 4px;
+  border: 2px solid #888;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hiddenInput:checked + .customLabel {
+  background-color: #4caf50;
+  color: white;
+  border-color: #4caf50;
+}

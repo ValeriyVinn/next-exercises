@@ -13,7 +13,7 @@ const reactMenuData = [
             title: "Forms",
             path: "/react/01-components-and-collections/01-components/Forms/",
           },
-          { title: "Task 3", path: "" },
+          { title: "Hidden Input", path: "/react/01-components-and-collections/01-components/HiddenInput/" },
         ],
       },
       {
