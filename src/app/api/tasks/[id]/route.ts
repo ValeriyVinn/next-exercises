@@ -2,9 +2,11 @@ import clientPromise from "../../../../../lib/mongodb";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
-type Params = { params: { id: string } };
-
-export async function GET(request: Request, context: Params) {
+// ✅ Мінімальний робочий варіант
+export async function GET(
+  request: Request,
+  context: { params: { id: string } }
+) {
   try {
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
@@ -17,12 +19,15 @@ export async function GET(request: Request, context: Params) {
 
     return NextResponse.json(task, { status: 200 });
   } catch (error) {
-    console.error("GET /task/:id error:", error);
+    console.error("GET /tasks/[id] error:", error);
     return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   }
 }
 
-export async function PUT(request: Request, context: Params) {
+export async function PUT(
+  request: Request,
+  context: { params: { id: string } }
+) {
   try {
     const body = await request.json();
 
@@ -36,12 +41,15 @@ export async function PUT(request: Request, context: Params) {
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("PUT /task/:id error:", error);
+    console.error("PUT /tasks/[id] error:", error);
     return NextResponse.json({ error: "Failed to update task" }, { status: 500 });
   }
 }
 
-export async function DELETE(request: Request, context: Params) {
+export async function DELETE(
+  request: Request,
+  context: { params: { id: string } }
+) {
   try {
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
@@ -50,7 +58,7 @@ export async function DELETE(request: Request, context: Params) {
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("DELETE /task/:id error:", error);
+    console.error("DELETE /tasks/[id] error:", error);
     return NextResponse.json({ error: "Failed to delete task" }, { status: 500 });
   }
 }
