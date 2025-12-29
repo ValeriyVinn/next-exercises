@@ -1,17 +1,15 @@
-
 import clientPromise from "../../../../../lib/mongodb";
 import { ObjectId } from "mongodb";
 import { NextResponse } from "next/server";
 
-export async function GET(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+type Params = { params: { id: string } };
+
+export async function GET(request: Request, context: Params) {
   try {
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
 
-    const task = await collection.findOne({ _id: new ObjectId(params.id) });
+    const task = await collection.findOne({ _id: new ObjectId(context.params.id) });
 
     if (!task) {
       return NextResponse.json({ error: "Task not found" }, { status: 404 });
@@ -24,10 +22,7 @@ export async function GET(
   }
 }
 
-export async function PUT(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function PUT(request: Request, context: Params) {
   try {
     const body = await request.json();
 
@@ -35,30 +30,27 @@ export async function PUT(
     const collection = client.db("exercises").collection("tasks");
 
     await collection.updateOne(
-      { _id: new ObjectId(params.id) },
+      { _id: new ObjectId(context.params.id) },
       { $set: body }
     );
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("GET /task/:id error:", error);
+    console.error("PUT /task/:id error:", error);
     return NextResponse.json({ error: "Failed to update task" }, { status: 500 });
   }
 }
 
-export async function DELETE(
-  request: Request,
-  { params }: { params: { id: string } }
-) {
+export async function DELETE(request: Request, context: Params) {
   try {
     const client = await clientPromise;
     const collection = client.db("exercises").collection("tasks");
 
-    await collection.deleteOne({ _id: new ObjectId(params.id) });
+    await collection.deleteOne({ _id: new ObjectId(context.params.id) });
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (error) {
-    console.error("GET /task/:id error:", error);
+    console.error("DELETE /task/:id error:", error);
     return NextResponse.json({ error: "Failed to delete task" }, { status: 500 });
   }
 }
