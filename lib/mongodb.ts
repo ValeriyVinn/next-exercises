@@ -10,16 +10,17 @@ const options = {};
 let client: MongoClient;
 let clientPromise: Promise<MongoClient>;
 
+declare global {
+  var _mongoClientPromise: Promise<MongoClient> | undefined;
+}
+
 if (process.env.NODE_ENV === "development") {
-  // У режимі розробки зберігаємо клієнт у глобальній змінній,
-  // щоб не створювати новий інстанс при кожному hot reload
-  if (!(global as any)._mongoClientPromise) {
+  if (!globalThis._mongoClientPromise) {
     client = new MongoClient(uri, options);
-    (global as any)._mongoClientPromise = client.connect();
+    globalThis._mongoClientPromise = client.connect();
   }
-  clientPromise = (global as any)._mongoClientPromise;
+  clientPromise = globalThis._mongoClientPromise;
 } else {
-  // У production створюється один новий клієнт
   client = new MongoClient(uri, options);
   clientPromise = client.connect();
 }
