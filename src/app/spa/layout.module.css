@@ -7,7 +7,7 @@
 
 /* Ліва панель (меню) */
 .sidebar {
-  width: 270px;
+  width: 170px;
   padding: 20px;
   background: #ffffff;
   border-right: 1px solid #e5e5e5;
@@ -25,6 +25,7 @@
   overflow-y: auto;
 }
 
+
 .backMenuWrapper {
   display: flex;
   justify-content: flex-start;
@@ -41,7 +42,6 @@
   background-color: #eee;
   border-radius: 4px;
 }
-
 
 /* Адаптивність */
 @media (max-width: 900px) {

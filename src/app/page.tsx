@@ -11,6 +11,7 @@ const topics = [
   { slug: "nodejs", label: "Node.js" },
   { slug: "nextjs", label: "Next.js" },
   { slug: "nestjs", label: "Nest.js" },
+  { slug: "spa", label: "SPA" },
   { slug: "databases", label: "Databases" },
 ];
 
