@@ -1,0 +1,368 @@
+.article {
+  border: 1px solid #000;
+
+  margin-bottom: 10px;
+}
+
+p {
+  margin: 0;
+}
+
+.abstract-container {
+  padding: 10px;
+  width: fit-content;
+  border: 1px solid crimson;
+  margin: 0 0 10px 10px;
+}
+.abstract {
+  font-size: 28px;
+  font-weight: bold;
+  color: crimson;
+}
+
+.abstract:not(:last-child) {
+  margin-bottom: 10px;
+}
+/* Article One */
+
+.one-container {
+  /* display: grid; */
+  display: inline-grid;
+  width: 400px;
+  text-align: center;
+  height: 400px;
+  justify-content: center;
+  align-items: center;
+  font-size: 35px;
+  background-color: #ff6f69;
+  border: 4px solid #000;
+  margin-bottom: 10px;
+}
+
+/* article - two */
+
+.article-two-container {
+  display: grid;
+  grid-template-columns: 100px 200px 400px;
+  grid-template-rows: 200px 150px 100px;
+}
+
+.article-two-grid-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid gold;
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+.article-two-item p {
+  margin: 0 0 5px 0;
+}
+
+/* article - three*/
+.article-three-container {
+  display: grid;
+  grid-template-columns: 100px 200px 400px;
+  grid-template-rows: 200px 150px 100px;
+  gap: 50px 100px;
+}
+.article-three-grid-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+.article-three-grid-item p {
+  margin: 0 0 5px 0;
+}
+
+/* article - four*/
+
+.article-four-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 100px 200px;
+  grid-template-rows: 250px 100px;
+  grid-auto-rows: 400px 100px;
+}
+
+.article-four-grid-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+/* article - five */
+
+.article-five-container {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 100px 200px;
+  grid-auto-flow: column;
+}
+
+.article-five-grid-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+/* article - six */
+
+.article-six-container {
+  display: grid;
+  border: 10px solid #000;
+  grid-template-columns: 150px auto 2fr 1fr;
+  gap: 25px;
+}
+
+.article-six-grid-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+/* article - seven */
+
+.article-seven-container {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: 100px repeat(4, 1fr) auto;
+}
+
+.article-seven-grid-item {
+   display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+/* article - eight */
+.article-eight-item {
+   display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+.article-eight-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  /* gap: 1px; */
+}
+
+.eight-header {
+  /* grid-column-start: 1;
+  grid-column-end: 5; */
+  grid-column: 1 / 5;
+  /* grid-row-start: 1;
+  grid-row-end: 2; */
+  grid-row: 1 / 2;
+}
+
+.eight-main {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+}
+
+.eight-sidebar {
+  grid-column: 4 / 5;
+  /* grid-row: 2 / 3; */
+  grid-row: -3 / -2;
+}
+
+.eight-footer {
+  grid-column: 1 / 5;
+  grid-row: 3 / 4;
+}
+
+/* article - nine */
+.article-nine-container {
+  display: grid;
+  border: 10px solid #000;
+  grid-template-columns: repeat(auto-fill, 150px);
+} 
+
+.article-nine-item {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+
+
+   .container {
+      display: grid;
+      gap: 10px;
+      border: 2px solid #333;
+      padding: 10px;
+      width: 1000px; /* Try resizing this width to see the effect */
+    }
+
+    .item {
+      background-color: lightblue;
+      border: 2px solid navy;
+      padding: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    /* Auto-fill grid */
+    .grid-fill {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    /* Auto-fit grid */
+    .grid-fit {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+/* article - ten */
+
+.article-ten-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  gap: 5px;
+  grid-template-areas:
+    "h h h h"
+    "m m . s"
+    "f f f f";
+}
+
+.ten-header {
+  grid-area: h;
+}
+
+.ten-main {
+  grid-area: m;
+}
+
+.ten-sidebar {
+  grid-area: s;
+}
+
+.ten-footer {
+  grid-area: f;
+}
+
+@media (max-width: 700px) {
+  .article-ten-container {
+    grid-template-areas:
+      "h h h h"
+      "s m m m"
+      "s f f f";
+  }
+}
+
+.grid-ten-item {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+
+
+/* article - eleven */
+.article-eleven-container {
+  display: grid;
+  grid-template-columns: repeat(4, 150px);
+  grid-template-rows: repeat(3, 150px);
+  height: 500px;
+  border: 10px solid;
+  /* justify-items: center;
+  align-items: center; */
+  /* justify-content: space-evenly; */
+  /* align-content: space-evenly; */
+}
+
+.grid-eleven-item {
+  /* We center the contents of these items. You can also do this with flexbox too! */
+  /* display: grid;
+  justify-content: center;
+  align-items: center; */
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+/* article - */
+
+/* article - */
+
+/* article - */
+
+
+
+
+
+/* article - eighteen */
+.article-eighteen-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+}
+
+.article-eighteen-grid-item{
+  /* display: grid;
+  justify-content: center;
+  align-items: center; */
+  border: 5px solid rgba(0, 0, 0, 0.03);
+  border-radius: 3px;
+  font-size: 35px;
+  background-color: #ff6f69;
+  color: #ffeead;
+}
+
+.article-eighteen-grid-item{
+    border: 2px solid #000;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  align-items: center;
+  justify-items: center;
+}
+

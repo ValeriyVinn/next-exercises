@@ -84,12 +84,12 @@ const htmlCssMenuData = [
             "title": "Basic 2v2 grid",
             "path": "vanilla/html-css/02-layout-and-css-models/04-grid-layout/basic-2v2-grid/basic-2v2-grid.html"
           },
-          { "title": "Task 2", "path": "" },
+          { "title": "Grid Container", "path": "vanilla/html-css/02-layout-and-css-models/04-grid-layout/grid-container/grid-container.html" },
           { "title": "Task 3", "path": "" }
         ]
       },
       {
-        "title": "Flexbox vs Grid",
+        "title": "Multi-column layout",
         "tasks": [
           { "title": "Task 1", "path": "" },
           { "title": "Task 2", "path": "" },
