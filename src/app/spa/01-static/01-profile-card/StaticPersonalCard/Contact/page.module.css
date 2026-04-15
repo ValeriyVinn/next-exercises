@@ -1,0 +1,8 @@
+.staticPersonalCardContact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 1.4rem;
+  color: rgb(228, 148, 0);
+}

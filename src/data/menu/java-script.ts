@@ -641,6 +641,110 @@ const javaScriptMenuData = [
       },
     ],
   },
+  {
+    title: "OOP",
+    children: [
+      {
+        title: "Basics",
+        tasks: [
+          {
+            title: "User Profile",
+            path: "/vanilla/java-script/13-oop/01-basics/user-profile/user-profile.html",
+          },
+          {
+            title: "Product Card",
+            path: "/vanilla/java-script/13-oop/01-basics/product-card/product-card.html",
+          },
+          {
+            title: "Course Item",
+            path: "/vanilla/java-script/13-oop/01-basics/course-item/course-item.html",
+          },
+        ],
+      },
+      {
+        title: "Collections",
+        tasks: [
+          {
+            title: "Basic inheritance",
+            path: "/vanilla/java-script/12-classes/02-inheritance/basic-inheritance/basic-inheritance.html",
+          },
+          {
+            title: "Using super() in a subclass",
+            path: "/vanilla/java-script/12-classes/02-inheritance/using-super-in-a-subclass/using-super-in-a-subclass.html",
+          },
+          {
+            title: "Multi-level inheritance",
+            path: "/vanilla/java-script/12-classes/02-inheritance/multilevel-inheritance/multilevel-inheritance.html",
+          },
+        ],
+      },
+      {
+        title: "Encapsulation",
+        tasks: [
+          {
+            title: "Mini Promice",
+            path: "/vanilla/java-script/12-classes/03-class-methods/mini-promise/mini-promise.html",
+          },
+          {
+            title: "Instance methods",
+            path: "/vanilla/java-script/12-classes/03-class-methods/instance-methods/instance-methods.html",
+          },
+        ],
+      },
+      {
+        title: "Inheritance",
+        tasks: [
+          {
+            title: "Mini Promice",
+            path: "/vanilla/java-script/12-classes/03-class-methods/mini-promise/mini-promise.html",
+          },
+          {
+            title: "Instance methods",
+            path: "/vanilla/java-script/12-classes/03-class-methods/instance-methods/instance-methods.html",
+          },
+        ],
+      },
+      {
+        title: "Services",
+        tasks: [
+          {
+            title: "Mini Promice",
+            path: "/vanilla/java-script/12-classes/03-class-methods/mini-promise/mini-promise.html",
+          },
+          {
+            title: "Instance methods",
+            path: "/vanilla/java-script/12-classes/03-class-methods/instance-methods/instance-methods.html",
+          },
+        ],
+      },
+      {
+        title: "Mini SPA",
+        tasks: [
+          {
+            title: "Mini Promice",
+            path: "/vanilla/java-script/12-classes/03-class-methods/mini-promise/mini-promise.html",
+          },
+          {
+            title: "Instance methods",
+            path: "/vanilla/java-script/12-classes/03-class-methods/instance-methods/instance-methods.html",
+          },
+        ],
+      },
+      {
+        title: "Mini Project",
+        tasks: [
+          {
+            title: "Mini Promice",
+            path: "/vanilla/java-script/12-classes/03-class-methods/mini-promise/mini-promise.html",
+          },
+          {
+            title: "Instance methods",
+            path: "/vanilla/java-script/12-classes/03-class-methods/instance-methods/instance-methods.html",
+          },
+        ],
+      },
+    ],
+  },
 ];
 
 export default javaScriptMenuData;

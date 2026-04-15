@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="data:," />
+    <link rel="stylesheet" href="./user-profile.css" />
+    <title>User Profile</title>
+  </head>
+  <body>
+    <header>
+      <a href="/">Home</a>
+      <a href="/javascript">JavaScript</a>
+    </header>
+    <main>
+      <h1>User Profile</h1>
+      <div class="image-wrapper">
+        <img src="/assets/images/MBM.jpg" alt="Profile Image" width="400" />
+        <p class="status-badge"></p>
+      </div>
+      <div class="user-info-output">
+        <h2>Name: <span id="user-name"></span></h2>
+        <p>Email: <span id="user-email"></span></p>
+      </div>
+      <div class="info-wrapper">
+        <div class="button-wrapper">
+          <button id="make-admin">Make Admin</button>
+          <button id="make-user">Make User</button>
+          <button id="show-info">Show Info</button>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+
+    <script src="./user-profile.js"></script>
+  </body>
+</html>
