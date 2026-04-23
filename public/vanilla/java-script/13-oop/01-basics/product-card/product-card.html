@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="data:," />
     <title>Product Card</title>
+    <link rel="stylesheet" href="./product-card.css" />
   </head>
   <body>
     <header>
@@ -12,7 +13,17 @@
       <a href="/javascript">JavaScript</a>
     </header>
     <main>
-      <h1>Product Card</h1>
+      <div class="product-card">
+        <h2 class="title"></h2>  
+        <p class="price"></p>
+        <p class="stock"></p>
+
+        <div class="button-wrapper">
+          <button class="discount-btn">-10%</button>
+          <button class="toggle-btn">Toggle Stock</button>
+          <button  class="price-btn">Get Price</button>
+        </div>
+      </div>
     </main>
     <footer></footer>
 

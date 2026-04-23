@@ -1,0 +1,70 @@
+.product-card {
+  border: 1px solid #ccc;
+  padding: 16px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.price {
+  margin: 0;
+  /* outline: 1px solid red; */
+  text-align: center;
+  height: 2rem;
+  font-size: 2rem;
+}
+
+.product-card .title {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.product-card .price,
+.product-card .stock {
+  margin-bottom: 8px;
+}
+
+.in-stock {
+  color: green;
+}
+.out-stock {
+  color: red;
+}
+
+/* ! Кнопки в одну колонку */
+/* ?display: table; */
+/* 
+.button-wrapper {
+  display: table;
+  
+  width: auto;
+}
+
+.button-wrapper button {
+  display: block;  
+  width: 100%;      
+  margin-bottom: 8px;
+  text-align: center;
+} */
+
+/* ?display: grid; */
+/* .button-wrapper {
+  display: inline-grid;  
+  grid-auto-flow: row;
+  gap: 10px;
+}
+
+.button-wrapper button {
+  justify-self: stretch; 
+} */
+
+.button-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: max-content;
+  gap: 10px;
+}
+
+.button-wrapper button {
+  justify-self: stretch;
+}
