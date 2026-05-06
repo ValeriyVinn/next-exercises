@@ -1,0 +1,51 @@
+.lesson-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.cards {
+  padding: 1rem;
+  width: fit-content;
+  background-color: rgb(241, 238, 234);
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.card {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 8px;
+  width: fit-content;
+  text-align: center;
+  background: #f9f9f9;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+.card h3 {
+  margin: 0.5rem 0;
+}
+.button-wrapper {
+  display: flex;
+  gap: 8px;
+}
+
+
+.red{
+  color:red;
+}
+.green{
+  color:green;
+}
+
+
+.header.green {
+  color: rgb(0, 200, 0);
+}
+.header.red {
+  color: red;
+}

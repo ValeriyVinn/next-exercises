@@ -26,7 +26,6 @@ p {
 /* Article One */
 
 .one-container {
-  /* display: grid; */
   display: inline-grid;
   width: 400px;
   text-align: center;
@@ -152,7 +151,7 @@ p {
 }
 
 .article-seven-grid-item {
-   display: grid;
+  display: grid;
   justify-content: center;
   align-items: center;
   border: 5px solid rgba(0, 0, 0, 0.03);
@@ -164,7 +163,7 @@ p {
 
 /* article - eight */
 .article-eight-item {
-   display: grid;
+  display: grid;
   justify-content: center;
   align-items: center;
   border: 5px solid rgba(0, 0, 0, 0.03);
@@ -211,7 +210,7 @@ p {
   display: grid;
   border: 10px solid #000;
   grid-template-columns: repeat(auto-fill, 150px);
-} 
+}
 
 .article-nine-item {
   display: grid;
@@ -224,33 +223,31 @@ p {
   color: #ffeead;
 }
 
+.container {
+  display: grid;
+  gap: 10px;
+  border: 2px solid #333;
+  padding: 10px;
+  width: 1000px; /* Try resizing this width to see the effect */
+}
 
+.item {
+  background-color: lightblue;
+  border: 2px solid navy;
+  padding: 20px;
+  text-align: center;
+  font-weight: bold;
+}
 
-   .container {
-      display: grid;
-      gap: 10px;
-      border: 2px solid #333;
-      padding: 10px;
-      width: 1000px; /* Try resizing this width to see the effect */
-    }
+/* Auto-fill grid */
+.grid-fill {
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+}
 
-    .item {
-      background-color: lightblue;
-      border: 2px solid navy;
-      padding: 20px;
-      text-align: center;
-      font-weight: bold;
-    }
-
-    /* Auto-fill grid */
-    .grid-fill {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    /* Auto-fit grid */
-    .grid-fit {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    }
+/* Auto-fit grid */
+.grid-fit {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
 
 /* article - ten */
 
@@ -302,8 +299,6 @@ p {
   color: #ffeead;
 }
 
-
-
 /* article - eleven */
 .article-eleven-container {
   display: grid;
@@ -335,18 +330,14 @@ p {
 
 /* article - */
 
-
-
-
-
 /* article - eighteen */
-.article-eighteen-container{
+.article-eighteen-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
 }
 
-.article-eighteen-grid-item{
+.article-eighteen-grid-item {
   /* display: grid;
   justify-content: center;
   align-items: center; */
@@ -357,12 +348,11 @@ p {
   color: #ffeead;
 }
 
-.article-eighteen-grid-item{
-    border: 2px solid #000;
+.article-eighteen-grid-item {
+  border: 2px solid #000;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   gap: 10px;
   align-items: center;
   justify-items: center;
 }
-
