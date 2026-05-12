@@ -72,7 +72,7 @@ const htmlCssMenuData = [
       {
         "title": "Flexbox",
         "tasks": [
-          { "title": "Task 1", "path": "" },
+          { "title": "Flex cheat sheet", "path": "vanilla/html-css/02-layout-and-css-models/03-flexbox/flex-cheat-sheet/flex-cheat-sheet.html" },
           { "title": "Task 2", "path": "" },
           { "title": "Task 3", "path": "" }
         ]

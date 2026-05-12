@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./flex-cheat-sheet.css" />
+    <title>Flexbox Cheat Sheet</title>
+  </head>
+  <body>
+    <header>
+      <nav id="menu-container" class="flex-cheat-sheet">
+        <a href="/">Home</a>
+
+        <!-- <div class="abstract-container">
+          <p class="abstract">display: grid;</p>
+          <p class="abstract">display: inline-grid;</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">grid-template-columns;</p>
+          <p class="abstract">grid-template-rows;</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">grid-gap;</p>
+          <p class="abstract">grid-row-gap;</p>
+          <p class="abstract">grid-column-gap;</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">Концепція явних та неявних сіток</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">grid-auto-flow;</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">px</p>
+          <p class="abstract">fr</p>
+          <p class="abstract">auto</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">repeat</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">Розміщення елементів всередині grid контейнера</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">auto-fit;</p>
+          <p class="abstract">auto-fill;</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">grid-template-areas;</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">justify-items</p>
+          <p class="abstract">align-items</p>
+          <p class="abstract">justify-content</p>
+          <p class="abstract">align-content</p>
+          <p class="abstract">justify-self</p>
+          <p class="abstract">align-self</p>
+        </div>
+
+        <div class="abstract-container">
+          <p class="abstract">Nested Grids</p>
+        </div> -->
+      </nav>
+    </header>
+
+    <main class="flex-cheat-sheet-main">
+      <h1>Flexbox Cheat Sheet</h1>
+    </main>
+    <article class="article">
+      <h2>Article 1</h2>
+      <p>display: flex;</p>
+      <p>flex-direction: row | column;</p>
+
+      <div class="content" id="content">
+        <div class="ui-container" id="ui-container">
+          <div class="flex-element">
+            <p class="container-name">Flex element #1</p>
+          </div>
+          <div class="flex-element">
+            <p class="container-name">Flex element #2</p>
+          </div>
+          <div class="flex-element">
+            <p class="container-name">Flex element #3</p>
+          </div>
+
+          <p class="container-tag">.ui-container</p>
+        </div>
+
+        <div class="code-container">
+            <p class="container-tag">code </p>
+          <div>
+            <p > <span class="class-red">.ui-container</span> {</p>
+            <p>&nbsp;&nbsp;display: flex;</p>
+            &nbsp;&nbsp;flex-direction:
+            <select id="displaySelect">
+              <option class="row">row</option>
+              <option class="column">column</option></select
+            >;
+            <p>&nbsp;&nbsp;justify-content: center;</p>
+            <p>&nbsp;&nbsp;align-content: center;</p>
+            <p>&nbsp;&nbsp;background-color: rgb(255, 0, 0, 0.1);</p>
+            <p>&nbsp;&nbsp;border: 2px solid red;</p>
+            <p>&nbsp;&nbsp;font-size: 1.4rem;</p>
+
+            <p>}</p>
+          </div>
+        </div>
+      </div>
+    </article>
+    <script type="module" src="./flex-cheat-sheet.js"></script>
+  </body>
+</html>

@@ -658,6 +658,10 @@ const javaScriptMenuData = [
           {
             title: "Course Item",
             path: "/vanilla/java-script/13-oop/01-basics/course-item/course-item.html",
+          },,
+          {
+            title: "Bank Account",
+            path: "/vanilla/java-script/13-oop/01-basics/bank-account/bank-account.html",
           },
         ],
       },
