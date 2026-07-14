@@ -663,6 +663,10 @@ const javaScriptMenuData = [
             title: "Bank Account",
             path: "/vanilla/java-script/13-oop/01-basics/bank-account/bank-account.html",
           },
+          {
+            title: "Counter",
+            path: "/vanilla/java-script/13-oop/01-basics/counter/counter.html",
+          },
         ],
       },
       {

@@ -1,36 +1,119 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+EN English
 
-## Getting Started
+# Next.js Exercises
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This educational repository documents my journey of learning modern web development with Next.js. It contains practical exercises, experiments, and small projects created to understand both the fundamentals and advanced features of the framework.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The primary goal is to build real-world skills through consistent hands-on practice.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Repository Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The repository contains two complementary learning areas:
+- **Next.js application** — practical exercises focused on modern React and Next.js development.
+- **Vanilla JavaScript practice (`/public`)** — independent exercises for improving core JavaScript, HTML, and CSS skills without relying on frameworks.
 
-## Learn More
+## Technologies
 
-To learn more about Next.js, take a look at the following resources:
+- Next.js
+- React
+- TypeScript
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Node.js
+- Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## What You'll Find
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Routing
+- App Router
+- Server Components
+- Client Components
+- Layouts
+- Dynamic Routes
+- Data Fetching
+- API Routes
+- Forms
+- Authentication experiments
+- State Management
+- Performance Optimization
+- Deployment
+- Various practical exercises
 
-## Deploy on Vercel
+## Current Status
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This repository is actively maintained and regularly updated with new exercises, experiments, and improvements.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Current Focus
+
+- Building applications with the App Router
+- Working with Server and Client Components
+- Improving TypeScript skills
+- Exploring rendering strategies
+- Learning best practices for scalable Next.js applications
+
+## Purpose
+
+This repository serves as my personal learning environment and portfolio, documenting continuous progress in modern full-stack web development.
+
+---------------------------------
+
+🇺🇦 Українська
+
+## Огляд
+
+Цей навчальний репозиторій відображає мій спосіб вивчення сучасної веб-розробки за допомогою Next.js. Він містить практичні вправи, експерименти та невеликі проекти, створені для розуміння як основ, так і розширених функцій фреймворку.
+
+Основна мета — розвивати реальні навички через послідовну практичну практику.
+
+## Структура репозиторію
+
+Репозиторій містить дві взаємодоповнюючі навчальні області:
+- **Next.js application** — практичні вправи, зосереджені на сучасній розробці на React та Next.js.
+- **Vanilla JavaScript practice (`/public`)** — незалежні вправи для покращення основних навичок JavaScript, HTML та CSS без використання фреймворків.
+
+## Технології
+
+- Next.js
+- React
+- TypeScript
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Node.js
+- Vercel
+
+## Що ви знайдете
+
+- Маршрутизація
+- Маршрутизатор додатків
+- Серверні компоненти
+- Клієнтські компоненти
+- Лайаути
+- Динамічні маршрути
+- Вибір даних
+- Маршрути API
+- Форми
+- Експерименти з автентифікації
+- Керування станом
+- Оптимізація продуктивності
+- Розгортання
+- Різні практичні вправи
+
+## Поточний стан
+
+Цей репозиторій активно підтримується та регулярно оновлюється новими вправами, експериментами та покращеннями.
+
+## Поточний фокус
+
+- Створення додатків за допомогою маршрутизатора додатків
+- Робота з серверними та клієнтськими компонентами
+- Вдосконалення навичок TypeScript
+- Вивчення стратегій рендерингу
+- Вивчення найкращих практик для масштабованих додатків Next.js
+
+## Мета
+
+Цей репозиторій служить моїм особистим навчальним середовищем та портфоліо, документуючи постійний прогрес у сучасній повноцінній веб-розробці.

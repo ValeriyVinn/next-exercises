@@ -79,3 +79,135 @@ showInfo.addEventListener("click", () => {
   // renderInfo(diego);
   renderUser(diego, { showInfo: true });
 });
+
+
+
+// const makeAdmin = document.getElementById("make-admin");
+// const makeUser = document.getElementById("make-user");
+// const showInfo = document.getElementById("show-info");
+
+// const statusBadge = document.querySelector(".status-badge");
+// const userName = document.getElementById("user-name");
+// const userEmail = document.getElementById("user-email");
+
+// let diego;
+
+// /* =========================
+//    USER CLASS
+// ========================= */
+// class User {
+//   constructor({ name, email, role }) {
+//     this.name = name;
+//     this.email = email;
+//     this.role = role;
+//   }
+
+//   changeRole(newRole) {
+//     this.role = newRole;
+//   }
+
+//   getInfo() {
+//     return {
+//       name: this.name,
+//       email: this.email,
+//       role: this.role,
+//     };
+//   }
+
+//   isAdmin() {
+//     return this.role === "Admin";
+//   }
+// }
+
+// /* =========================
+//    LOAD DATA (API)
+// ========================= */
+// async function loadUser() {
+//   const res = await fetch("http://localhost:5000/api/user-profile");
+//   const data = await res.json();
+
+//   diego = new User(data);
+
+//   renderUser(diego, { showBadge: true });
+// }
+
+// /* =========================
+//    RENDER FUNCTIONS
+// ========================= */
+// function renderUser(user, options = {}) {
+//   const { showBadge = true, showInfo = false } = options;
+
+//   if (showBadge) renderBadge(user);
+//   if (showInfo) renderInfo(user);
+// }
+
+// function renderBadge(user) {
+//   const { role } = user.getInfo();
+
+//   statusBadge.textContent = role;
+//   statusBadge.classList.remove("admin", "user");
+
+//   if (user.isAdmin()) {
+//     statusBadge.classList.add("admin");
+//   } else {
+//     statusBadge.classList.add("user");
+//   }
+// }
+
+// function renderInfo(user) {
+//   const { name, email } = user.getInfo();
+
+//   userName.textContent = name;
+//   userEmail.textContent = email;
+// }
+
+// /* =========================
+//    EVENTS
+// ========================= */
+// function bindEvents() {
+// makeAdmin.addEventListener("click", async () => {
+//   const res = await fetch("http://localhost:5000/api/user-profile/role", {
+//     method: "PATCH",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ role: "Admin" }),
+//   });
+
+//   const updatedUser = await res.json();
+
+//   diego = new User(updatedUser);
+
+//   renderUser(diego, { showBadge: true });
+// });
+
+// makeUser.addEventListener("click", async () => {
+//   const res = await fetch("http://localhost:5000/api/user-profile/role", {
+//     method: "PATCH",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ role: "User" }),
+//   });
+
+//   const updatedUser = await res.json();
+
+//   diego = new User(updatedUser);
+
+//   renderUser(diego, { showBadge: true });
+// });
+
+//   showInfo.addEventListener("click", () => {
+//     renderUser(diego, { showInfo: true });
+//   });
+// }
+
+// /* =========================
+//    INIT
+// ========================= */
+// async function init() {
+//   await loadUser();
+//   bindEvents();
+// }
+
+// init();
