@@ -12,6 +12,7 @@ const topics = [
   { slug: "nextjs", label: "Next.js" },
   { slug: "nestjs", label: "Nest.js" },
   { slug: "spa", label: "SPA" },
+  { slug: "applications", label: "APP" },
   { slug: "databases", label: "Databases" },
 ];
 

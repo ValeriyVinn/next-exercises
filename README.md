@@ -1,4 +1,4 @@
-EN English
+🇬🇧 English
 
 # Next.js Exercises
 

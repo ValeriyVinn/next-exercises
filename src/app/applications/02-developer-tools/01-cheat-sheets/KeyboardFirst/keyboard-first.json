@@ -1,0 +1,185 @@
+{
+  "title": "Keyboard First",
+  "sections": [
+    {
+      "id": "windows",
+      "title": "Windows",
+      "items": [
+        {
+          "id": "win",
+          "label": "Win",
+          "description": "Відкрити меню Пуск"
+        },
+        {
+          "id": "win-r",
+          "label": "Win + R",
+          "description": "Відкрити вікно «Виконати»"
+        },
+        {
+          "id": "win-x",
+          "label": "Win + X",
+          "description": "Відкрити меню системних інструментів"
+        },
+        {
+          "id": "ctrl + shift + esc",
+          "label": "Ctrl + Shift + Esc",
+          "description": "Диспетчер завдань"
+        },
+        {
+          "id": "alt + tab",
+          "label": "Alt + Tab",
+          "description": "Наступна програма"
+        },
+        {
+          "id": "alt + shift + tab",
+          "label": "Alt + Shift + Tab",
+          "description": "Попередня програма"
+        },
+        {
+          "id": "win + tab",
+          "label": "Win + Tab",
+          "description": "Перегляд усіх вікон"
+        },
+        {
+          "id": "alt + esc",
+          "label": "Alt + Esc",
+          "description": "Перемикання без прев'ю"
+        },
+        {
+          "id": "win + ↑",
+          "label": "Win + ↑",
+          "description": "Розгорнути"
+        },
+        {
+          "id": "win + ↓",
+          "label": "Win + ↓",
+          "description": "Згорнути / відновити"
+        },
+        {
+          "id": "win + ←",
+          "label": "Win + ←",
+          "description": "Прикріпити ліворуч"
+        },
+        {
+          "id": "win + shift + ←/→",
+          "label": "win + shift + ←/→",
+          "description": "Перенести на інший монітор"
+        },
+        {
+          "id": "alt + f4",
+          "label": "Alt + F4",
+          "description": "Закрити програму"
+        }
+      ]
+    },
+    {
+      "id": "vscode",
+      "title": "VSCode",
+      "items": [
+        {
+          "id": "terminal",
+          "label": "Ctrl + `",
+          "description": "Відкрити Термінал"
+        }
+      ]
+    },
+    {
+      "id": "еxplorer",
+      "title": "Explorer",
+      "items": [
+        {
+          "id": "win + e",
+          "label": "Win + E",
+          "description": "Відкрити провідник"
+        }
+      ]
+    },
+    {
+      "id": "робота з текстом",
+      "title": "Робота з текстом",
+      "items": [
+        {
+          "id": "Ctrl + C",
+          "label": "Ctrl + C",
+          "description": "Копіювати"
+        }
+      ]
+    },
+    {
+      "id": "робота з вкладками",
+      "title": "Робота з вкладками",
+      "items": [
+        {
+          "id": "Ctrl + Tab",
+          "label": "Ctrl + Tab",
+          "description": "Наступна вкладка"
+        }
+      ]
+    },
+    {
+      "id": "git",
+      "title": "Git",
+      "items": [
+        {
+          "id": "basic",
+          "label": "Основні команди",
+          "items": [
+            {
+              "id": "status",
+              "label": "git status",
+              "description": "Показати стан робочого дерева"
+            },
+            {
+              "id": "add",
+              "label": "git add .",
+              "description": "Додати зміни до staging area"
+            },
+            {
+              "id": "commit",
+              "label": "git commit -m \"message\"",
+              "description": "Створити commit"
+            }
+          ]
+        },
+        {
+          "id": "branches",
+          "label": "Branches",
+          "items": [
+            {
+              "id": "branch",
+              "label": "git branch",
+              "description": "Показати branches"
+            },
+            {
+              "id": "switch",
+              "label": "git switch <branch>",
+              "description": "Перейти на branch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "curl",
+      "title": "Curl",
+      "items": [
+        {
+          "id": "http-post",
+          "label": "http-post",
+          "description": "simple HTTP POST using the easy interface"
+        }
+      ]
+    },
+    {
+      "id": "Psql",
+      "title": "Psql",
+      "items": [
+        {
+          "id": "\\l",
+          "label": "\\l",
+          "description": "Показати список баз даних"
+        }
+      ]
+    }
+  ]
+}
