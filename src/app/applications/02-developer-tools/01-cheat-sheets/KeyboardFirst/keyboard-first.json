@@ -84,13 +84,203 @@
       ]
     },
     {
-      "id": "еxplorer",
+      "id": "explorer",
       "title": "Explorer",
       "items": [
         {
           "id": "win + e",
           "label": "Win + E",
-          "description": "Відкрити провідник"
+          "description": "Відкрити Провідник"
+        },
+        {
+          "id": "ctrl + n",
+          "label": "Ctrl + N",
+          "description": "Відкрити нове вікно Провідника"
+        },
+        {
+          "id": "ctrl + w",
+          "label": "Ctrl + W",
+          "description": "Закрити поточне вікно Провідника"
+        },
+        {
+          "id": "alt + left",
+          "label": "Alt + ←",
+          "description": "Перейти до попереднього розташування"
+        },
+        {
+          "id": "alt + right",
+          "label": "Alt + →",
+          "description": "Перейти до наступного розташування"
+        },
+        {
+          "id": "alt + up",
+          "label": "Alt + ↑",
+          "description": "Перейти до батьківської папки"
+        },
+        {
+          "id": "alt + d",
+          "label": "Alt + D",
+          "description": "Перемістити фокус до адресного рядка"
+        },
+        {
+          "id": "ctrl + l",
+          "label": "Ctrl + L",
+          "description": "Перемістити фокус до адресного рядка"
+        },
+        {
+          "id": "ctrl + f",
+          "label": "Ctrl + F",
+          "description": "Перемістити фокус до поля пошуку"
+        },
+        {
+          "id": "f4",
+          "label": "F4",
+          "description": "Відкрити список адрес у адресному рядку"
+        },
+        {
+          "id": "tab",
+          "label": "Tab",
+          "description": "Переміщувати фокус між елементами вікна"
+        },
+        {
+          "id": "shift + tab",
+          "label": "Shift + Tab",
+          "description": "Переміщувати фокус між елементами у зворотному напрямку"
+        },
+        {
+          "id": "arrow keys",
+          "label": "← ↑ → ↓",
+          "description": "Переміщувати вибір між файлами та папками"
+        },
+        {
+          "id": "enter",
+          "label": "Enter",
+          "description": "Відкрити вибраний файл або папку"
+        },
+        {
+          "id": "alt + enter",
+          "label": "Alt + Enter",
+          "description": "Відкрити властивості вибраного файла або папки"
+        },
+        {
+          "id": "space",
+          "label": "Space",
+          "description": "Виділити або зняти виділення з поточного елемента"
+        },
+        {
+          "id": "ctrl + a",
+          "label": "Ctrl + A",
+          "description": "Виділити всі файли та папки"
+        },
+        {
+          "id": "ctrl + click",
+          "label": "Ctrl + Click",
+          "description": "Вибрати кілька окремих файлів або папок"
+        },
+        {
+          "id": "shift + click",
+          "label": "Shift + Click",
+          "description": "Вибрати діапазон файлів або папок"
+        },
+        {
+          "id": "shift + arrow",
+          "label": "Shift + ← ↑ → ↓",
+          "description": "Розширити виділення за допомогою клавіш зі стрілками"
+        },
+        {
+          "id": "ctrl + c",
+          "label": "Ctrl + C",
+          "description": "Копіювати вибрані файли або папки"
+        },
+        {
+          "id": "ctrl + x",
+          "label": "Ctrl + X",
+          "description": "Вирізати вибрані файли або папки"
+        },
+        {
+          "id": "ctrl + v",
+          "label": "Ctrl + V",
+          "description": "Вставити скопійовані або вирізані файли та папки"
+        },
+        {
+          "id": "delete",
+          "label": "Delete",
+          "description": "Перемістити вибрані файли або папки до Кошика"
+        },
+        {
+          "id": "shift + delete",
+          "label": "Shift + Delete",
+          "description": "Видалити вибрані файли або папки без переміщення до Кошика"
+        },
+        {
+          "id": "f2",
+          "label": "F2",
+          "description": "Перейменувати вибраний файл або папку"
+        },
+        {
+          "id": "ctrl + shift + n",
+          "label": "Ctrl + Shift + N",
+          "description": "Створити нову папку"
+        },
+        {
+          "id": "ctrl + z",
+          "label": "Ctrl + Z",
+          "description": "Скасувати останню операцію з файлами або папками"
+        },
+        {
+          "id": "ctrl + y",
+          "label": "Ctrl + Y",
+          "description": "Повторити скасовану операцію"
+        },
+        {
+          "id": "f5",
+          "label": "F5",
+          "description": "Оновити вміст поточної папки"
+        },
+        {
+          "id": "ctrl + mouse wheel",
+          "label": "Ctrl + Mouse Wheel",
+          "description": "Змінити розмір піктограм і спосіб відображення файлів"
+        },
+        {
+          "id": "home",
+          "label": "Home",
+          "description": "Перейти до першого елемента у поточному списку"
+        },
+        {
+          "id": "end",
+          "label": "End",
+          "description": "Перейти до останнього елемента у поточному списку"
+        },
+        {
+          "id": "page up",
+          "label": "Page Up",
+          "description": "Прокрутити список вгору на один екран"
+        },
+        {
+          "id": "page down",
+          "label": "Page Down",
+          "description": "Прокрутити список вниз на один екран"
+        },
+        {
+          "id": "backspace",
+          "label": "Backspace",
+          "description": "Перейти до попереднього розташування"
+        },
+        {
+          "id": "ctrl + shift + e",
+          "label": "Ctrl + Shift + E",
+          "description": "Розгорнути всі папки в області навігації"
+        },
+        {
+          "id": "shift + f10",
+          "label": "Shift + F10",
+          "description": "Відкрити контекстне меню вибраного елемента"
+        },
+        {
+          "id": "menu key",
+          "label": "Menu",
+          "description": "Відкрити контекстне меню вибраного елемента"
         }
       ]
     },
@@ -161,23 +351,601 @@
     },
     {
       "id": "curl",
-      "title": "Curl",
+      "title": "curl",
       "items": [
         {
-          "id": "http-post",
-          "label": "http-post",
-          "description": "simple HTTP POST using the easy interface"
+          "id": "basics",
+          "label": "Basics",
+          "items": [
+            {
+              "id": "curl --version",
+              "label": "curl --version",
+              "description": "Показати встановлену версію curl"
+            },
+            {
+              "id": "curl url",
+              "label": "curl <url>",
+              "description": "Виконати HTTP GET-запит до URL"
+            },
+            {
+              "id": "curl -v url",
+              "label": "curl -v <url>",
+              "description": "Виконати запит і показати детальну інформацію про HTTP-з'єднання"
+            },
+            {
+              "id": "curl -I url",
+              "label": "curl -I <url>",
+              "description": "Отримати тільки HTTP headers відповіді"
+            }
+          ]
+        },
+        {
+          "id": "get",
+          "label": "GET",
+          "items": [
+            {
+              "id": "curl get",
+              "label": "curl <url>",
+              "description": "Виконати GET-запит"
+            },
+            {
+              "id": "curl -G",
+              "label": "curl -G <url>",
+              "description": "Виконати GET-запит із параметрами URL"
+            },
+            {
+              "id": "curl query",
+              "label": "curl \"<url>?key=value\"",
+              "description": "Передати query parameter у GET-запиті"
+            },
+            {
+              "id": "curl multiple query",
+              "label": "curl -G <url> -d \"key=value\"",
+              "description": "Додати query parameter через параметр -d у GET-запиті"
+            }
+          ]
+        },
+        {
+          "id": "headers",
+          "label": "Headers",
+          "items": [
+            {
+              "id": "curl -I",
+              "label": "curl -I <url>",
+              "description": "Показати HTTP headers відповіді"
+            },
+            {
+              "id": "curl -H",
+              "label": "curl -H \"Header: value\" <url>",
+              "description": "Додати HTTP header до запиту"
+            },
+            {
+              "id": "content-type",
+              "label": "Content-Type",
+              "description": "Вказати тип даних, які передаються в request body"
+            },
+            {
+              "id": "accept",
+              "label": "Accept",
+              "description": "Вказати формат даних, який клієнт очікує отримати"
+            }
+          ]
+        },
+        {
+          "id": "post",
+          "label": "POST",
+          "items": [
+            {
+              "id": "curl -X POST",
+              "label": "curl -X POST <url>",
+              "description": "Виконати HTTP POST-запит"
+            },
+            {
+              "id": "curl -d",
+              "label": "curl -d \"key=value\" <url>",
+              "description": "Передати дані у request body"
+            },
+            {
+              "id": "curl -X POST -d",
+              "label": "curl -X POST -d \"key=value\" <url>",
+              "description": "Виконати POST-запит і передати дані у body"
+            },
+            {
+              "id": "curl --data-raw",
+              "label": "curl --data-raw \"data\" <url>",
+              "description": "Передати raw data у request body"
+            }
+          ]
+        },
+        {
+          "id": "json",
+          "label": "JSON",
+          "items": [
+            {
+              "id": "curl json header",
+              "label": "curl -H \"Content-Type: application/json\" <url>",
+              "description": "Вказати JSON як формат request body"
+            },
+            {
+              "id": "curl json data",
+              "label": "curl -d '{\"name\":\"John\"}' <url>",
+              "description": "Передати JSON у request body"
+            },
+            {
+              "id": "curl post json",
+              "label": "curl -X POST -H \"Content-Type: application/json\" -d '{\"name\":\"John\"}' <url>",
+              "description": "Виконати POST-запит із JSON body"
+            },
+            {
+              "id": "curl json file",
+              "label": "curl -d @data.json <url>",
+              "description": "Передати JSON із локального файлу"
+            }
+          ]
+        },
+        {
+          "id": "put-patch",
+          "label": "PUT / PATCH",
+          "items": [
+            {
+              "id": "curl -X PUT",
+              "label": "curl -X PUT <url>",
+              "description": "Виконати HTTP PUT-запит"
+            },
+            {
+              "id": "curl -X PATCH",
+              "label": "curl -X PATCH <url>",
+              "description": "Виконати HTTP PATCH-запит"
+            },
+            {
+              "id": "curl put json",
+              "label": "curl -X PUT -H \"Content-Type: application/json\" -d '{...}' <url>",
+              "description": "Оновити ресурс за допомогою PUT і JSON body"
+            },
+            {
+              "id": "curl patch json",
+              "label": "curl -X PATCH -H \"Content-Type: application/json\" -d '{...}' <url>",
+              "description": "Частково оновити ресурс за допомогою PATCH і JSON body"
+            }
+          ]
+        },
+        {
+          "id": "delete",
+          "label": "DELETE",
+          "items": [
+            {
+              "id": "curl -X DELETE",
+              "label": "curl -X DELETE <url>",
+              "description": "Виконати HTTP DELETE-запит"
+            },
+            {
+              "id": "curl delete resource",
+              "label": "curl -X DELETE <url>/<id>",
+              "description": "Видалити конкретний ресурс за його ID"
+            }
+          ]
+        },
+        {
+          "id": "authentication",
+          "label": "Authentication",
+          "items": [
+            {
+              "id": "basic auth",
+              "label": "curl -u <user>:<password> <url>",
+              "description": "Виконати запит із Basic Authentication"
+            },
+            {
+              "id": "bearer token",
+              "label": "curl -H \"Authorization: Bearer <token>\" <url>",
+              "description": "Передати Bearer token у Authorization header"
+            },
+            {
+              "id": "authorization header",
+              "label": "curl -H \"Authorization: <value>\" <url>",
+              "description": "Додати Authorization header до запиту"
+            }
+          ]
+        },
+        {
+          "id": "response",
+          "label": "Response",
+          "items": [
+            {
+              "id": "curl -i",
+              "label": "curl -i <url>",
+              "description": "Показати HTTP response headers разом із body"
+            },
+            {
+              "id": "curl -s",
+              "label": "curl -s <url>",
+              "description": "Виконати запит без progress meter та зайвого виведення"
+            },
+            {
+              "id": "curl -w",
+              "label": "curl -w \"<format>\" <url>",
+              "description": "Вивести додаткову інформацію про HTTP-відповідь"
+            },
+            {
+              "id": "curl status code",
+              "label": "curl -o /dev/null -w \"%{http_code}\" <url>",
+              "description": "Отримати тільки HTTP status code"
+            }
+          ]
+        },
+        {
+          "id": "files",
+          "label": "Files",
+          "items": [
+            {
+              "id": "curl -o",
+              "label": "curl -o <file> <url>",
+              "description": "Завантажити відповідь у файл із вказаною назвою"
+            },
+            {
+              "id": "curl -O",
+              "label": "curl -O <url>",
+              "description": "Завантажити файл із його оригінальною назвою"
+            },
+            {
+              "id": "curl -T",
+              "label": "curl -T <file> <url>",
+              "description": "Завантажити локальний файл на сервер"
+            },
+            {
+              "id": "curl -F",
+              "label": "curl -F \"file=@<file>\" <url>",
+              "description": "Передати файл через multipart/form-data"
+            }
+          ]
+        },
+        {
+          "id": "redirects",
+          "label": "Redirects",
+          "items": [
+            {
+              "id": "curl -L",
+              "label": "curl -L <url>",
+              "description": "Автоматично переходити за HTTP redirect"
+            },
+            {
+              "id": "curl -L -o",
+              "label": "curl -L -o <file> <url>",
+              "description": "Перейти за redirect і зберегти результат у файл"
+            }
+          ]
+        },
+        {
+          "id": "debug",
+          "label": "Debug",
+          "items": [
+            {
+              "id": "curl -v",
+              "label": "curl -v <url>",
+              "description": "Показати детальну інформацію про виконання запиту"
+            },
+            {
+              "id": "curl --trace",
+              "label": "curl --trace <file> <url>",
+              "description": "Записати детальну інформацію про передачу даних у файл"
+            },
+            {
+              "id": "curl --connect-timeout",
+              "label": "curl --connect-timeout <seconds> <url>",
+              "description": "Встановити максимальний час очікування встановлення з'єднання"
+            },
+            {
+              "id": "curl --max-time",
+              "label": "curl --max-time <seconds> <url>",
+              "description": "Встановити максимальний час виконання запиту"
+            }
+          ]
+        },
+        {
+          "id": "api-testing",
+          "label": "API Testing",
+          "items": [
+            {
+              "id": "get endpoint",
+              "label": "curl http://localhost:3000/api/users",
+              "description": "Перевірити GET endpoint локального API"
+            },
+            {
+              "id": "post endpoint",
+              "label": "curl -X POST -H \"Content-Type: application/json\" -d '{...}' http://localhost:3000/api/users",
+              "description": "Перевірити POST endpoint локального API"
+            },
+            {
+              "id": "put endpoint",
+              "label": "curl -X PUT -H \"Content-Type: application/json\" -d '{...}' http://localhost:3000/api/users/1",
+              "description": "Перевірити PUT endpoint локального API"
+            },
+            {
+              "id": "delete endpoint",
+              "label": "curl -X DELETE http://localhost:3000/api/users/1",
+              "description": "Перевірити DELETE endpoint локального API"
+            }
+          ]
         }
       ]
     },
     {
-      "id": "Psql",
-      "title": "Psql",
+      "id": "psql",
+      "title": "psql / PostgreSQL",
       "items": [
         {
-          "id": "\\l",
-          "label": "\\l",
-          "description": "Показати список баз даних"
+          "id": "connection",
+          "label": "Connection",
+          "items": [
+            {
+              "id": "psql --version",
+              "label": "psql --version",
+              "description": "Показати встановлену версію psql"
+            },
+            {
+              "id": "psql -U postgres",
+              "label": "psql -U postgres",
+              "description": "Підключитися до PostgreSQL від імені користувача postgres"
+            },
+            {
+              "id": "psql -U user -d database",
+              "label": "psql -U <user> -d <database>",
+              "description": "Підключитися до конкретної бази даних"
+            },
+            {
+              "id": "psql -h localhost -p 5432",
+              "label": "psql -h localhost -p 5432",
+              "description": "Підключитися до PostgreSQL на localhost через порт 5432"
+            },
+            {
+              "id": "psql -U user -d database -h localhost -p 5432",
+              "label": "psql -U <user> -d <database> -h localhost -p 5432",
+              "description": "Підключитися до конкретної бази, користувача, хоста та порту"
+            }
+          ]
+        },
+        {
+          "id": "navigation",
+          "label": "Navigation",
+          "items": [
+            {
+              "id": "\\l",
+              "label": "\\l",
+              "description": "Показати список баз даних"
+            },
+            {
+              "id": "\\c database",
+              "label": "\\c <database>",
+              "description": "Підключитися до іншої бази даних"
+            },
+            {
+              "id": "\\conninfo",
+              "label": "\\conninfo",
+              "description": "Показати інформацію про поточне підключення"
+            },
+            {
+              "id": "\\q",
+              "label": "\\q",
+              "description": "Вийти з psql"
+            }
+          ]
+        },
+        {
+          "id": "inspect",
+          "label": "Inspect",
+          "items": [
+            {
+              "id": "\\dt",
+              "label": "\\dt",
+              "description": "Показати таблиці поточної бази даних"
+            },
+            {
+              "id": "\\dt *.*",
+              "label": "\\dt *.*",
+              "description": "Показати таблиці з усіх схем"
+            },
+            {
+              "id": "\\d table",
+              "label": "\\d <table>",
+              "description": "Показати структуру таблиці"
+            },
+            {
+              "id": "\\d+ table",
+              "label": "\\d+ <table>",
+              "description": "Показати розширену інформацію про таблицю"
+            },
+            {
+              "id": "\\dn",
+              "label": "\\dn",
+              "description": "Показати список схем"
+            },
+            {
+              "id": "\\du",
+              "label": "\\du",
+              "description": "Показати список користувачів і ролей"
+            }
+          ]
+        },
+        {
+          "id": "sql",
+          "label": "SQL",
+          "items": [
+            {
+              "id": "select",
+              "label": "SELECT",
+              "description": "Отримати дані з таблиці"
+            },
+            {
+              "id": "insert",
+              "label": "INSERT",
+              "description": "Додати нові записи до таблиці"
+            },
+            {
+              "id": "update",
+              "label": "UPDATE",
+              "description": "Змінити існуючі записи"
+            },
+            {
+              "id": "delete",
+              "label": "DELETE",
+              "description": "Видалити записи з таблиці"
+            },
+            {
+              "id": "create table",
+              "label": "CREATE TABLE",
+              "description": "Створити нову таблицю"
+            },
+            {
+              "id": "alter table",
+              "label": "ALTER TABLE",
+              "description": "Змінити структуру існуючої таблиці"
+            },
+            {
+              "id": "drop table",
+              "label": "DROP TABLE",
+              "description": "Видалити таблицю"
+            }
+          ]
+        },
+        {
+          "id": "database",
+          "label": "Database",
+          "items": [
+            {
+              "id": "create database",
+              "label": "CREATE DATABASE",
+              "description": "Створити нову базу даних"
+            },
+            {
+              "id": "drop database",
+              "label": "DROP DATABASE",
+              "description": "Видалити базу даних"
+            },
+            {
+              "id": "\\l",
+              "label": "\\l",
+              "description": "Переглянути список баз даних"
+            },
+            {
+              "id": "\\c database",
+              "label": "\\c <database>",
+              "description": "Перейти до іншої бази даних"
+            }
+          ]
+        },
+        {
+          "id": "files",
+          "label": "Files",
+          "items": [
+            {
+              "id": "\\i file.sql",
+              "label": "\\i <file.sql>",
+              "description": "Виконати SQL-команди з файлу"
+            },
+            {
+              "id": "\\ir file.sql",
+              "label": "\\ir <file.sql>",
+              "description": "Виконати SQL-файл відносно поточного робочого каталогу"
+            },
+            {
+              "id": "\\o file",
+              "label": "\\o <file>",
+              "description": "Перенаправити результати команд у файл"
+            },
+            {
+              "id": "\\copy",
+              "label": "\\copy",
+              "description": "Копіювати дані між таблицею та локальним файлом"
+            }
+          ]
+        },
+        {
+          "id": "output",
+          "label": "Output",
+          "items": [
+            {
+              "id": "\\timing",
+              "label": "\\timing",
+              "description": "Увімкнути або вимкнути показ часу виконання SQL-запитів"
+            },
+            {
+              "id": "\\x",
+              "label": "\\x",
+              "description": "Увімкнути або вимкнути розширений вертикальний формат виведення"
+            },
+            {
+              "id": "\\pset pager off",
+              "label": "\\pset pager off",
+              "description": "Вимкнути pager для виведення результатів"
+            }
+          ]
+        },
+        {
+          "id": "information",
+          "label": "Information",
+          "items": [
+            {
+              "id": "select version",
+              "label": "SELECT version();",
+              "description": "Показати версію сервера PostgreSQL"
+            },
+            {
+              "id": "current database",
+              "label": "SELECT current_database();",
+              "description": "Показати поточну базу даних"
+            },
+            {
+              "id": "current user",
+              "label": "SELECT current_user;",
+              "description": "Показати поточного користувача"
+            }
+          ]
+        },
+        {
+          "id": "help",
+          "label": "Help",
+          "items": [
+            {
+              "id": "\\?",
+              "label": "\\?",
+              "description": "Показати довідку щодо команд psql"
+            },
+            {
+              "id": "\\h",
+              "label": "\\h",
+              "description": "Показати довідку щодо SQL-команд"
+            },
+            {
+              "id": "\\h select",
+              "label": "\\h SELECT",
+              "description": "Показати довідку щодо SQL-команди SELECT"
+            }
+          ]
+        },
+        {
+          "id": "keyboard",
+          "label": "Keyboard",
+          "items": [
+            {
+              "id": "ctrl c",
+              "label": "Ctrl + C",
+              "description": "Перервати виконання поточного запиту"
+            },
+            {
+              "id": "ctrl l",
+              "label": "Ctrl + L",
+              "description": "Очистити екран терміналу"
+            },
+            {
+              "id": "arrow up",
+              "label": "↑",
+              "description": "Переглянути попередню команду в історії"
+            },
+            {
+              "id": "arrow down",
+              "label": "↓",
+              "description": "Перейти до наступної команди в історії"
+            }
+          ]
         }
       ]
     }
