@@ -15,7 +15,7 @@ export default function AppLayout({
           <Link href="/" className={css.backMenuItem}>
             Home
           </Link>
-          <Link href="/app" className={css.backMenuItem}>
+          <Link href="/applications" className={css.backMenuItem}>
             APP
           </Link>
         </div>
