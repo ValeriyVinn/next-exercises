@@ -1,1370 +1,3791 @@
-## 06. Promisification
+# 07. HTTP Basics
 
-Promisification (перетворення callback-based API у Promise-based API) — це техніка перетворення функції, яка працює через callbacks, у функцію, яка повертає `Promise`.
+HTTP (HyperText Transfer Protocol) — основний протокол, який використовується для обміну даними між клієнтом і сервером у web.
 
-Це дозволяє використовувати старий callback-based код разом із сучасним:
+Для JavaScript-розробника HTTP особливо важливий, тому що frontend постійно взаємодіє з backend через HTTP requests.
 
-    Promise
-    async / await
-    try / catch
-    Promise.all()
+Типовий full-stack flow:
 
-Наприклад, callback-based API:
+    Browser
+        ↓
+    HTTP Request
+        ↓
+    Server
+        ↓
+    Database
+        ↓
+    Server
+        ↓
+    HTTP Response
+        ↓
+    Browser
 
-    function getData(callback) {
-      setTimeout(() => {
-        callback(null, "Data");
-      }, 1000);
-    }
+HTTP використовується для:
 
-Після promisification:
+    отримання даних
+    створення даних
+    оновлення даних
+    видалення даних
+    authentication
+    authorization
+    передачі JSON
+    роботи з REST API
+    взаємодії frontend ↔ backend
 
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        setTimeout(() => {
-          resolve("Data");
-        }, 1000);
-      });
-    }
+У JavaScript HTTP-запити найчастіше виконуються через:
 
-Тепер можна використовувати:
+    fetch()
+    Axios
+    інші HTTP clients
 
-    const data = await getDataAsync();
+У цьому курсі основна увага — на стандартному:
+
+    fetch()
+
+---
 
 ### Ключові поняття
 
-✔ promisification
-✔ callback-based API
-✔ Promise-based API
-✔ callback
-✔ `Promise`
-✔ `resolve`
-✔ `reject`
-✔ `async / await`
-✔ `try / catch`
-✔ success callback
-✔ error callback
-✔ error-first callback
-✔ callback hell
-✔ wrapper function
-✔ Promise wrapper
-✔ Node.js callback convention
-✔ `util.promisify()`
-✔ `this` context
-✔ multiple callback arguments
+✔ HTTP  
+✔ HTTPS  
+✔ client  
+✔ server  
+✔ request  
+✔ response  
+✔ request-response model  
+✔ URL  
+✔ URI  
+✔ endpoint  
+✔ HTTP method  
+✔ GET  
+✔ POST  
+✔ PUT  
+✔ PATCH  
+✔ DELETE  
+✔ HTTP headers  
+✔ request headers  
+✔ response headers  
+✔ body  
+✔ request body  
+✔ response body  
+✔ status code  
+✔ 2xx  
+✔ 3xx  
+✔ 4xx  
+✔ 5xx  
+✔ JSON  
+✔ Content-Type  
+✔ Accept  
+✔ Authorization  
+✔ REST API  
+✔ API endpoint  
+✔ query parameters  
+✔ path parameters  
+✔ HTTP request lifecycle  
+✔ stateless protocol  
+✔ idempotency  
+✔ safe methods  
+✔ CORS  
+✔ HTTP caching  
+
+---
 
 ### Що потрібно пам'ятати
 
-• Promisification — це перетворення callback-based функції на Promise-based функцію.
+• HTTP — протокол обміну даними між client та server.
 
-• Основна ідея:
+• Browser зазвичай виступає як client.
 
-    callback API
-         ↓
-    Promise wrapper
-         ↓
-    Promise API
+• Backend server приймає request та формує response.
 
-• Promise-based функцію можна використовувати через `.then()` / `.catch()`.
+• HTTP використовує модель:
 
-• Promise-based функцію можна використовувати через `async / await`.
+    request → response
 
-• Успішний callback зазвичай перетворюється на:
+• HTTP request містить:
 
-    resolve(value)
+    method
+    URL
+    headers
+    body (optional)
 
-• Callback з помилкою перетворюється на:
+• HTTP response містить:
 
-    reject(error)
+    status code
+    headers
+    body (optional)
 
-• Найчастіше promisification використовується для старих callback-based APIs.
+• Основні HTTP methods:
 
-• Node.js традиційно використовує error-first callback pattern:
+    GET
+    POST
+    PUT
+    PATCH
+    DELETE
 
-    callback(error, result)
+• `GET` зазвичай використовується для отримання даних.
 
-• `util.promisify()` у Node.js дозволяє автоматично перетворювати багато callback-based функцій у Promise-based.
+• `POST` зазвичай використовується для створення ресурсу або виконання операції.
 
-• Не кожну callback-функцію можна безпосередньо передати в `util.promisify()` — вона повинна відповідати очікуваному callback convention.
+• `PUT` зазвичай використовується для повної заміни ресурсу.
 
-• Promisification не робить синхронну функцію асинхронною магічним способом.
+• `PATCH` використовується для часткового оновлення ресурсу.
 
-• Promisification змінює спосіб отримання результату: callback → Promise.
+• `DELETE` використовується для видалення ресурсу.
 
-• Promise повинен бути settled лише один раз:
+• `2xx` — успішні responses.
 
-    resolve(...)
-    або
-    reject(...)
+• `3xx` — redirects / інші response-коди перенаправлення.
 
-• Якщо callback може викликатися багато разів, простий Promise wrapper може бути неправильним рішенням.
+• `4xx` — помилки на стороні client/request.
+
+• `5xx` — помилки на стороні server.
+
+• `200 OK` означає успішний request.
+
+• `201 Created` означає, що ресурс було створено.
+
+• `204 No Content` означає успішний request без response body.
+
+• `400 Bad Request` означає неправильний request.
+
+• `401 Unauthorized` зазвичай означає, що authentication відсутня або недійсна.
+
+• `403 Forbidden` означає, що server зрозумів request, але відмовляє в доступі.
+
+• `404 Not Found` означає, що ресурс не знайдено.
+
+• `500 Internal Server Error` означає server-side error.
+
+• JSON — найпоширеніший формат передачі даних між frontend та backend.
+
+• HTTP є stateless protocol: кожен request сам по собі не повинен покладатися на збережений server-side стан попереднього request.
+
+• `fetch()` повертає Promise.
+
+• `fetch()` не вважає HTTP `404` або `500` автоматично JavaScript exception. Response все одно може бути отриманий, тому потрібно перевіряти `response.ok` або `response.status`.
 
 ---
 
-### Callback-based API
+# HTTP
 
-Callback-based API передає функцію, яка буде викликана після завершення операції.
+HTTP розшифровується як:
+
+    HyperText Transfer Protocol
+
+Це протокол, за допомогою якого client і server обмінюються повідомленнями.
 
 Наприклад:
 
-    function getData(callback) {
-      setTimeout(() => {
-        callback("Hello");
-      }, 1000);
+    Browser
+        ↓
+    HTTP Request
+        ↓
+    Server
+        ↓
+    HTTP Response
+        ↓
+    Browser
+
+---
+
+# HTTPS
+
+HTTPS — HTTP поверх захищеного TLS-з'єднання.
+
+    HTTP
+        +
+    TLS
+        ↓
+    HTTPS
+
+У web-застосунках зазвичай потрібно використовувати:
+
+    https://
+
+замість:
+
+    http://
+
+Особливо для:
+
+    authentication
+    passwords
+    tokens
+    personal data
+    payment data
+
+---
+
+# Client
+
+Client — сторона, яка надсилає request.
+
+Наприклад:
+
+    Browser
+    Mobile App
+    Desktop App
+    CLI tool
+
+У типовому frontend application:
+
+    Browser = client
+
+---
+
+# Server
+
+Server — система, яка приймає request та формує response.
+
+Наприклад:
+
+    Node.js
+    Nest.js
+    Express
+    Django
+    Laravel
+    ASP.NET
+
+Для твого full-stack JavaScript stack:
+
+    Browser
+        ↓
+    Next.js / React
+        ↓
+    HTTP
+        ↓
+    Nest.js / Node.js
+        ↓
+    PostgreSQL
+
+---
+
+# Request
+
+HTTP request — повідомлення від client до server.
+
+Спрощено:
+
+    REQUEST
+
+    method
+    URL
+    headers
+    body
+
+Наприклад:
+
+    GET /api/users
+
+---
+
+# Response
+
+HTTP response — повідомлення від server до client.
+
+Спрощено:
+
+    RESPONSE
+
+    status
+    headers
+    body
+
+Наприклад:
+
+    200 OK
+
+    {
+        "id": 1,
+        "name": "John"
     }
 
-Використання:
-
-    getData(data => {
-      console.log(data);
-    });
-
-Модель:
-
-    getData()
-       │
-       │ callback
-       ▼
-    result
-
 ---
 
-### Error-first Callback
+# Request-Response Model
 
-У Node.js поширений pattern:
+Основна модель HTTP:
 
-    callback(error, result)
+    Client
+        ↓
+    Request
+        ↓
+    Server
+        ↓
+    Response
+        ↓
+    Client
 
 Наприклад:
 
-    function getData(callback) {
-      setTimeout(() => {
-        const success = true;
+    Browser
+        ↓
+    GET /api/users
+        ↓
+    Backend
+        ↓
+    200 OK + JSON
+        ↓
+    Browser
 
-        if (success) {
-          callback(null, "Data");
-        } else {
-          callback(new Error("Failed"));
+---
+
+# URL
+
+URL (Uniform Resource Locator) визначає адресу ресурсу.
+
+Наприклад:
+
+    https://example.com/api/users
+
+URL складається з частин.
+
+    https://example.com/api/users
+    └──┬──┘ └──────┬─────┘ └───┬───┘
+     scheme       host       path
+
+---
+
+# URL Structure
+
+Наприклад:
+
+    https://api.example.com/users/42?active=true
+
+Маємо:
+
+    https
+        → scheme / protocol
+
+    api.example.com
+        → host
+
+    /users/42
+        → path
+
+    ?active=true
+        → query string
+
+---
+
+# Scheme
+
+Scheme визначає протокол.
+
+Наприклад:
+
+    http://
+    https://
+
+У сучасному web найчастіше:
+
+    https://
+
+---
+
+# Host
+
+Host визначає сервер / домен.
+
+Наприклад:
+
+    example.com
+
+або:
+
+    api.example.com
+
+У локальній розробці:
+
+    localhost
+
+---
+
+# Port
+
+Server може слухати певний port.
+
+Наприклад:
+
+    http://localhost:3000
+
+Тут:
+
+    localhost
+        → host
+
+    3000
+        → port
+
+Типові ports:
+
+    HTTP  → 80
+    HTTPS → 443
+
+Для development часто:
+
+    Next.js → 3000
+    Nest.js → 3000
+    PostgreSQL → 5432
+
+---
+
+# Path
+
+Path визначає конкретний ресурс або route.
+
+Наприклад:
+
+    /api/users
+
+або:
+
+    /api/users/42
+
+---
+
+# Endpoint
+
+Endpoint — конкретна API address, через яку можна взаємодіяти з ресурсом.
+
+Наприклад:
+
+    GET /api/users
+
+    GET /api/users/42
+
+    POST /api/users
+
+    PATCH /api/users/42
+
+    DELETE /api/users/42
+
+Один resource може мати кілька endpoints залежно від method.
+
+---
+
+# HTTP Methods
+
+Основні methods:
+
+    GET
+    POST
+    PUT
+    PATCH
+    DELETE
+
+---
+
+# GET
+
+`GET` використовується для отримання даних.
+
+Наприклад:
+
+    GET /api/users
+
+Може повернути:
+
+    [
+        {
+            "id": 1,
+            "name": "John"
+        },
+        {
+            "id": 2,
+            "name": "Anna"
         }
-      }, 1000);
-    }
-
-Використання:
-
-    getData((error, data) => {
-      if (error) {
-        console.error(error);
-
-        return;
-      }
-
-      console.log(data);
-    });
-
-Модель:
-
-    callback(error, result)
-
-Успіх:
-
-    callback(null, result)
-
-Помилка:
-
-    callback(error)
+    ]
 
 ---
 
-### Що таке Promisification
+# GET Single Resource
 
-Promisification бере callback-based function:
+Щоб отримати одного user:
 
-    function getData(callback) {
-      ...
-    }
+    GET /api/users/42
 
-і створює Promise-based function:
+Response:
 
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        ...
-      });
-    }
-
-Тепер:
-
-    getDataAsync()
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-
-Або:
-
-    try {
-      const data = await getDataAsync();
-
-      console.log(data);
-    } catch (error) {
-      console.error(error);
+    {
+        "id": 42,
+        "name": "John"
     }
 
 ---
 
-### Найпростіший Promise Wrapper
+# GET та Body
 
-Callback:
+GET requests зазвичай не використовують request body для передачі параметрів.
 
-    function getData(callback) {
-      setTimeout(() => {
-        callback(null, "Data");
-      }, 1000);
-    }
+Замість цього використовуються:
 
-Promisification:
+    path parameters
+    query parameters
 
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        getData((error, data) => {
-          if (error) {
-            reject(error);
+Наприклад:
 
-            return;
-          }
+    GET /api/users/42
 
-          resolve(data);
-        });
-      });
-    }
+або:
 
-Використання:
-
-    const data = await getDataAsync();
+    GET /api/users?role=admin
 
 ---
 
-### Promise Wrapper
+# POST
 
-Загальна модель:
+`POST` зазвичай використовується для створення нового ресурсу.
 
-    function promisifiedFunction() {
-      return new Promise((resolve, reject) => {
+Наприклад:
 
-        callbackBasedFunction((error, result) => {
+    POST /api/users
 
-          if (error) {
-            reject(error);
+Request body:
 
-            return;
-          }
+    {
+        "name": "John",
+        "email": "john@example.com"
+    }
 
-          resolve(result);
-        });
+Server може відповісти:
 
-      });
+    201 Created
+
+    {
+        "id": 42,
+        "name": "John",
+        "email": "john@example.com"
     }
 
 ---
 
-### Promisification через `.then()`
+# PUT
 
-Після створення Promise wrapper:
+`PUT` зазвичай використовується для повної заміни ресурсу.
 
-    getDataAsync()
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+Наприклад:
 
----
+    PUT /api/users/42
 
-### Promisification через async / await
+Body:
 
-Найзручніший варіант:
-
-    async function main() {
-      try {
-        const data = await getDataAsync();
-
-        console.log(data);
-      } catch (error) {
-        console.error(error);
-      }
+    {
+        "name": "John",
+        "email": "new@example.com"
     }
 
-    main();
+Ідея:
+
+    existing resource
+        ↓
+    replace with new representation
 
 ---
 
-### Callback API → Promise API
+# PATCH
 
-Стара API:
+`PATCH` використовується для часткового оновлення ресурсу.
 
-    readFile(path, callback)
+Наприклад:
 
-Promise API:
+    PATCH /api/users/42
 
-    readFileAsync(path)
+Body:
 
-Модель:
+    {
+        "email": "new@example.com"
+    }
 
-    Callback API
-        │
-        │ promisification
-        ▼
-    Promise API
-        │
-        ├── .then()
-        ├── .catch()
-        └── async / await
+Змінюється тільки:
+
+    email
+
+Інші поля можуть залишитися без змін.
 
 ---
 
-### Навіщо потрібна Promisification
+# PUT vs PATCH
 
-Promisification особливо корисна, коли:
+    PUT
+        → full replacement
 
-✔ є старий callback-based API
+    PATCH
+        → partial update
 
-✔ потрібно використовувати `async / await`
+Наприклад:
 
-✔ потрібно використовувати `Promise.all()`
+    PUT /users/1
 
-✔ потрібно використовувати `Promise.race()`
+може передати весь ресурс:
 
-✔ потрібно централізовано обробляти помилки
+    {
+        "name": "John",
+        "email": "john@example.com",
+        "age": 30
+    }
 
-✔ callback code стає складним
+А:
 
-✔ потрібно інтегрувати legacy code із сучасним JavaScript
+    PATCH /users/1
+
+може передати лише:
+
+    {
+        "age": 31
+    }
 
 ---
 
-### Callback Hell
+# DELETE
 
-Callback-based код може ставати складним:
+`DELETE` використовується для видалення ресурсу.
 
-    getUser(userId, (error, user) => {
-      if (error) {
-        return handleError(error);
-      }
+Наприклад:
 
-      getOrders(user.id, (error, orders) => {
-        if (error) {
-          return handleError(error);
+    DELETE /api/users/42
+
+Server може відповісти:
+
+    204 No Content
+
+---
+
+# HTTP Methods Cheat Sheet
+
+    GET
+        → read
+
+    POST
+        → create
+
+    PUT
+        → replace
+
+    PATCH
+        → partial update
+
+    DELETE
+        → delete
+
+У REST-style API часто використовують таку модель:
+
+    GET    /users
+        → list users
+
+    GET    /users/42
+        → get user
+
+    POST   /users
+        → create user
+
+    PUT    /users/42
+        → replace user
+
+    PATCH  /users/42
+        → update user
+
+    DELETE /users/42
+        → delete user
+
+---
+
+# Request Headers
+
+Headers передають додаткову інформацію про request.
+
+Наприклад:
+
+    Content-Type
+    Accept
+    Authorization
+
+Приклад:
+
+    Content-Type: application/json
+
+---
+
+# Response Headers
+
+Server також повертає headers.
+
+Наприклад:
+
+    Content-Type: application/json
+
+Інші можливі headers:
+
+    Cache-Control
+    Set-Cookie
+    Location
+    ETag
+
+---
+
+# Content-Type
+
+`Content-Type` повідомляє, який формат має body.
+
+Для JSON:
+
+    Content-Type: application/json
+
+Наприклад:
+
+    POST /api/users
+
+    Content-Type: application/json
+
+    {
+        "name": "John"
+    }
+
+---
+
+# Accept
+
+`Accept` повідомляє server, які формати response client готовий приймати.
+
+Наприклад:
+
+    Accept: application/json
+
+Це означає:
+
+    client expects JSON response
+
+---
+
+# Authorization
+
+`Authorization` використовується для передачі authentication credentials / token.
+
+Наприклад:
+
+    Authorization: Bearer <token>
+
+Не потрібно плутати:
+
+    authentication
+        → хто ти?
+
+    authorization
+        → що тобі дозволено?
+
+---
+
+# Request Body
+
+Body містить дані, які client передає server.
+
+Наприклад:
+
+    POST /api/users
+
+    Content-Type: application/json
+
+    {
+        "name": "John",
+        "email": "john@example.com"
+    }
+
+Body найчастіше використовується з:
+
+    POST
+    PUT
+    PATCH
+
+---
+
+# Response Body
+
+Response body містить дані, які server повертає client.
+
+Наприклад:
+
+    {
+        "id": 42,
+        "name": "John"
+    }
+
+Або масив:
+
+    [
+        {
+            "id": 1,
+            "name": "John"
+        },
+        {
+            "id": 2,
+            "name": "Anna"
         }
-
-        getProducts(orders, (error, products) => {
-          if (error) {
-            return handleError(error);
-          }
-
-          console.log(products);
-        });
-      });
-    });
-
-Модель:
-
-    getUser()
-       │
-       ▼
-    getOrders()
-       │
-       ▼
-    getProducts()
-       │
-       ▼
-    result
-
-При великій кількості операцій код може ставати важким для читання.
+    ]
 
 ---
 
-### Після Promisification
+# JSON
 
-Після перетворення:
-
-    const user = await getUserAsync(userId);
-
-    const orders = await getOrdersAsync(user.id);
-
-    const products = await getProductsAsync(orders);
-
-Код стає лінійнішим.
-
-Модель:
-
-    getUserAsync()
-         ↓
-    getOrdersAsync()
-         ↓
-    getProductsAsync()
-         ↓
-    result
-
----
-
-### Error Handling
-
-Callback:
-
-    getData((error, data) => {
-      if (error) {
-        ...
-      }
-    });
-
-Promise:
-
-    getDataAsync()
-      .catch(error => {
-        ...
-      });
-
-Async / await:
-
-    try {
-      const data = await getDataAsync();
-    } catch (error) {
-      ...
-    }
-
----
-
-### Promisification з error-first callback
+JSON (JavaScript Object Notation) — популярний формат передачі структурованих даних.
 
 Наприклад:
 
-    function divide(a, b, callback) {
-      if (b === 0) {
-        callback(new Error("Division by zero"));
-
-        return;
-      }
-
-      callback(null, a / b);
+    {
+        "id": 1,
+        "name": "John",
+        "age": 30
     }
 
-Promisified version:
-
-    function divideAsync(a, b) {
-      return new Promise((resolve, reject) => {
-        divide(a, b, (error, result) => {
-          if (error) {
-            reject(error);
-
-            return;
-          }
-
-          resolve(result);
-        });
-      });
-    }
-
-Використання:
-
-    try {
-      const result = await divideAsync(10, 2);
-
-      console.log(result);
-    } catch (error) {
-      console.error(error);
-    }
+JSON використовується дуже часто у REST APIs.
 
 ---
 
-### Promisification з setTimeout
+# JSON.stringify()
 
-Callback API:
+Перед відправленням JavaScript object у JSON body часто використовується:
 
-    function delay(ms, callback) {
-      setTimeout(() => {
-        callback(null);
-      }, ms);
-    }
-
-Promisified:
-
-    function delayAsync(ms) {
-      return new Promise(resolve => {
-        setTimeout(resolve, ms);
-      });
-    }
-
-Використання:
-
-    await delayAsync(1000);
-
-    console.log("Done");
-
----
-
-### Promisification і Promise
-
-Важливо розуміти різницю:
-
-    callback-based function
-    ↓
-    передає результат у callback
-
-    Promise-based function
-    ↓
-    повертає Promise
+    JSON.stringify()
 
 Наприклад:
 
-    getData(callback);
+    const user = {
+        name: "John",
+        age: 30
+    };
 
-Проти:
-
-    const promise = getDataAsync();
-
----
-
-### Promisification і async / await
-
-`async / await` не замінює Promisification.
-
-Навпаки:
-
-    callback API
-         ↓
-    promisification
-         ↓
-    Promise API
-         ↓
-    async / await
-
-Тобто:
-
-**Promisification робить callback API сумісним із Promise-based code.**
-
----
-
-### util.promisify()
-
-Node.js має вбудований helper:
-
-    util.promisify()
-
-Він дозволяє перетворювати функції з Node.js callback style у Promise-based functions.
-
-Імпорт:
-
-    const { promisify } = require("node:util");
-
-Або ES Modules:
-
-    import { promisify } from "node:util";
-
----
-
-### Приклад util.promisify()
-
-Callback-based function:
-
-    function add(a, b, callback) {
-      setTimeout(() => {
-        callback(null, a + b);
-      }, 100);
-    }
-
-Promisify:
-
-    const addAsync = promisify(add);
-
-Тепер:
-
-    const result = await addAsync(2, 3);
-
-    console.log(result);
+    const body = JSON.stringify(user);
 
 Результат:
 
-    5
+    '{"name":"John","age":30}'
 
 ---
 
-### Як працює util.promisify()
+# JSON.parse()
 
-Умовно:
+Щоб перетворити JSON string у JavaScript value:
 
-    promisify(callbackFunction)
-            │
-            ▼
-    Promise-returning function
+    JSON.parse()
 
 Наприклад:
 
-    const addAsync = promisify(add);
+    const json = '{"name":"John","age":30}';
 
-Виклик:
-
-    addAsync(2, 3)
-
-повертає:
-
-    Promise
+    const user = JSON.parse(json);
 
 ---
 
-### util.promisify() та error-first callback
+# fetch()
 
-`util.promisify()` очікує типовий Node.js callback:
+`fetch()` — стандартний JavaScript API для виконання HTTP requests.
 
-    callback(error, result)
+Простий GET:
 
-Наприклад:
+    fetch("/api/users");
 
-    function getUser(id, callback) {
-      ...
-      callback(null, user);
-    }
+`fetch()` повертає:
 
-Після:
-
-    const getUserAsync = promisify(getUser);
-
-Можна:
-
-    const user = await getUserAsync(5);
+    Promise<Response>
 
 ---
 
-### Promisify Node.js API
+# Basic fetch
 
-Багато старих Node.js APIs мають callback-based versions.
-
-Наприклад, умовно:
-
-    fs.readFile(path, callback)
-
-Через `promisify`:
-
-    const { promisify } = require("node:util");
-    const fs = require("node:fs");
-
-    const readFileAsync = promisify(fs.readFile);
-
-    const data = await readFileAsync(
-      "file.txt",
-      "utf8"
-    );
-
-У сучасному Node.js багато APIs вже мають готові Promise-based versions, тому ручний `promisify()` потрібен не завжди.
-
----
-
-### Promise-based Node.js APIs
-
-Якщо бібліотека вже має Promise API, краще використовувати його без додаткової promisification.
-
-Наприклад:
-
-    const fs = require("node:fs/promises");
-
-    const data = await fs.readFile(
-      "file.txt",
-      "utf8"
-    );
-
-Тут Promise вже повертається без `promisify()`.
-
----
-
-### Ручна Promisification vs util.promisify()
-
-Ручна:
-
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        getData((error, data) => {
-          if (error) {
-            reject(error);
-
-            return;
-          }
-
-          resolve(data);
+    fetch("/api/users")
+        .then((response) => {
+            return response.json();
+        })
+        .then((users) => {
+            console.log(users);
         });
-      });
-    }
-
-Автоматична:
-
-    const getDataAsync = promisify(getData);
-
-Ручний варіант потрібен, коли callback API має нестандартну поведінку.
 
 ---
 
-### Callback з декількома результатами
+# fetch з async / await
 
-Не всі callback APIs повертають тільки один result.
+Сучасний стиль:
 
-Наприклад:
+    async function getUsers() {
+        const response = await fetch("/api/users");
+        const users = await response.json();
 
-    callback(null, value1, value2);
+        console.log(users);
+    }
 
-Звичайний Promise може передати тільки одне значення через `resolve()`.
+---
 
-Тому потрібно створити object або array:
+# fetch GET
 
-    resolve({
-      value1,
-      value2
+    const response = await fetch("/api/users");
+
+    const users = await response.json();
+
+---
+
+# fetch POST
+
+    const response = await fetch("/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: "John",
+            email: "john@example.com"
+        })
     });
 
-Або:
-
-    resolve([
-      value1,
-      value2
-    ]);
-
-Наприклад:
-
-    function getData(callback) {
-      callback(null, "John", 30);
-    }
-
-Promisified:
-
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        getData((error, name, age) => {
-          if (error) {
-            reject(error);
-
-            return;
-          }
-
-          resolve({
-            name,
-            age
-          });
-        });
-      });
-    }
-
-Використання:
-
-    const { name, age } = await getDataAsync();
+    const user = await response.json();
 
 ---
 
-### Callback, який викликається багато разів
+# fetch PUT
 
-Це важливе обмеження.
-
-Наприклад:
-
-    function onData(callback) {
-      callback("first");
-      callback("second");
-      callback("third");
-    }
-
-Не можна просто очікувати, що Promise збере всі значення:
-
-    new Promise(resolve => {
-      onData(data => {
-        resolve(data);
-      });
+    const response = await fetch("/api/users/42", {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: "John",
+            email: "john@example.com",
+            age: 30
+        })
     });
 
-Promise буде fulfilled після першого:
+---
 
-    resolve("first");
+# fetch PATCH
 
-Наступні виклики:
-
-    resolve("second");
-    resolve("third");
-
-вже не змінять результат Promise.
-
-Якщо API повертає багато значень протягом часу, потрібно використовувати інший механізм, наприклад:
-
-    EventEmitter
-    AsyncIterator
-    Stream
+    const response = await fetch("/api/users/42", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            age: 31
+        })
+    });
 
 ---
 
-### Promise settle only once
+# fetch DELETE
 
-Promise може перейти у фінальний стан лише один раз:
-
-    pending
-       │
-       ├── resolve() → fulfilled
-       │
-       └── reject()  → rejected
-
-Після цього:
-
-    resolve()
-    reject()
-
-не змінять його стан.
+    const response = await fetch("/api/users/42", {
+        method: "DELETE"
+    });
 
 ---
 
-### Promisification і EventEmitter
+# Response Object
 
-Не кожен callback API потрібно promisify.
-
-Наприклад, event-based API:
-
-    emitter.on("data", handler);
-
-може генерувати багато подій.
-
-Promise підходить для операції:
-
-    one operation
-         ↓
-    one result
-
-EventEmitter підходить для:
-
-    one source
-         ↓
-    many events
-
----
-
-### Promisification та synchronous callback
-
-Promisification зазвичай використовується для asynchronous APIs.
-
-Якщо функція синхронна:
-
-    function add(a, b) {
-      return a + b;
-    }
-
-Немає сенсу робити:
-
-    function addAsync(a, b) {
-      return Promise.resolve(add(a, b));
-    }
-
-без конкретної причини.
-
-Це лише змінить API, але не зробить саму операцію корисно асинхронною.
-
----
-
-### Promisification і `this`
-
-При promisification важливо враховувати context.
+`fetch()` повертає `Response`.
 
 Наприклад:
 
-    const object = {
-      value: 10,
+    const response = await fetch("/api/users");
 
-      getValue(callback) {
-        callback(null, this.value);
-      }
-    };
+Можна перевірити:
 
-Якщо передати метод окремо:
-
-    const getValueAsync = promisify(
-      object.getValue
-    );
-
-можна втратити необхідний `this`.
-
-Потрібно зберегти context:
-
-    const getValueAsync = promisify(
-      object.getValue.bind(object)
-    );
-
-Тепер:
-
-    const value = await getValueAsync();
+    response.status
+    response.ok
+    response.headers
+    response.url
 
 ---
 
-### Promisification wrapper
+# response.status
 
-Хороший wrapper:
+`status` містить HTTP status code.
 
-    function promisifyOperation() {
-      return new Promise((resolve, reject) => {
-        originalOperation((error, result) => {
-          if (error) {
-            reject(error);
+Наприклад:
 
-            return;
-          }
+    response.status
 
-          resolve(result);
-        });
-      });
+може бути:
+
+    200
+    201
+    400
+    401
+    404
+    500
+
+---
+
+# response.ok
+
+`response.ok` дорівнює `true`, якщо status є успішним HTTP response.
+
+Наприклад:
+
+    const response = await fetch("/api/users");
+
+    if (response.ok) {
+        console.log("Success");
     }
 
-Модель:
+---
 
-    Original API
-         │
-         │ callback
-         ▼
-    Promise Wrapper
-         │
-         ├── error → reject()
-         │
-         └── result → resolve()
-         │
-         ▼
-       Promise
+# Important fetch Behavior
+
+Це дуже важливо:
+
+`fetch()` не відхиляє Promise просто через HTTP status:
+
+    404
+    500
+
+Наприклад:
+
+    const response = await fetch("/api/users");
+
+Навіть якщо server повернув:
+
+    404 Not Found
+
+Promise `fetch()` зазвичай буде fulfilled з `Response`.
+
+Тому потрібно перевіряти:
+
+    response.ok
+
+або:
+
+    response.status
 
 ---
 
-### Типові помилки
+# Proper fetch Error Check
 
-❌ Забути `return new Promise(...)`.
+    const response = await fetch("/api/users");
+
+    if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    const users = await response.json();
+
+---
+
+# HTTP Status Code Classes
+
+HTTP status codes поділяються на класи:
+
+    1xx
+        → informational
+
+    2xx
+        → success
+
+    3xx
+        → redirection
+
+    4xx
+        → client errors
+
+    5xx
+        → server errors
+
+---
+
+# 1xx
+
+`1xx` — informational responses.
+
+Наприклад:
+
+    100 Continue
+
+На frontend application-level практиці використовуються рідко.
+
+---
+
+# 2xx Success
+
+`2xx` означають успішне виконання request.
+
+Найважливіші:
+
+    200 OK
+    201 Created
+    202 Accepted
+    204 No Content
+
+---
+
+# 200 OK
+
+Request успішно виконано.
+
+Наприклад:
+
+    GET /api/users
+
+Response:
+
+    200 OK
+
+---
+
+# 201 Created
+
+Resource успішно створено.
+
+Наприклад:
+
+    POST /api/users
+
+Response:
+
+    201 Created
+
+---
+
+# 202 Accepted
+
+Request прийнято для обробки, але обробка ще не обов'язково завершена.
+
+Може використовуватися для:
+
+    background jobs
+    asynchronous processing
+
+---
+
+# 204 No Content
+
+Request успішний, але response body відсутній.
+
+Часто використовується після:
+
+    DELETE
+
+Наприклад:
+
+    DELETE /api/users/42
+
+Response:
+
+    204 No Content
+
+---
+
+# 3xx Redirection
+
+`3xx` пов'язані з перенаправленням або іншими умовами, де client може виконати додаткову дію.
+
+Приклади:
+
+    301 Moved Permanently
+    302 Found
+    304 Not Modified
+
+---
+
+# 301 Moved Permanently
+
+Ресурс переміщений на іншу URL permanently.
+
+---
+
+# 304 Not Modified
+
+Ресурс не змінився відносно cache validators.
+
+Browser може використати cached representation.
+
+---
+
+# 4xx Client Errors
+
+`4xx` означають проблему з request або доступом client.
+
+Найважливіші:
+
+    400 Bad Request
+    401 Unauthorized
+    403 Forbidden
+    404 Not Found
+    405 Method Not Allowed
+    409 Conflict
+    422 Unprocessable Content
+    429 Too Many Requests
+
+---
+
+# 400 Bad Request
+
+Request некоректний.
+
+Наприклад:
+
+    invalid JSON
+    invalid parameters
+    invalid request structure
+
+---
+
+# 401 Unauthorized
+
+Request потребує authentication або надані authentication credentials недійсні.
+
+Наприклад:
+
+    GET /api/profile
+
+без необхідного authentication.
+
+---
+
+# 403 Forbidden
+
+Server зрозумів request, але відмовляє в доступі.
+
+Наприклад:
+
+    authenticated user
+        ↓
+    protected admin endpoint
+        ↓
+    user is not allowed
+        ↓
+    403 Forbidden
+
+---
+
+# 401 vs 403
+
+Запам'ятати:
+
+    401
+        → authentication problem
+
+    403
+        → access is forbidden
+
+Спрощено:
+
+    401 → "ти не автентифікований"
+
+    403 → "ти автентифікований,
+          але тобі не дозволено"
+
+---
+
+# 404 Not Found
+
+Server не знайшов ресурс за вказаним URL.
+
+Наприклад:
+
+    GET /api/users/999999
+
+може повернути:
+
+    404 Not Found
+
+---
+
+# 405 Method Not Allowed
+
+Endpoint існує, але HTTP method для нього не дозволений.
+
+Наприклад:
+
+    POST /api/users/42
+
+якщо endpoint підтримує тільки:
+
+    GET
+    PATCH
+    DELETE
+
+---
+
+# 409 Conflict
+
+Request конфліктує з поточним станом ресурсу.
+
+Наприклад:
+
+    створення user
+        ↓
+    email already exists
+        ↓
+    409 Conflict
+
+---
+
+# 422 Unprocessable Content
+
+Server зрозумів структуру request, але дані не проходять semantic validation.
+
+Наприклад:
+
+    age: -500
+
+або:
+
+    email: "not-email"
+
+Точне використання залежить від API design.
+
+---
+
+# 429 Too Many Requests
+
+Client перевищив дозволену кількість requests.
+
+Наприклад:
+
+    too many requests
+        ↓
+    rate limit
+        ↓
+    429
+
+---
+
+# 5xx Server Errors
+
+`5xx` означають проблему на server side.
+
+Найважливіші:
+
+    500 Internal Server Error
+    501 Not Implemented
+    502 Bad Gateway
+    503 Service Unavailable
+    504 Gateway Timeout
+
+---
+
+# 500 Internal Server Error
+
+Загальна server-side error.
+
+Наприклад:
+
+    backend exception
+        ↓
+    500 Internal Server Error
+
+---
+
+# 502 Bad Gateway
+
+Gateway / proxy отримав некоректну response від upstream server.
+
+Часто зустрічається в архітектурах із:
+
+    reverse proxy
+    load balancer
+    API gateway
+
+---
+
+# 503 Service Unavailable
+
+Server тимчасово не може обробити request.
+
+Можливі причини:
+
+    overload
+    maintenance
+    unavailable service
+
+---
+
+# 504 Gateway Timeout
+
+Gateway / proxy не дочекався response від upstream server у встановлений час.
+
+---
+
+# Status Code Cheat Sheet
+
+    200 → OK
+    201 → Created
+    202 → Accepted
+    204 → No Content
+
+    301 → Moved Permanently
+    302 → Found
+    304 → Not Modified
+
+    400 → Bad Request
+    401 → Unauthorized
+    403 → Forbidden
+    404 → Not Found
+    405 → Method Not Allowed
+    409 → Conflict
+    422 → Unprocessable Content
+    429 → Too Many Requests
+
+    500 → Internal Server Error
+    502 → Bad Gateway
+    503 → Service Unavailable
+    504 → Gateway Timeout
+
+---
+
+# Path Parameters
+
+Path parameter є частиною URL path.
+
+Наприклад:
+
+    /api/users/42
+
+Тут:
+
+    42
+
+можна трактувати як:
+
+    userId
+
+Endpoint:
+
+    GET /api/users/:id
+
+Concrete request:
+
+    GET /api/users/42
+
+---
+
+# Query Parameters
+
+Query parameters знаходяться після `?`.
+
+Наприклад:
+
+    /api/users?role=admin
+
+Тут:
+
+    role=admin
+
+є query parameter.
+
+---
+
+# Multiple Query Parameters
+
+Наприклад:
+
+    /api/users?role=admin&active=true&page=2
+
+Маємо:
+
+    role=admin
+    active=true
+    page=2
+
+---
+
+# Query Parameters для Filtering
+
+Наприклад:
+
+    GET /api/products?category=books
+
+---
+
+# Query Parameters для Pagination
+
+Наприклад:
+
+    GET /api/users?page=2&limit=20
+
+---
+
+# Query Parameters для Sorting
+
+Наприклад:
+
+    GET /api/users?sort=name&order=asc
+
+---
+
+# URLSearchParams
+
+JavaScript має `URLSearchParams`.
+
+Наприклад:
+
+    const params = new URLSearchParams({
+        page: "2",
+        limit: "20",
+        sort: "name"
+    });
+
+    const url = `/api/users?${params}`;
+
+Результат:
+
+    /api/users?page=2&limit=20&sort=name
+
+---
+
+# REST API
+
+REST — архітектурний стиль побудови web APIs.
+
+У REST-style API ресурси представляються через URLs.
+
+Наприклад:
+
+    /users
+    /users/42
+    /posts
+    /posts/10
+
+HTTP method визначає operation.
+
+Наприклад:
+
+    GET /users
+        → get users
+
+    POST /users
+        → create user
+
+    GET /users/42
+        → get user
+
+    PATCH /users/42
+        → update user
+
+    DELETE /users/42
+        → delete user
+
+---
+
+# Resource-Oriented API
+
+Замість:
+
+    /getUsers
+    /createUser
+    /deleteUser
+
+REST-style API часто використовує:
+
+    GET /users
+    POST /users
+    DELETE /users/42
+
+Тобто:
+
+    URL → resource
+
+    HTTP method → operation
+
+---
+
+# Stateless HTTP
+
+HTTP є stateless protocol.
+
+Це означає, що кожен request розглядається як окреме повідомлення.
+
+Наприклад:
+
+    Request 1:
+    GET /api/users
+
+    Request 2:
+    GET /api/products
+
+Server не повинен автоматично припускати, що request 2 має контекст request 1.
+
+State може підтримуватися окремими механізмами:
+
+    cookies
+    sessions
+    tokens
+    databases
+
+---
+
+# Authentication
+
+Authentication відповідає на питання:
+
+    "Хто ти?"
+
+Наприклад:
+
+    login
+        ↓
+    credentials
+        ↓
+    authentication
+        ↓
+    user identity
+
+---
+
+# Authorization
+
+Authorization відповідає на питання:
+
+    "Що тобі дозволено?"
+
+Наприклад:
+
+    authenticated user
+        ↓
+    role = student
+        ↓
+    access allowed
+
+або:
+
+    role = student
+        ↓
+    admin endpoint
+        ↓
+    403 Forbidden
+
+---
+
+# Cookies
+
+Cookie — механізм зберігання невеликих даних, які browser може пов'язувати з domain.
+
+Server може відправити:
+
+    Set-Cookie
+
+Browser зберігає cookie та може надсилати його в наступних requests відповідно до cookie rules.
+
+Cookies часто використовуються для:
+
+    sessions
+    authentication
+    preferences
+
+---
+
+# CORS
+
+CORS — Cross-Origin Resource Sharing.
+
+Він визначає правила, за якими browser дозволяє web page робити requests до іншого origin.
+
+Наприклад:
+
+    frontend:
+    http://localhost:3000
+
+    backend:
+    http://localhost:4000
+
+Це різні origins.
+
+Browser може застосувати CORS restrictions.
+
+---
+
+# Origin
+
+Origin складається з:
+
+    scheme
+    host
+    port
+
+Наприклад:
+
+    http://localhost:3000
+
+та:
+
+    http://localhost:4000
+
+мають різні origins, тому що різні ports.
+
+Так само:
+
+    http://example.com
+
+та:
+
+    https://example.com
+
+мають різні origins через різні schemes.
+
+---
+
+# CORS Example
+
+Frontend:
+
+    http://localhost:3000
+
+Backend:
+
+    http://localhost:4000
+
+Frontend:
+
+    fetch("http://localhost:4000/api/users");
+
+Browser може перевірити CORS policy backend.
+
+Backend має дозволити відповідний origin через CORS headers / configuration.
+
+---
+
+# Preflight Request
+
+Для деяких cross-origin requests browser спочатку виконує:
+
+    OPTIONS
+
+request.
+
+Це називається:
+
+    preflight request
+
+Його мета — перевірити, чи дозволений actual request.
+
+Наприклад:
+
+    Browser
+        ↓
+    OPTIONS
+        ↓
+    Server
+        ↓
+    CORS permission
+        ↓
+    actual request
+
+---
+
+# HTTP Headers Example
+
+Request може виглядати концептуально так:
+
+    POST /api/users HTTP/1.1
+    Host: example.com
+    Content-Type: application/json
+    Accept: application/json
+
+    {
+        "name": "John"
+    }
+
+Response:
+
+    HTTP/1.1 201 Created
+    Content-Type: application/json
+
+    {
+        "id": 42,
+        "name": "John"
+    }
+
+---
+
+# HTTP Request Lifecycle
+
+Типовий lifecycle:
+
+    User action
+        ↓
+    JavaScript
+        ↓
+    fetch()
+        ↓
+    HTTP request
+        ↓
+    network
+        ↓
+    server
+        ↓
+    route
+        ↓
+    controller
+        ↓
+    service
+        ↓
+    database
+        ↓
+    response
+        ↓
+    browser
+        ↓
+    JavaScript
+        ↓
+    UI update
+
+---
+
+# Full Stack Example
+
+Нехай frontend хоче отримати users.
+
+Frontend:
+
+    const response = await fetch(
+        "http://localhost:3000/api/users"
+    );
+
+Backend:
+
+    GET /api/users
+
+Backend може виконати:
+
+    controller
+        ↓
+    service
+        ↓
+    PostgreSQL
+        ↓
+    users
+
+Потім:
+
+    PostgreSQL
+        ↓
+    backend
+        ↓
+    JSON response
+        ↓
+    frontend
+
+---
+
+# Full Stack CRUD
+
+Для CRUD:
+
+    CREATE
+        ↓
+    POST /api/users
+
+    READ
+        ↓
+    GET /api/users
+
+    READ ONE
+        ↓
+    GET /api/users/42
+
+    UPDATE
+        ↓
+    PATCH /api/users/42
+
+    DELETE
+        ↓
+    DELETE /api/users/42
+
+Це базова модель для full-stack practice.
+
+---
+
+# CRUD + HTTP
+
+| CRUD | HTTP |
+|---|---|
+| Create | POST |
+| Read | GET |
+| Update | PATCH / PUT |
+| Delete | DELETE |
+
+Це не абсолютне правило HTTP, але типовий REST-style mapping.
+
+---
+
+# Idempotency
+
+Idempotent method — метод, повторення якого має той самий intended effect на server state після першого застосування.
+
+Наприклад:
+
+    PUT /users/42
+
+з одним і тим самим representation можна повторити.
+
+Результат стану ресурсу має залишатися тим самим.
+
+`GET`, `PUT`, `DELETE` визначені як idempotent methods.
+
+`POST` зазвичай не є idempotent.
+
+Важливо:
+
+    idempotent
+        ≠
+    response буде абсолютно однаковим
+
+Йдеться про intended effect на server state.
+
+---
+
+# Safe Methods
+
+Safe HTTP methods — methods, призначені для отримання інформації, а не зміни server state.
+
+Наприклад:
+
+    GET
+    HEAD
+    OPTIONS
+
+Найважливіший для frontend:
+
+    GET
+
+---
+
+# GET Should Not Modify Data
+
+Наприклад:
+
+    GET /api/users
+
+повинен отримувати users.
+
+Не слід проєктувати API так:
+
+    GET /api/delete-user/42
+
+для видалення user.
+
+Для цього існує:
+
+    DELETE /api/users/42
+
+---
+
+# HTTP Caching
+
+HTTP підтримує caching mechanisms.
+
+Browser та інші caches можуть зберігати response, щоб не виконувати network request щоразу.
+
+Пов'язані headers:
+
+    Cache-Control
+    ETag
+    Last-Modified
+    If-None-Match
+    If-Modified-Since
+
+На базовому рівні достатньо розуміти:
+
+    cache
+        ↓
+    reuse response
+        ↓
+    less network traffic
+        ↓
+    faster application
+
+---
+
+# ETag
+
+`ETag` — validator, який server може використовувати для визначення, чи змінилася representation ресурсу.
+
+Спрощено:
+
+    first request
+        ↓
+    response + ETag
+        ↓
+    browser stores cache
+
+Наступний request:
+
+    If-None-Match: <etag>
+
+Server може відповісти:
+
+    304 Not Modified
+
+і browser використає cached representation.
+
+---
+
+# HTTP vs HTTPS
+
+| HTTP | HTTPS |
+|---|---|
+| незашифрований HTTP | HTTP over TLS |
+| дані можуть бути перехоплені | traffic захищений TLS |
+| `http://` | `https://` |
+| не підходить для sensitive data | стандартний вибір для web |
+
+Для production application:
+
+    HTTPS
+
+є стандартною практикою.
+
+---
+
+# Common Request Headers
+
+    Content-Type
+    Accept
+    Authorization
+    Cookie
+    User-Agent
+    Cache-Control
+
+---
+
+# Common Response Headers
+
+    Content-Type
+    Content-Length
+    Cache-Control
+    ETag
+    Set-Cookie
+    Location
+    Access-Control-Allow-Origin
+
+---
+
+# HTTP vs WebSocket
+
+HTTP:
+
+    request
+        ↓
+    response
+
+WebSocket:
+
+    connection
+        ↓
+    persistent communication
+        ↕
+    messages
+
+HTTP добре підходить для:
+
+    CRUD APIs
+    page requests
+    REST APIs
+
+WebSocket корисний для:
+
+    real-time chat
+    live notifications
+    multiplayer applications
+    live updates
+
+---
+
+# HTTP Version
+
+Існують різні версії HTTP:
+
+    HTTP/1.1
+    HTTP/2
+    HTTP/3
+
+На рівні frontend JavaScript зазвичай не потрібно вручну керувати version.
+
+Browser та server домовляються про протокол на транспортному рівні.
+
+Основні сучасні ідеї:
+
+    HTTP/1.1
+        → classic widely used protocol
+
+    HTTP/2
+        → multiplexing, binary framing, improved transport efficiency
+
+    HTTP/3
+        → HTTP over QUIC
+
+Для Junior достатньо знати, що HTTP має кілька versions та сучасний web часто використовує HTTP/2 або HTTP/3.
+
+---
+
+# Practical Example — GET
+
+    async function getUsers() {
+        const response = await fetch("/api/users");
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP error: ${response.status}`
+            );
+        }
+
+        const users = await response.json();
+
+        return users;
+    }
+
+---
+
+# Practical Example — POST
+
+    async function createUser(user) {
+        const response = await fetch("/api/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        });
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP error: ${response.status}`
+            );
+        }
+
+        return response.json();
+    }
+
+---
+
+# Practical Example — PATCH
+
+    async function updateUser(id, data) {
+        const response = await fetch(
+            `/api/users/${id}`,
+            {
+                method: "PATCH",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP error: ${response.status}`
+            );
+        }
+
+        return response.json();
+    }
+
+---
+
+# Practical Example — DELETE
+
+    async function deleteUser(id) {
+        const response = await fetch(
+            `/api/users/${id}`,
+            {
+                method: "DELETE"
+            }
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP error: ${response.status}`
+            );
+        }
+    }
+
+---
+
+# Practical Example — CRUD API
+
+    async function getUsers() {
+        const response = await fetch("/api/users");
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch users");
+        }
+
+        return response.json();
+    }
+
+    async function createUser(user) {
+        const response = await fetch("/api/users", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(user)
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to create user");
+        }
+
+        return response.json();
+    }
+
+    async function updateUser(id, data) {
+        const response = await fetch(`/api/users/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to update user");
+        }
+
+        return response.json();
+    }
+
+    async function deleteUser(id) {
+        const response = await fetch(`/api/users/${id}`, {
+            method: "DELETE"
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to delete user");
+        }
+    }
+
+---
+
+# Typical API Structure
+
+Наприклад:
+
+    /api/users
+
+    GET
+        → list users
+
+    POST
+        → create user
+
+    /api/users/:id
+
+    GET
+        → get one user
+
+    PATCH
+        → update user
+
+    DELETE
+        → delete user
+
+Це дуже типовий pattern для:
+
+    Express
+    Nest.js
+    Next.js Route Handlers
+
+---
+
+# HTTP + PostgreSQL
+
+У full-stack application PostgreSQL не спілкується з browser безпосередньо.
+
+Типова архітектура:
+
+    Browser
+        ↓
+    HTTP
+        ↓
+    Backend
+        ↓
+    PostgreSQL
+
+Не:
+
+    Browser
+        ↓
+    PostgreSQL
+
+Backend виконує роль application layer.
+
+---
+
+# Why Browser Should Not Connect Directly to PostgreSQL
+
+Database credentials не повинні потрапляти у frontend code.
+
+Правильна модель:
+
+    Browser
+        ↓
+    public HTTP API
+        ↓
+    backend
+        ↓
+    private database
+
+Backend контролює:
+
+    authentication
+    authorization
+    validation
+    business logic
+    database access
+
+---
+
+# HTTP and Validation
+
+Client validation:
+
+    Browser
+        ↓
+    validate form
+        ↓
+    request
+
+Але server все одно повинен перевіряти дані.
+
+Правильна модель:
+
+    Client validation
+        +
+    Server validation
+
+Не можна довіряти тільки frontend validation.
+
+---
+
+# HTTP Errors vs Network Errors
+
+Це дуже важлива відмінність.
+
+### HTTP error
+
+Server відповів:
+
+    404
+    400
+    500
+
+Тобто HTTP response існує.
+
+---
+
+### Network error
+
+Request не зміг нормально отримати HTTP response.
+
+Наприклад:
+
+    network disconnected
+    DNS failure
+    connection failure
+    blocked request
+
+У такій ситуації `fetch()` може reject Promise.
+
+---
+
+# fetch Error Handling
+
+Наприклад:
+
+    try {
+        const response = await fetch("/api/users");
+
+        if (!response.ok) {
+            throw new Error(
+                `HTTP ${response.status}`
+            );
+        }
+
+        const users = await response.json();
+
+        console.log(users);
+    } catch (error) {
+        console.error(error);
+    }
+
+Тут обробляються:
+
+    network / fetch errors
+    HTTP errors, які ми явно перетворили на exception
+
+---
+
+# Request Headers Example
+
+    const response = await fetch("/api/profile", {
+        headers: {
+            "Accept": "application/json",
+            "Authorization": "Bearer token"
+        }
+    });
+
+---
+
+# POST Request Structure
+
+Типова структура:
+
+    fetch("/api/users", {
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            name: "John"
+        })
+    });
+
+Запам'ятати:
+
+    method
+        ↓
+    headers
+        ↓
+    body
+
+---
+
+# GET Request Structure
+
+    fetch("/api/users");
+
+або:
+
+    fetch("/api/users?page=2&limit=20");
+
+Для простого GET:
+
+    method
+        → default GET
+
+---
+
+# DELETE Request Structure
+
+    fetch("/api/users/42", {
+        method: "DELETE"
+    });
+
+---
+
+# HTTP Flow Example
+
+Користувач натискає:
+
+    "Add user"
+
+Frontend:
+
+    button click
+        ↓
+    createUser()
+        ↓
+    fetch()
+        ↓
+    POST /api/users
+        ↓
+    JSON body
+
+Backend:
+
+    receive request
+        ↓
+    validate data
+        ↓
+    service
+        ↓
+    PostgreSQL
+        ↓
+    INSERT
+
+Backend:
+
+    201 Created
+        ↓
+    JSON response
+
+Frontend:
+
+    response
+        ↓
+    update UI
+
+---
+
+# Practical CRUD Flow
+
+    User clicks Add
+        ↓
+    POST /api/users
+        ↓
+    Nest.js
+        ↓
+    validation
+        ↓
+    PostgreSQL INSERT
+        ↓
+    201 Created
+        ↓
+    JSON user
+        ↓
+    React state update
+        ↓
+    UI render
+
+---
+
+# HTTP Mental Model
+
+Корисно мислити:
+
+    URL
+        → WHERE?
+
+    Method
+        → WHAT operation?
+
+    Headers
+        → METADATA?
+
+    Body
+        → WHAT data?
+
+    Status
+        → WHAT happened?
+
+---
+
+# Request Mental Model
+
+    REQUEST
+
+    METHOD
+        +
+    URL
+        +
+    HEADERS
+        +
+    BODY
+
+---
+
+# Response Mental Model
+
+    RESPONSE
+
+    STATUS
+        +
+    HEADERS
+        +
+    BODY
+
+---
+
+# HTTP Cheat Sheet
+
+## Request
+
+    METHOD
+    URL
+    HEADERS
+    BODY
+
+---
+
+## Response
+
+    STATUS
+    HEADERS
+    BODY
+
+---
+
+## Methods
+
+    GET
+        → read
+
+    POST
+        → create / submit
+
+    PUT
+        → replace
+
+    PATCH
+        → partial update
+
+    DELETE
+        → delete
+
+---
+
+## Status Codes
+
+    2xx → success
+    3xx → redirection
+    4xx → client/request problem
+    5xx → server problem
+
+---
+
+## Important Statuses
+
+    200 → OK
+    201 → Created
+    204 → No Content
+
+    400 → Bad Request
+    401 → Unauthorized
+    403 → Forbidden
+    404 → Not Found
+    409 → Conflict
+    422 → Unprocessable Content
+    429 → Too Many Requests
+
+    500 → Internal Server Error
+    502 → Bad Gateway
+    503 → Service Unavailable
+    504 → Gateway Timeout
+
+---
+
+## URL
+
+    https://example.com/api/users/42?active=true
+
+    https
+        → scheme
+
+    example.com
+        → host
+
+    /api/users/42
+        → path
+
+    ?active=true
+        → query
+
+---
+
+## Path Parameter
+
+    /users/42
+
+    42 → id
+
+---
+
+## Query Parameter
+
+    /users?page=2&limit=20
+
+    page=2
+    limit=20
+
+---
+
+## JSON
+
+    {
+        "name": "John",
+        "age": 30
+    }
+
+---
+
+## Content-Type
+
+    Content-Type: application/json
+
+---
+
+## fetch
+
+    const response = await fetch("/api/users");
+
+    if (!response.ok) {
+        throw new Error(
+            `HTTP ${response.status}`
+        );
+    }
+
+    const data = await response.json();
+
+---
+
+# Типові помилки
+
+❌ Вважати, що `fetch()` кидає exception на `404` або `500`.
+
+Правильно:
+
+    fetch()
+        ↓
+    Response
+        ↓
+    check response.ok / status
+
+---
+
+❌ Не перевіряти `response.ok`.
+
+    const response = await fetch("/api/users");
+
+    const data = await response.json();
+
+Краще:
+
+    const response = await fetch("/api/users");
+
+    if (!response.ok) {
+        throw new Error(
+            `HTTP ${response.status}`
+        );
+    }
+
+---
+
+❌ Забувати `JSON.stringify()` при відправленні JSON.
 
 Неправильно:
 
-    function getDataAsync() {
-      new Promise((resolve, reject) => {
-        ...
-      });
+    body: {
+        name: "John"
     }
 
 Правильно:
 
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        ...
-      });
+    body: JSON.stringify({
+        name: "John"
+    })
+
+---
+
+❌ Забувати:
+
+    Content-Type: application/json
+
+при відправленні JSON body, якщо API очікує цей header.
+
+---
+
+❌ Плутати `401` та `403`.
+
+    401 → authentication problem
+
+    403 → access forbidden
+
+---
+
+❌ Плутати `PUT` та `PATCH`.
+
+    PUT
+        → replace
+
+    PATCH
+        → partial update
+
+---
+
+❌ Використовувати GET для зміни server state.
+
+Неправильно:
+
+    GET /delete-user/42
+
+Краще:
+
+    DELETE /users/42
+
+---
+
+❌ Плутати path parameters та query parameters.
+
+    /users/42
+        → path parameter
+
+    /users?page=2
+        → query parameter
+
+---
+
+❌ Підключати browser безпосередньо до PostgreSQL.
+
+Правильно:
+
+    Browser
+        ↓
+    Backend API
+        ↓
+    PostgreSQL
+
+---
+
+❌ Покладатися тільки на frontend validation.
+
+Server повинен повторно перевіряти дані.
+
+---
+
+❌ Плутати HTTP error та network error.
+
+    HTTP error
+        → response received
+        → status 4xx / 5xx
+
+    Network error
+        → request не зміг нормально отримати response
+
+---
+
+❌ Вважати, що HTTP завжди означає insecure connection.
+
+    HTTP
+        → protocol
+
+    HTTPS
+        → HTTP over TLS
+
+---
+
+# Питання зі співбесіди
+
+Що таке HTTP?
+
+Що таке HTTPS?
+
+Чим HTTP відрізняється від HTTPS?
+
+Що таке client?
+
+Що таке server?
+
+Що таке HTTP request?
+
+Що таке HTTP response?
+
+Що містить HTTP request?
+
+Що містить HTTP response?
+
+Що таке URL?
+
+З яких частин складається URL?
+
+Що таке endpoint?
+
+Що таке HTTP method?
+
+Які основні HTTP methods ти знаєш?
+
+Для чого використовується GET?
+
+Для чого використовується POST?
+
+Для чого використовується PUT?
+
+Для чого використовується PATCH?
+
+Для чого використовується DELETE?
+
+Чим PUT відрізняється від PATCH?
+
+Що таке HTTP headers?
+
+Що таке `Content-Type`?
+
+Що таке `Accept`?
+
+Для чого потрібен `Authorization`?
+
+Що таке request body?
+
+Що таке response body?
+
+Що таке JSON?
+
+Для чого потрібен `JSON.stringify()`?
+
+Для чого потрібен `JSON.parse()`?
+
+Що таке HTTP status code?
+
+Що означає `200`?
+
+Що означає `201`?
+
+Що означає `204`?
+
+Що означає `400`?
+
+Що означає `401`?
+
+Що означає `403`?
+
+Що означає `404`?
+
+Що означає `409`?
+
+Що означає `422`?
+
+Що означає `429`?
+
+Що означає `500`?
+
+Що означає `502`?
+
+Що означає `503`?
+
+Що означає `504`?
+
+Яка різниця між `401` та `403`?
+
+Яка різниця між `4xx` та `5xx`?
+
+Що таке path parameter?
+
+Що таке query parameter?
+
+Яка різниця між:
+
+    /users/42
+
+та:
+
+    /users?id=42
+
+Що таке REST API?
+
+Що таке CRUD?
+
+Як CRUD пов'язаний з HTTP methods?
+
+Що таке stateless protocol?
+
+Що таке authentication?
+
+Що таке authorization?
+
+Що таке CORS?
+
+Що таке origin?
+
+Що таке preflight request?
+
+Що таке `OPTIONS` request?
+
+Як працює `fetch()`?
+
+Що повертає `fetch()`?
+
+Що таке `Response`?
+
+Що таке `response.ok`?
+
+Чи кидає `fetch()` exception при `404`?
+
+Чи кидає `fetch()` exception при `500`?
+
+Чим HTTP error відрізняється від network error?
+
+Як відправити POST request через `fetch()`?
+
+Як відправити JSON через `fetch()`?
+
+Як передати query parameters?
+
+Як отримати JSON response?
+
+Чому browser не повинен безпосередньо підключатися до PostgreSQL?
+
+Як виглядає full-stack HTTP flow?
+
+---
+
+# Шлях
+
+## 🟢 Core (обов'язково знати)
+
+Що таке HTTP.
+
+Що таке HTTPS.
+
+Client / server.
+
+Request / response.
+
+Request-response model.
+
+URL.
+
+Endpoint.
+
+HTTP methods:
+
+    GET
+    POST
+    PUT
+    PATCH
+    DELETE
+
+Request:
+
+    method
+    URL
+    headers
+    body
+
+Response:
+
+    status
+    headers
+    body
+
+HTTP status classes:
+
+    2xx
+    3xx
+    4xx
+    5xx
+
+Основні status codes:
+
+    200
+    201
+    204
+    400
+    401
+    403
+    404
+    500
+
+JSON.
+
+`Content-Type`.
+
+`fetch()`.
+
+`response.ok`.
+
+`response.status`.
+
+`response.json()`.
+
+Path parameters.
+
+Query parameters.
+
+Основи REST API.
+
+Основи CRUD.
+
+Основи CORS.
+
+Основи authentication / authorization.
+
+Розуміння:
+
+    Browser
+        ↓
+    HTTP
+        ↓
+    Backend
+        ↓
+    Database
+
+---
+
+## 🔵 Junior
+
+Впевнено працювати з:
+
+    GET
+    POST
+    PUT
+    PATCH
+    DELETE
+
+Вміти створити HTTP request через `fetch()`.
+
+Вміти передавати:
+
+    headers
+    JSON body
+    query parameters
+
+Вміти обробляти:
+
+    response.ok
+    response.status
+
+Розуміти:
+
+    401
+    403
+    404
+    409
+    422
+    429
+    500
+
+Розуміти різницю:
+
+    PUT
+    PATCH
+
+Розуміти:
+
+    path parameters
+    query parameters
+
+Розуміти:
+
+    request body
+    response body
+
+Розуміти JSON serialization:
+
+    JSON.stringify()
+    JSON.parse()
+
+Розуміти HTTP errors vs network errors.
+
+Розуміти stateless HTTP.
+
+Розуміти authentication vs authorization.
+
+Розуміти CORS.
+
+Розуміти preflight.
+
+Розуміти REST-style resource design.
+
+Уміти побудувати простий CRUD API flow:
+
+    GET
+    POST
+    PATCH
+    DELETE
+
+Уміти пояснити full-stack request:
+
+    React / Next.js
+        ↓
+    fetch()
+        ↓
+    Nest.js
+        ↓
+    PostgreSQL
+        ↓
+    Nest.js
+        ↓
+    JSON
+        ↓
+    React
+
+---
+
+## 🟠 Middle
+
+Глибше розуміння:
+
+    HTTP semantics
+    HTTP caching
+    ETag
+    Cache-Control
+    conditional requests
+
+Розуміння:
+
+    safe methods
+    idempotent methods
+
+Розуміння:
+
+    cookies
+    sessions
+    tokens
+    authentication flows
+
+Глибоке розуміння:
+
+    CORS
+    preflight
+    credentials
+
+Розуміння:
+
+    content negotiation
+    Accept
+    Content-Type
+
+Розуміння:
+
+    pagination
+    filtering
+    sorting
+    searching
+
+Розуміння:
+
+    rate limiting
+    retries
+    timeouts
+    cancellation
+
+Розуміння:
+
+    REST API design
+    resource modeling
+    HTTP semantics
+
+Розуміння:
+
+    HTTP/1.1
+    HTTP/2
+    HTTP/3
+
+Розуміння reverse proxy:
+
+    Browser
+        ↓
+    Nginx / proxy
+        ↓
+    Backend
+
+Розуміння:
+
+    load balancer
+    API gateway
+    caching layer
+
+---
+
+## 🔴 Senior
+
+Глибоке розуміння HTTP semantics.
+
+RFC-level understanding HTTP methods.
+
+HTTP caching architecture.
+
+Cache validation.
+
+Conditional requests.
+
+ETag strategies.
+
+Cache-Control directives.
+
+Content negotiation.
+
+HTTP/2 multiplexing.
+
+HTTP/3 / QUIC.
+
+Connection management.
+
+TLS.
+
+HTTP performance.
+
+Compression.
+
+Streaming responses.
+
+Range requests.
+
+Reverse proxies.
+
+Load balancing.
+
+API gateways.
+
+Rate limiting.
+
+Retries.
+
+Timeouts.
+
+Circuit breakers.
+
+Idempotency keys.
+
+Distributed systems.
+
+API versioning.
+
+Backward compatibility.
+
+REST API architecture.
+
+Resource modeling.
+
+Error response design.
+
+Observability.
+
+Tracing.
+
+Request correlation.
+
+Security headers.
+
+CSRF.
+
+CORS security.
+
+Authentication protocols.
+
+Authorization architecture.
+
+---
+
+# Міні-шпаргалка
+
+## HTTP
+
+    Client
+        ↓
+    Request
+        ↓
+    Server
+        ↓
+    Response
+        ↓
+    Client
+
+---
+
+## Request
+
+    METHOD
+    URL
+    HEADERS
+    BODY
+
+---
+
+## Response
+
+    STATUS
+    HEADERS
+    BODY
+
+---
+
+## Methods
+
+    GET
+        → read
+
+    POST
+        → create / submit
+
+    PUT
+        → replace
+
+    PATCH
+        → partial update
+
+    DELETE
+        → delete
+
+---
+
+## CRUD
+
+    Create → POST
+    Read   → GET
+    Update → PATCH / PUT
+    Delete → DELETE
+
+---
+
+## Status
+
+    2xx → success
+    3xx → redirect
+    4xx → client/request error
+    5xx → server error
+
+---
+
+## Important Status
+
+    200 → OK
+    201 → Created
+    204 → No Content
+
+    400 → Bad Request
+    401 → Unauthorized
+    403 → Forbidden
+    404 → Not Found
+    409 → Conflict
+    422 → Unprocessable Content
+    429 → Too Many Requests
+
+    500 → Internal Server Error
+    502 → Bad Gateway
+    503 → Service Unavailable
+    504 → Gateway Timeout
+
+---
+
+## URL
+
+    https://example.com/api/users/42?page=2
+
+    https
+        → scheme
+
+    example.com
+        → host
+
+    /api/users/42
+        → path
+
+    ?page=2
+        → query
+
+---
+
+## Path
+
+    /users/42
+
+    42
+        → resource id
+
+---
+
+## Query
+
+    /users?page=2&limit=20
+
+    page=2
+    limit=20
+
+---
+
+## JSON
+
+    {
+        "name": "John",
+        "age": 30
     }
 
-❌ Забути `reject()` для callback error.
-
-❌ Викликати `resolve()` до обробки error.
-
-❌ Викликати `resolve()` та `reject()` без розуміння callback convention.
-
-❌ Використовувати `util.promisify()` для callback API, яке не відповідає error-first convention.
-
-❌ Promisify callback, який викликається багато разів.
-
-❌ Вважати, що promisification автоматично робить синхронну функцію асинхронною.
-
-❌ Використовувати promisification для API, яке вже має Promise version.
-
-❌ Втратити `this` при promisification object method.
-
-❌ Вважати, що Promise може повернути декілька окремих результатів через `resolve()`.
-
-❌ Плутати Promisification з `async / await`.
-
 ---
 
-### Питання зі співбесіди
+## fetch
 
-Що таке promisification?
+    const response = await fetch("/api/users");
 
-Навіщо потрібна promisification?
-
-Що таке callback-based API?
-
-Що таке Promise-based API?
-
-Що таке error-first callback?
-
-Як перетворити callback API на Promise?
-
-Що робить `resolve()`?
-
-Що робить `reject()`?
-
-Чому `fetch()` не потребує promisification?
-
-Чим promisification відрізняється від `async / await`?
-
-Що таке `util.promisify()`?
-
-Який callback pattern очікує `util.promisify()`?
-
-Чи можна promisify будь-яку callback function?
-
-Що відбудеться, якщо callback викликається декілька разів?
-
-Що відбудеться, якщо `resolve()` викликати декілька разів?
-
-Як promisify function, яка повертає декілька результатів?
-
-Чому може виникнути проблема з `this` при promisification?
-
-Коли не потрібно використовувати promisification?
-
-Яка різниця між `fs` та `fs/promises` у Node.js?
-
----
-
-### Шлях
-
-🟢 **Core (обов'язково знати)**
-
-Що таке callback-based API.
-
-Що таке Promise-based API.
-
-Що таке promisification.
-
-Як callback API перетворити на Promise.
-
-`resolve()`.
-
-`reject()`.
-
-Error-first callback.
-
-`new Promise()`.
-
-Promisification через wrapper.
-
-Promisification + `async / await`.
-
-Promisification + `try / catch`.
-
-Розуміти, що Promise settle відбувається один раз.
-
----
-
-🔵 **Junior**
-
-Node.js error-first callback pattern.
-
-Callback hell.
-
-Ручна promisification.
-
-`util.promisify()`.
-
-Promisification старих Node.js APIs.
-
-Promise chaining після promisification.
-
-Parallel operations через `Promise.all()`.
-
-Обробка errors.
-
-Розуміння `this` при promisification.
-
-Різниця між callback API та Promise API.
-
----
-
-🟠 **Middle**
-
-Створення reusable promisify wrapper.
-
-Promisification нестандартних callback APIs.
-
-Callbacks з декількома результатами.
-
-API, які викликають callback багато разів.
-
-EventEmitter vs Promise.
-
-Streams vs Promise.
-
-Preserving `this`.
-
-Error propagation.
-
-Cancellation considerations.
-
-Retry logic після promisification.
-
-Адаптація legacy APIs до modern Promise-based architecture.
-
----
-
-🔴 **Senior**
-
-Designing Promise adapters.
-
-Legacy API migration.
-
-Callback-to-Promise compatibility layers.
-
-Async architecture.
-
-Error propagation architecture.
-
-Cancellation architecture.
-
-Resource lifecycle.
-
-Backpressure.
-
-Streams та Async Iterators.
-
-Event-driven vs Promise-based architecture.
-
-API migration strategies.
-
-Performance trade-offs.
-
-Memory management.
-
-Designing reliable adapters для legacy systems.
-
----
-
-### Міні-шпаргалка
-
-Callback:
-
-    function getData(callback) {
-      callback(null, "Data");
+    if (!response.ok) {
+        throw new Error(
+            `HTTP ${response.status}`
+        );
     }
 
-Використання:
+    const data = await response.json();
 
-    getData((error, data) => {
-      if (error) {
-        console.error(error);
+---
 
-        return;
-      }
+## POST
 
-      console.log(data);
+    const response = await fetch("/api/users", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: "John"
+        })
     });
 
 ---
 
-Promisification:
+## PATCH
 
-    function getDataAsync() {
-      return new Promise((resolve, reject) => {
-        getData((error, data) => {
-          if (error) {
-            reject(error);
-
-            return;
-          }
-
-          resolve(data);
-        });
-      });
-    }
-
----
-
-Promise:
-
-    getDataAsync()
-      .then(data => {
-        console.log(data);
-      })
-      .catch(error => {
-        console.error(error);
-      });
-
----
-
-Async / await:
-
-    try {
-      const data = await getDataAsync();
-
-      console.log(data);
-    } catch (error) {
-      console.error(error);
-    }
-
----
-
-Error-first callback:
-
-    callback(error, result)
-
-Успіх:
-
-    callback(null, result)
-
-Помилка:
-
-    callback(error)
-
----
-
-Основна схема:
-
-    Callback API
-         │
-         │ promisification
-         ▼
-    Promise API
-         │
-         ├── .then()
-         ├── .catch()
-         └── async / await
-
----
-
-Ручний wrapper:
-
-    function asyncOperation() {
-      return new Promise((resolve, reject) => {
-        operation((error, result) => {
-          if (error) {
-            reject(error);
-
-            return;
-          }
-
-          resolve(result);
-        });
-      });
-    }
-
----
-
-`util.promisify()`:
-
-    const { promisify } = require("node:util");
-
-    const asyncOperation =
-      promisify(operation);
-
-    const result = await asyncOperation();
-
----
-
-Promise lifecycle:
-
-    pending
-       │
-       ├── resolve()
-       │      ↓
-       │   fulfilled
-       │
-       └── reject()
-              ↓
-           rejected
-
----
-
-Один Promise → один фінальний результат:
-
-    resolve(value1)
-         ↓
-      fulfilled
-
-    resolve(value2)
-         ↓
-      ignored
-
----
-
-Один результат:
-
-    callback(error, result)
-                       │
-                       ▼
-                    resolve()
-
-Декілька результатів:
-
-    callback(error, value1, value2)
-                       │
-                       ▼
-                  resolve({
-                    value1,
-                    value2
-                  })
-
----
-
-Не кожен callback API потрібно promisify:
-
-    One result
-        ↓
-    Promise
-
-    Many events
-        ↓
-    EventEmitter / Stream / AsyncIterator
-
----
-
-### Головне:
-
-• Promisification — перетворення callback-based API у Promise-based API.
-
-• Callback API передає результат через callback.
-
-• Promise API повертає `Promise`.
-
-• Типовий Node.js callback має форму:
-
-    callback(error, result)
-
-• Успішний результат перетворюється на:
-
-    resolve(result)
-
-• Помилка перетворюється на:
-
-    reject(error)
-
-• Основний інструмент ручної promisification:
-
-    new Promise((resolve, reject) => {
-      ...
+    const response = await fetch("/api/users/42", {
+        method: "PATCH",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: "Anna"
+        })
     });
 
-• `async / await` працює поверх Promise API.
+---
 
-• Promisification і `async / await` — не одне й те саме:
+## DELETE
 
-    callback API
-         ↓
-    promisification
-         ↓
-    Promise API
-         ↓
-    async / await
+    const response = await fetch("/api/users/42", {
+        method: "DELETE"
+    });
 
-• `util.promisify()` дозволяє автоматично адаптувати багато Node.js callback APIs.
+---
 
-• `util.promisify()` зазвичай очікує error-first callback.
+## Authentication
 
-• Promise може перейти у фінальний стан лише один раз.
+    authentication
+        → Who are you?
 
-• Callback, який викликається багато разів, не можна просто перетворити на Promise і очікувати отримання всіх значень.
+    authorization
+        → What are you allowed to do?
 
-• API, яке вже має Promise version, зазвичай не потрібно promisify.
+---
 
-• При promisification object methods потрібно враховувати `this`.
+## CORS
 
-• Promisification особливо важлива для роботи з legacy callback-based code.
+    Frontend
+        ↓
+    cross-origin request
+        ↓
+    Browser CORS checks
+        ↓
+    Backend policy
 
-• Основна ідея:
+---
 
-    Callback
-       ↓
-    Adapter / Promisification
-       ↓
-    Promise
-       ↓
-    async / await
-       ↓
-    readable modern JavaScript
+## Full Stack
+
+    React / Next.js
+        ↓
+    fetch()
+        ↓
+    HTTP
+        ↓
+    Nest.js / Node.js
+        ↓
+    PostgreSQL
+        ↓
+    Nest.js
+        ↓
+    HTTP Response
+        ↓
+    React / Next.js
+
+---
+
+# Головне:
+
+• HTTP — протокол обміну даними між client та server.
+
+• Основна модель HTTP:
+
+    request → response
+
+• HTTP request складається з:
+
+    method
+    URL
+    headers
+    body
+
+• HTTP response складається з:
+
+    status
+    headers
+    body
+
+• Основні methods:
+
+    GET
+    POST
+    PUT
+    PATCH
+    DELETE
+
+• Типовий CRUD mapping:
+
+    CREATE → POST
+    READ   → GET
+    UPDATE → PATCH / PUT
+    DELETE → DELETE
+
+• `GET` використовується переважно для отримання даних.
+
+• `POST` використовується переважно для створення ресурсу або виконання операції.
+
+• `PUT` використовується для повної заміни ресурсу.
+
+• `PATCH` використовується для часткового оновлення.
+
+• `DELETE` використовується для видалення ресурсу.
+
+• HTTP status codes:
+
+    2xx → success
+    3xx → redirection
+    4xx → client/request problem
+    5xx → server problem
+
+• Найважливіші status codes:
+
+    200 → OK
+    201 → Created
+    204 → No Content
+    400 → Bad Request
+    401 → Unauthorized
+    403 → Forbidden
+    404 → Not Found
+    409 → Conflict
+    422 → Unprocessable Content
+    429 → Too Many Requests
+    500 → Internal Server Error
+    503 → Service Unavailable
+
+• `401` пов'язаний з authentication.
+
+• `403` означає, що доступ заборонений.
+
+• `404` означає, що ресурс не знайдено.
+
+• `500` означає server-side error.
+
+• URL визначає адресу ресурсу.
+
+• Path parameter знаходиться в path:
+
+    /users/42
+
+• Query parameter знаходиться після `?`:
+
+    /users?page=2
+
+• Headers передають metadata.
+
+• `Content-Type` описує формат body.
+
+• `Accept` описує бажаний формат response.
+
+• JSON — один із найпоширеніших форматів обміну даними між frontend та backend.
+
+• `JSON.stringify()` перетворює JavaScript value у JSON string.
+
+• `JSON.parse()` перетворює JSON string у JavaScript value.
+
+• `fetch()` використовується для HTTP requests.
+
+• `fetch()` повертає Promise.
+
+• `fetch()` не вважає `404` або `500` автоматично JavaScript exception.
+
+• Тому потрібно перевіряти:
+
+    response.ok
+
+або:
+
+    response.status
+
+• `response.json()` також є asynchronous operation та повертає Promise.
+
+• HTTP error та network error — не одне й те саме.
+
+• HTTP є stateless protocol.
+
+• Authentication відповідає:
+
+    Who are you?
+
+• Authorization відповідає:
+
+    What are you allowed to do?
+
+• CORS контролює browser access до resources іншого origin.
+
+• HTTPS — HTTP поверх TLS.
+
+• Browser не повинен безпосередньо підключатися до PostgreSQL.
+
+• Типова full-stack architecture:
+
+    Browser
+        ↓
+    HTTP API
+        ↓
+    Backend
+        ↓
+    PostgreSQL
+
+• Для твого JavaScript full-stack stack типовий flow:
+
+    React / Next.js
+        ↓
+    fetch()
+        ↓
+    HTTP request
+        ↓
+    Nest.js / Node.js
+        ↓
+    PostgreSQL
+        ↓
+    HTTP response
+        ↓
+    React / Next.js
+
+• Основна mental model:
+
+    URL
+        → WHERE?
+
+    Method
+        → WHAT operation?
+
+    Headers
+        → METADATA?
+
+    Body
+        → WHAT data?
+
+    Status
+        → WHAT happened?
+
+• Якщо добре розуміти цю модель, то наступні теми:
+
+    fetch
+    Promises
+    async/await
+    REST API
+    CRUD
+    Nest.js
+    Next.js
+    PostgreSQL integration
+
+стають значно зрозумілішими.
+
+• Головна формула HTTP для full-stack JavaScript:
+
+    Request
+        ↓
+    Backend
+        ↓
+    Database
+        ↓
+    Response
+
+• І найважливіше практичне правило:
+
+    Frontend
+        ↓
+    HTTP API
+        ↓
+    Backend
+        ↓
+    Database
+
+а не:
+
+    Frontend
+        ↓
+    Database

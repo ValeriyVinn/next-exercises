@@ -29,8 +29,33 @@ vanilla/javascript
 │   └── 10-method-chaining
 │
 ├── 📁 03-strings-and-regex
-│
+│   ├── 01-string-basics
+│   ├── 02-string-properties-and-access
+│   ├── 03-search-and-check
+│   ├── 04-slice-substring-substr
+│   ├── 05-case-and-whitespace
+│   ├── 06-replace-and-replaceAll
+│   ├── 07-split-and-join
+│   ├── 08-template-literals
+│   ├── 09-string-padding-and-repeat
+│   ├── 10-regex-basics
+│   ├── 11-regex-methods
+│   ├── 12-regex-patterns
+│   └── 13-string-project
+││
 ├── 📁 04-numbers-and-math
+│   ├── 01-number-basics
+│   ├── 02-number-conversion
+│   ├── 03-number-methods
+│   ├── 04-math-round-floor-ceil-trunc
+│   ├── 05-math-abs-min-max
+│   ├── 06-math-pow-sqrt
+│   ├── 07-random-numbers
+│   ├── 08-random-numbers-and-ranges
+│   ├── 09-floating-point-and-precision
+│   ├── 10-number-formatting
+│   ├── 11-bigint
+│   └── 12-numbers-project
 │
 ├── 📁 05-working-with-the-dom
 │   ├── 01-element-selection
@@ -111,7 +136,7 @@ vanilla/javascript
 │   ├── 03-default-named-exports
 │   ├── 04-module-architecture
 │   ├── 05-map-and-set
-│   ├── 06-immutability
+│   ├── 06-advanced-object-features
 │   ├── 07-iterators
 │   └── 08-generators
 │
