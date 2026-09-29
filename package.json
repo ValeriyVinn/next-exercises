@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "start http://localhost:3000 && next dev --turbopack",
+    "dev": "next dev --turbopack",
     "server": "ts-node-dev --project server/tsconfig.json server/src/server.ts",
     "build": "next build",
     "start": "next start",
