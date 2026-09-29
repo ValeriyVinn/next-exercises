@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/react/01-components-and-collections/02-props-and-children/ProductCard/page.tsx",
+    "src/app/react/01-components-and-rendering/03-props-and-children/ProductCard/page.tsx",
     ".next/dev/types/**/*.ts"
   ],
   "exclude": [

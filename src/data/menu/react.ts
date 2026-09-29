@@ -7,13 +7,13 @@ const reactMenuData = [
         tasks: [
           {
             title: "Home",
-            path: "/react/01-components-and-collections/01-components/Home/",
+            path: "/react/01-components-and-rendering/01-components/Home/",
           },
           {
             title: "Forms",
-            path: "/react/01-components-and-collections/01-components/Forms/",
+            path: "/react/01-components-and-rendering/01-components/Forms/",
           },
-          { title: "Hidden Input", path: "/react/01-components-and-collections/01-components/HiddenInput/" },
+          { title: "Hidden Input", path: "/react/01-components-and-rendering/01-components/HiddenInput/" },
         ],
       },
       {
@@ -21,11 +21,11 @@ const reactMenuData = [
         tasks: [
           {
             title: "Product card",
-            path: "/react/01-components-and-collections/02-props-and-children/ProductCard",
+            path: "/react/01-components-and-rendering/03-props-and-children/ProductCard",
           },
           {
             title: "User Profile",
-            path: "/react/01-components-and-collections/02-props-and-children/UserProfile",
+            path: "/react/01-components-and-rendering/03-props-and-children/UserProfile",
           },
           { title: "Task 3", path: "" },
         ],
@@ -73,20 +73,20 @@ const reactMenuData = [
         tasks: [
           {
             title: "Forms",
-            path: "/react/02-events-and-state-forms/03-Forms/Forms",
+            path: "/react/02-events-state-and-forms/05-Forms/Forms",
           },          
           {
             title: "Studying Phrasal Verbs",
-            path: "/react/02-events-and-state-forms/03-Forms/StudyingPhrasalVerbs",
+            path: "/react/02-events-state-and-forms/05-Forms/StudyingPhrasalVerbs",
           },
           {
             title: "Word Learning Timer",
-            path: "/react/02-events-and-state-forms/03-Forms/WordLearningTimer",
+            path: "/react/02-events-state-and-forms/05-Forms/WordLearningTimer",
           },
 
           {
             title: "Wiki Sentence Finder",
-            path: "/react/02-events-and-state-forms/03-Forms/WikiSentenceFinder",
+            path: "/react/02-events-state-and-forms/05-Forms/WikiSentenceFinder",
           },
           { title: "Controlled Components", path: "" },
           { title: "Multiple Inputs", path: "" },

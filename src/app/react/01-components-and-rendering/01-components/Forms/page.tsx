@@ -1,9 +1,13 @@
-import FormWrapper from "@/app/react/01-components-and-collections/01-components/Forms/FormWrapper";
-import TextInput from "@/app/react/01-components-and-collections/01-components/Forms/TextInput";
-import SelectField from "@/app/react/01-components-and-collections/01-components/Forms/SelectField";
-import RadioGroup from "@/app/react/01-components-and-collections/01-components/Forms/RadioGroup";
-import CheckboxField from "@/app/react/01-components-and-collections/01-components/Forms/CheckboxField";
-import SubmitButton from "@/app/react/01-components-and-collections/01-components/Forms/SubmitButton";
+import FormWrapper from "@/app/react/01-components-and-rendering/01-components/Forms/FormWrapper";
+import TextInput from "@/app/react/01-components-and-rendering/01-components/Forms/TextInput";
+import SelectField from "@/app/react/01-components-and-rendering/01-components/Forms/SelectField";
+import RadioGroup from "@/app/react/01-components-and-rendering/01-components/Forms/RadioGroup";
+import CheckboxField from "@/app/react/01-components-and-rendering/01-components/Forms/CheckboxField";
+import SubmitButton from "@/app/react/01-components-and-rendering/01-components/Forms/SubmitButton";
+
+
+
+
 
 export default function Page() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Modal from "../../../01-components-and-collections/02-props-and-children/Modal/Modal";
+import Modal from "../../../01-components-and-rendering/03-props-and-children/Modal/Modal";
 import css from "./page.module.css";
 import phrasalVerbsData from "../../../../../../public/data/phrasal-verbs.json";
 
@@ -69,36 +69,35 @@ const PhrasalVerbs: React.FC = () => {
   };
 
   const filteredVerbs = Object.keys(typedData).filter((key) =>
-    key.toLowerCase().startsWith(filter)
+    key.toLowerCase().startsWith(filter),
   );
 
   // універсальний рендерер поля JSON
-const renderDefinition = (definition: unknown): React.ReactNode => {
-  if (Array.isArray(definition)) {
-    return (
-      <ul>
-        {definition.map((item, index) => (
-          <li key={index}>{renderDefinition(item)}</li>
-        ))}
-      </ul>
-    );
-  }
+  const renderDefinition = (definition: unknown): React.ReactNode => {
+    if (Array.isArray(definition)) {
+      return (
+        <ul>
+          {definition.map((item, index) => (
+            <li key={index}>{renderDefinition(item)}</li>
+          ))}
+        </ul>
+      );
+    }
 
-  if (typeof definition === "object" && definition !== null) {
-    return (
-      <div style={{ marginLeft: "10px" }}>
-        {Object.entries(definition).map(([key, value]) => (
-          <div key={key}>
-            <strong>{key}:</strong> {renderDefinition(value)}
-          </div>
-        ))}
-      </div>
-    );
-  }
+    if (typeof definition === "object" && definition !== null) {
+      return (
+        <div style={{ marginLeft: "10px" }}>
+          {Object.entries(definition).map(([key, value]) => (
+            <div key={key}>
+              <strong>{key}:</strong> {renderDefinition(value)}
+            </div>
+          ))}
+        </div>
+      );
+    }
 
-  return <span>{String(definition)}</span>;
-};
-
+    return <span>{String(definition)}</span>;
+  };
 
   return (
     <div className={css.article}>

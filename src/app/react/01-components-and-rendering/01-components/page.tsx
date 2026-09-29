@@ -9,7 +9,10 @@ export default function ComponentsPage() {
     <div>
       <h1>Components — Demo Page</h1>
 
-      <p>This is a simple test page to verify that your React section works correctly.</p>
+      <p>
+        This is a simple test page to verify that your React section works
+        correctly.
+      </p>
 
       <h2>Example list rendered by a component:</h2>
       <ul>
@@ -21,7 +24,7 @@ export default function ComponentsPage() {
       <h2>Practice Tasks</h2>
       <ul>
         <li>
-          <Link href="/react/01-components-and-collections/components/task-1">
+          <Link href="/react/01-components-and-rendering/01-components/">
             Go to Task 1 →
           </Link>
         </li>
