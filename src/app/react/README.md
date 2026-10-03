@@ -21,8 +21,8 @@ src/app/react
 │   ├── 📁 02-mount-update-unmount
 │   ├── 📁 03-effects-and-side-effects
 │   ├── 📁 04-effect-dependencies
-│   ├── 📁 04-cleanup
-│   └── 📁 05-lifecycle-thinking
+│   ├── 📁 05-cleanup
+│   └── 📁 06-lifecycle-thinking
 │
 ├── 📁 04-hooks
 │   ├── 📁 01-use-state
