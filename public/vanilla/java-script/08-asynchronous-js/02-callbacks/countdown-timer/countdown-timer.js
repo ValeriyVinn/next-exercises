@@ -1,11 +1,3 @@
-// import { setupExercise } from "../../../../scripts/vanilla-exercise-handler.js";
-
-// setupExercise({
-//   fileKey: "08-asynchronous-js",
-//   exerciseName: "Countdown timer",
-//   statement:
-//     "Create a function countdown(start, callback) that counts down from a given number to zero at 1 second intervals.",
-// });
 
 // ! Рішення ----------
 
