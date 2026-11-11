@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bribe-taking traffic light</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <main class="container">
+
+        <h1>Bribe-taking traffic light</h1>
+        <p class="statement">Дослідити стани pending, fulfilled і rejected на прикладі декількох Promise та спостерігати за їх результатами</p>
+
+        <p>Хочеш проїхати?</p>
+
+        <fieldset class="payment-options">
+            <legend>Обери свій варіант:</legend>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="bribe"
+                >
+                10 гривень
+            </label>
+
+            <label>
+                <input
+                    type="radio"
+                    name="payment"
+                    value="nothing"
+                    checked
+                >
+                Нічого
+            </label>
+        </fieldset>
+
+        <div class="traffic-light">
+            <div
+                class="light"
+                id="traffic-light"
+                aria-label="Жовтий сигнал світлофора"
+            ></div>
+        </div>
+
+        <p id="message" aria-live="polite">
+            Світлофор очікує на рішення...
+        </p>
+
+    </main>
+
+</body>
+</html>
